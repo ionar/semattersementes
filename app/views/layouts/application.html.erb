@@ -1,14 +1,52 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Semattersementes</title>
-    <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
-
-  <body>
+<html lang="pt-br">
+<head>
+  <title>Sematter Sementes</title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= render 'application/favicon' %>
+</head>
+<body>
+<nav class="navbar navbar-inverse" role="navigation">
+	<div class="container">
+		<!-- Brand and toggle get grouped for better mobile display -->
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+			</button>
+		    <%= link_to root_path, :class => 'navbar-brand' do %>
+		    	<span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Sematter
+		    <% end %>
+		</div>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse" id="menu">
+			<ul class="nav navbar-nav">
+				<li class="<%= active?('cultivations')%>"><%= link_to "Cultivos", cultivations_path %></li>
+				<li class="<%= active?('cycles')%>"><%= link_to "Ciclos", cycles_path %></li>
+				<li class="<%= active?('purposes')%>"><%= link_to "Objetivos", purposes_path %></li>
+				<li class="<%= active?('products')%>"><%= link_to "Produtos", products_path %></li>		
+			</ul>
+		</div><!-- /.navbar-collapse -->
+	</div><!-- /.container -->
+</nav>			
+<!-- Flash messages -->
+<% flash.each do |type, message| %>
+	<div class="container">
+	  <div class="alert <%= bootstrap_class_for(type) %> alert-dismissible fade in" role="alert">
+	    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <%= message %>
+	  </div>
+	</div><!-- /container -->  
+<% end %>
+<div class="container">
     <%= yield %>
+</div><!-- /container -->
   </body>
 </html>
