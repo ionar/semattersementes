@@ -1,0 +1,12 @@
+<%= simple_form_for(@products_purposes_relation) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+  <%= @products_purposes_relation.product.name %> <=> <%= @products_purposes_relation.purpose.name %>
+  <%= f.input :stars %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

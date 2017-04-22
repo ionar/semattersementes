@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170419102547) do
+ActiveRecord::Schema.define(version: 20170421175907) do
 
   create_table "cultivations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name"
@@ -37,10 +37,20 @@ ActiveRecord::Schema.define(version: 20170419102547) do
     t.index ["cycle_id"], name: "index_products_on_cycle_id", using: :btree
   end
 
+  create_table "products_purposes_relations", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "product_id"
+    t.integer  "purpose_id"
+    t.integer  "stars"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["product_id"], name: "index_products_purposes_relations_on_product_id", using: :btree
+    t.index ["purpose_id"], name: "index_products_purposes_relations_on_purpose_id", using: :btree
+  end
+
   create_table "purposes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.string   "description"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_foreign_key "products", "cultivations"

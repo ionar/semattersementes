@@ -1,0 +1,34 @@
+<%= simple_form_for(@product) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :name %>
+    <%= f.input :description %>
+    <%= f.association :cultivation %>
+    <%= f.association :cycle %>                                                     
+    <%= link_to_add_association 'Adicionar propósitos', f, :products_purposes_relations, 
+
+    'data-association-insertion-node' => "#relation-purpose ol",
+    'data-association-insertion-method' => "append",
+    :wrap_object => Proc.new {|products_purposes_relation| products_purposes_relation.build_purpose; products_purposes_relation } %>
+    <fieldset id="relation-purpose">
+      <ol>
+        <%= f.fields_for :products_purposes_relations do |products_purposes_relation| %>
+          <%= render partial: "products_purposes_relation_fields", locals: {f: products_purposes_relation} %>
+        <% end %>
+      </ol>
+    </fieldset>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>
+
+
+*************************
+    <% @purposes.each do |purpose| -%>
+      <%= f.simple_fields_for :purposes, purpose do |r| %>
+       <%= r.check_box :description %>
+      <% end %>
+    <% end %>

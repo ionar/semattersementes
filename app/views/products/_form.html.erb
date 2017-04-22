@@ -6,9 +6,48 @@
     <%= f.input :description %>
     <%= f.association :cultivation %>
     <%= f.association :cycle %>
-  </div>
+    <%= f.association :purposes do %>
+      <%= f.collection_check_boxes :purpose_ids, Purpose.all, :id, :name do |b|
 
+              simple_fields_for :products_purposes_relation do |p| 
+                b.check_box + b.label() + p.input(:stars)
+              end 
+          end %>
+    <% end %>
   <div class="form-actions">
     <%= f.button :submit %>
   </div>
 <% end %>
+
+
+
+<%
+# f.association :purposes, 
+#     as: :check_boxes,
+#    collection: Purpose.order('name ASC') 
+%>
+
+ <%
+#
+# f.input :purpose_ids, :as => :check_boxes, label: "teste" do 
+#
+#
+#         f.collection_check_boxes :purpose_ids, Purpose.all, :id, :name do |b|
+#            b.check_box + b.label(:class => "teste")
+ #         end 
+# end 
+ %>
+
+    <%
+#    f.simple_fields_for :products_purposes_relations do |p| 
+#       p.input :stars
+#      end 
+%>
+
+<%
+#f.input :purpose_ids, :as => :check_boxes, label: "Propositos: " do 
+#         f.collection_check_boxes :purpose_ids, Purpose.all, :id, :name do |b|
+#            b.check_box + b.label() + email_field_tag('name')
+#         end 
+#end
+%> 

@@ -1,0 +1,2 @@
+module ProductsPurposesRelationsHelper
+end

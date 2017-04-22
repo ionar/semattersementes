@@ -69,6 +69,6 @@ class PurposesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def purpose_params
-      params.require(:purpose).permit(:description)
+      params.require(:purpose).permit(:name)
     end
 end

@@ -2,8 +2,14 @@
 
 <p>
   <strong>Description:</strong>
-  <%= @purpose.description %>
+  ID <%= @purpose.id %> <%= @purpose.name %>
 </p>
 
 <%= link_to 'Edit', edit_purpose_path(@purpose) %> |
 <%= link_to 'Back', purposes_path %>
+
+<p>Produtos relacionados:</p>
+<% @purpose.products.each do |product| %>
+	<%= product.name %> - <%= product.products_purposes_relations.map(&:stars).to_sentence %> estrelas
+	<br>
+<% end %>

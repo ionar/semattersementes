@@ -13,7 +13,7 @@
   <tbody>
     <% @purposes.each do |purpose| %>
       <tr>
-        <td><%= purpose.description %></td>
+        <td><%= purpose.name %></td>
         <td><%= link_to 'Show', purpose %></td>
         <td><%= link_to 'Edit', edit_purpose_path(purpose) %></td>
         <td><%= link_to 'Destroy', purpose, method: :delete, data: { confirm: 'Are you sure?' } %></td>

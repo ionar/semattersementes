@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+	resources :products_purposes_relations
   resources :products
   resources :purposes
   resources :cycles
