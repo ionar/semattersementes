@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   resources :cultivations
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-  root :to => "products#index"
+  #root :to => "products#index"
+
+  # root configurado em config/initializers/high_voltage.rb
+
 end

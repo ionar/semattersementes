@@ -64,3 +64,5 @@ group :development do
 end
 
 gem 'devise'
+
+gem 'high_voltage', '~> 3.0.0'
