@@ -62,3 +62,5 @@ gem 'bootswatch-rails'
 group :development do
   gem 'rails_real_favicon'
 end
+
+gem 'devise'
