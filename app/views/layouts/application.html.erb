@@ -13,7 +13,26 @@
   <%= render 'application/favicon' %>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+<!-- Flash messages -->
+<% flash.each do |type, message| %>
+  <div class="auto-close-alert alert <%= bootstrap_class_for(type) %> alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <div class="container">
+    	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <%= message %>
+    </div><!-- /container -->
+  </div>
+<% end %><!-- /flash messages -->
+
+<div id="cab">
+	<div class="container">
+		<div class="logo-principal">
+			<%= link_to root_path do %>
+		    	<%= image_tag "sematter-logo-195x55.png", alt: "Sematter Sementes" %>
+		    <% end %>
+		</div>
+	</div>
+</div>
+<nav class="navbar navbar-inverse">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -39,15 +58,7 @@
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container -->
 </nav>			
-<!-- Flash messages -->
-<% flash.each do |type, message| %>
-	<div class="container">
-	  <div class="alert <%= bootstrap_class_for(type) %> alert-dismissible fade in" role="alert">
-	    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	    <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <%= message %>
-	  </div>
-	</div><!-- /container -->  
-<% end %>
+
     <%= yield %>
   </body>
 </html>

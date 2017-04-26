@@ -18,4 +18,7 @@
 
 $(document).on("turbolinks:load", function() {
   //alert("page has loaded!");
+  $(".auto-close-alert").fadeTo(2000, 500).slideUp(500, function(){
+    $(".auto-close-alert").slideUp(500);
+  });
  });

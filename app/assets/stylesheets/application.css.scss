@@ -30,3 +30,18 @@
 
 // And finally bootswatch style itself
 @import "bootswatch/cosmo/bootswatch";
+
+.navbar {
+	margin-bottom: 0;
+}
+
+#cab {
+	height: 75px;
+	background-color: #164B17;
+	border-bottom: 2px solid #0C3515;
+	#background-image: url('hB_1.png');
+}
+
+.logo-principal{
+	margin-top: 10px;
+}
