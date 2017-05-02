@@ -49,5 +49,5 @@ test:
 #
 production:
   <<: *default
-  database: semattersementes_production
+  database: semattersement
 
