@@ -1,29 +1,31 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Cultivations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @cultivations.each do |cultivation| %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <h2><%= t("cultivations") %></h2>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="text-right">
+        <h2>
+          <%= link_to new_cultivation_path, :class => 'btn btn-primary' do %>
+            <span class="glyphicon glyphicon-plus"></span> Adicionar
+          <% end %>
+        </h2>
+      </div>
+    </div>
+  </div> <!-- /.row -->
+  <table class="table table-striped">
+    <thead>
       <tr>
-        <td><%= cultivation.name %></td>
-        <td><%= cultivation.description %></td>
-        <td><%= link_to 'Show', cultivation %></td>
-        <td><%= link_to 'Edit', edit_cultivation_path(cultivation) %></td>
-        <td><%= link_to 'Destroy', cultivation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><%= t('name') %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Cultivation', new_cultivation_path %>
+    <tbody>
+      <% @cultivations.each do |cultivation| %>
+        <tr>
+          <td><%= link_to cultivation.name, cultivation %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div><!-- /.container -->

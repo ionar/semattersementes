@@ -15,9 +15,9 @@
 <body>
 <!-- Flash messages -->
 <% flash.each do |type, message| %>
-  <div class="auto-close-alert alert <%= bootstrap_class_for(type) %> alert-dismissible fade in" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+  <div class="auto-close-alert alert <%= bootstrap_class_for(type) %> alert-dismissible fade in" role="alert" id="flash-message-wrapper">
     <div class="container">
+    	<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
     	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span> <%= message %>
     </div><!-- /container -->
   </div>
@@ -32,7 +32,7 @@
 		</div>
 	</div>
 </div>
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-default">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -43,25 +43,33 @@
 			<span class="icon-bar"></span>
 			</button>
 		    <%= link_to root_path, :class => 'navbar-brand' do %>
-		    	<span class="glyphicon glyphicon-flash" aria-hidden="true"></span> Sematter
+		    	<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 		    <% end %>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse" id="menu">
+		<div class="collapse navbar-collapse navbar-right" id="menu">
 			<ul class="nav navbar-nav">
 				<li class="<%= active?('cultivations')%>"><%= link_to "Cultivos", cultivations_path %></li>
 				<li class="<%= active?('cycles')%>"><%= link_to "Ciclos", cycles_path %></li>
 				<li class="<%= active?('purposes')%>"><%= link_to "Objetivos", purposes_path %></li>
 				<li class="<%= active?('products')%>"><%= link_to "Produtos", products_path %></li>
-				<li class="<%= active?('products_purposes_relations')%>"><%= link_to "Estrelas", products_purposes_relations_path %></li>		
+				<li class="<%= active?('products_purposes_relations')%>"><%= link_to "Estrelas", products_purposes_relations_path %></li>
+				<li class="dropdown">
+		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN <span class="caret"></span></a>
+		          <ul class="dropdown-menu">
+		          <li class="<%= active?('cultivations')%>"><%= link_to "Cultivos", cultivations_path %></li>
+				<li class="<%= active?('cycles')%>"><%= link_to "Ciclos", cycles_path %></li>
+				<li class="<%= active?('purposes')%>"><%= link_to "Objetivos", purposes_path %></li>
+				<li class="<%= active?('products')%>"><%= link_to "Produtos", products_path %></li>
+				<li class="<%= active?('products_purposes_relations')%>"><%= link_to "Estrelas", products_purposes_relations_path %></li>
+		          </ul>
+		        </li>	
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container -->
 </nav>			
 
-    <%= yield %>
-
-
+<%= yield %>
 
 <!-- Footer -->
 <div id="rodape">
@@ -77,7 +85,7 @@
                     </div>
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div style="padding-bottom: 20px;">
+                    <div style="padding-top: 20px;">
                        <strong>Sematter Sementes</strong> <br />
                         Rua Arno Erich Schwambach, 990 | 89900-000 <br />
                         São Miguel do Oeste - SC <br />
@@ -86,7 +94,7 @@
                     </div>
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div style="padding-bottom: 20px;">
+                    <div style="padding-top: 20px;">
                        <strong>Acesso rápido</strong> <br />
                       <%= link_to 'Inicial', root_path  %><br>
                       <%= link_to 'Empresa', page_path('empresa') %> <br>  
@@ -96,22 +104,24 @@
                     </div>
                   </div>                  
                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <span class="glyphicon glyphicon-copyright-mark"></span> 2017 SEMATTER - Todos os direitos reservados
-                    <br>
-                      <% if user_signed_in? %>
-                        <%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-user"></span> <%= current_user.email %><% end %>
-                        <br>
-                        <%= link_to destroy_user_session_path, method: :delete do %><span class="glyphicon glyphicon-log-out"></span> Sair <% end %>
-                      <% else %>
-                        <%= link_to new_user_registration_path do %><span class="glyphicon glyphicon-user"></span> Cadastrar-se<% end %>
-                        <br>
-                        <%= link_to new_user_session_path do %><span class="glyphicon glyphicon-log-in"></span> Login <% end %>
-                      <% end %>
-                      <div style="margin-top:20px">
-                        <%= link_to "http://www.ionar.com.br" do %>
-                          <%= image_tag 'logo_ionar.png', :alt => 'Ionar', :class => 'img-responsive' %>
-                        <% end %>
-                      </div>
+                  	<div style="padding-top: 20px;">
+	                    <span class="glyphicon glyphicon-copyright-mark"></span> 2017 SEMATTER - Todos os direitos reservados
+	                    <br>
+	                      <% if user_signed_in? %>
+	                        <%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-user"></span> <%= current_user.email %><% end %>
+	                        <br>
+	                        <%= link_to destroy_user_session_path, method: :delete do %><span class="glyphicon glyphicon-log-out"></span> Sair <% end %>
+	                      <% else %>
+	                        <%= link_to new_user_registration_path do %><span class="glyphicon glyphicon-user"></span> Cadastrar-se<% end %>
+	                        <br>
+	                        <%= link_to new_user_session_path do %><span class="glyphicon glyphicon-log-in"></span> Login <% end %>
+	                      <% end %>
+	                      <div style="margin-top:20px">
+	                        <%= link_to "http://www.ionar.com.br" do %>
+	                          <%= image_tag 'logo_ionar.png', :alt => 'Ionar', :class => 'img-responsive' %>
+	                        <% end %>
+                      	</div>
+                    </div>
                   </div>
               </div><!-- /.row -->
           </footer>

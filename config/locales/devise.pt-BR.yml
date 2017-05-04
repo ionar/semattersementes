@@ -2,6 +2,7 @@
 # pt-BR translations for Devise
 pt-BR:
   devise:
+    remember_me: "Lembre-se de mim"
     confirmations:
       confirmed: "Sua conta foi confirmada com sucesso. Você está logado."
       send_instructions: "Dentro de minutos, você receberá um e-mail com instruções para a confirmação da sua conta."
