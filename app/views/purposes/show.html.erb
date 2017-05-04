@@ -1,15 +1,42 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+	<div class="row">
+	    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+	      <h2><%= @purpose.name %></h2>
+	    </div>
+	    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	      <div class="text-right">
+	        <h2>
+	          <%= link_to purposes_path, :class => 'btn btn-primary' do %>
+	            <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+	          <% end %> 
+	          <%= link_to edit_purpose_path(@purpose), :class => 'btn btn-success' do %>
+	            <span class="glyphicon glyphicon-list-alt"></span> Editar
+	          <% end %> 
+	          <%= link_to purpose_path(@purpose), method: :delete, :class => 'btn btn-danger', data: { confirm: t('Are you sure?')  } do %>
+	            <span class="glyphicon glyphicon-remove"></span> Apagar
+	          <% end %> 
+	        </h2>
+	      </div>
+	    </div>
+	</div> <!-- /.row -->
+	    <div class="panel panel-default">
+	      <div class="panel-body">
+	        <p>
+	          <strong><%= t("name") %>:</strong>
+	          <%= @purpose.name %>
+	        </p>
+	        <p>Produtos relacionados:</p>
+			<% @purpose.products.each do |product| %>
+				<%= product.name %>
+				<% num_stars = product.products_purposes_relations.map(&:stars).to_sentence.to_i %>
 
-<p>
-  <strong>Description:</strong>
-  ID <%= @purpose.id %> <%= @purpose.name %>
-</p>
+				<% (1..num_stars).each do %>
+					 <span class="glyphicon glyphicon-star"></span>
+				<% end %>
+				<br>
+			<% end %>
+	      </div><!-- /panel-body -->
+	    </div><!-- /panel -->
+</div><!-- /container -->
 
-<%= link_to 'Edit', edit_purpose_path(@purpose) %> |
-<%= link_to 'Back', purposes_path %>
 
-<p>Produtos relacionados:</p>
-<% @purpose.products.each do |product| %>
-	<%= product.name %> - <%= product.products_purposes_relations.map(&:stars).to_sentence %> estrelas
-	<br>
-<% end %>

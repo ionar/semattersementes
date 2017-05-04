@@ -28,7 +28,7 @@ class ProductsPurposesRelationsController < ApplicationController
 
     respond_to do |format|
       if @products_purposes_relation.save
-        format.html { redirect_to @products_purposes_relation, notice: 'Products purposes relation was successfully created.' }
+        format.html { redirect_to @products_purposes_relation, notice: t('create_success') }
         format.json { render :show, status: :created, location: @products_purposes_relation }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class ProductsPurposesRelationsController < ApplicationController
   def update
     respond_to do |format|
       if @products_purposes_relation.update(products_purposes_relation_params)
-        format.html { redirect_to @products_purposes_relation, notice: 'Products purposes relation was successfully updated.' }
+        format.html { redirect_to @products_purposes_relation, notice: t('update_success') }
         format.json { render :show, status: :ok, location: @products_purposes_relation }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class ProductsPurposesRelationsController < ApplicationController
   def destroy
     @products_purposes_relation.destroy
     respond_to do |format|
-      format.html { redirect_to products_purposes_relations_url, notice: 'Products purposes relation was successfully destroyed.' }
+      format.html { redirect_to products_purposes_relations_url, notice: t('destroy_success') }
       format.json { head :no_content }
     end
   end

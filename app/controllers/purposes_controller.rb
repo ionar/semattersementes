@@ -28,7 +28,7 @@ class PurposesController < ApplicationController
 
     respond_to do |format|
       if @purpose.save
-        format.html { redirect_to @purpose, notice: 'Purpose was successfully created.' }
+        format.html { redirect_to @purpose, notice: t('create_success') }
         format.json { render :show, status: :created, location: @purpose }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class PurposesController < ApplicationController
   def update
     respond_to do |format|
       if @purpose.update(purpose_params)
-        format.html { redirect_to @purpose, notice: 'Purpose was successfully updated.' }
+        format.html { redirect_to @purpose, notice: t('update_success') }
         format.json { render :show, status: :ok, location: @purpose }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class PurposesController < ApplicationController
   def destroy
     @purpose.destroy
     respond_to do |format|
-      format.html { redirect_to purposes_url, notice: 'Purpose was successfully destroyed.' }
+      format.html { redirect_to purposes_url, notice: t('destroy_success') }
       format.json { head :no_content }
     end
   end

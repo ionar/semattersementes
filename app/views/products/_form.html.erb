@@ -2,23 +2,21 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
-    <%= f.input :description %>
-    <%= f.association :cultivation %>
-    <%= f.association :cycle %>
-    <%= f.association :purposes do %>
-      <%= f.collection_check_boxes :purpose_ids, Purpose.all, :id, :name do |b|
-
-              simple_fields_for :products_purposes_relation do |p| 
-                b.check_box + b.label() + p.input(:stars)
-              end 
-          end %>
+    <%= f.input :name, :label => t('name') %>
+    <%= f.input :description, :label => t('description') %>
+    <%= f.association :cultivation, :label => t('cultivation') %>
+    <%= f.association :cycle, :label => t('cycle') %>
+    <%= f.association :purposes, :label => t('purposes'), as: :check_boxes,
+      collection: Purpose.order('name ASC') %>
+      
+    <div class="actions text-right">
+      <%= link_to 'Cancelar', :back, :class => 'btn btn-default' %>
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+      <span class="glyphicon glyphicon-floppy-disk"></span> Salvar
     <% end %>
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    </div>
 <% end %>
-
+<hr>
 
 
 <%
@@ -51,3 +49,13 @@
 #         end 
 #end
 %> 
+<% 
+#f.association :purposes, :label => t('purposes') do 
+#      f.collection_check_boxes :purpose_ids, Purpose.all, :id, :name do |b|
+#
+#              simple_fields_for :products_purposes_relation do |p| 
+#                b.check_box + b.label() + p.input(:stars)
+#              end 
+#          end 
+#end
+%>

@@ -28,7 +28,7 @@ class CultivationsController < ApplicationController
 
     respond_to do |format|
       if @cultivation.save
-        format.html { redirect_to @cultivation, notice: 'Cultivation was successfully created.' }
+        format.html { redirect_to @cultivation, notice: t('create_success') }
         format.json { render :show, status: :created, location: @cultivation }
       else
         format.html { render :new }
@@ -42,7 +42,7 @@ class CultivationsController < ApplicationController
   def update
     respond_to do |format|
       if @cultivation.update(cultivation_params)
-        format.html { redirect_to @cultivation, notice: 'Cultivation was successfully updated.' }
+        format.html { redirect_to @cultivation, notice: t('update_success') }
         format.json { render :show, status: :ok, location: @cultivation }
       else
         format.html { render :edit }
@@ -56,7 +56,7 @@ class CultivationsController < ApplicationController
   def destroy
     @cultivation.destroy
     respond_to do |format|
-      format.html { redirect_to cultivations_url, notice: 'Cultivation was successfully destroyed.' }
+      format.html { redirect_to cultivations_url, notice: t('destroy_success') }
       format.json { head :no_content }
     end
   end

@@ -1,14 +1,34 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @cycle.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @cycle.description %>
-</p>
-
-<%= link_to 'Edit', edit_cycle_path(@cycle) %> |
-<%= link_to 'Back', cycles_path %>
+<div class="container">
+	<div class="row">
+	    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+	      <h2><%= @cycle.name %></h2>
+	    </div>
+	    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	      <div class="text-right">
+	        <h2>
+	          <%= link_to cycles_path, :class => 'btn btn-primary' do %>
+	            <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+	          <% end %> 
+	          <%= link_to edit_cycle_path(@cycle), :class => 'btn btn-success' do %>
+	            <span class="glyphicon glyphicon-list-alt"></span> Editar
+	          <% end %> 
+	          <%= link_to cycle_path(@cycle), method: :delete, :class => 'btn btn-danger', data: { confirm: t('Are you sure?')  } do %>
+	            <span class="glyphicon glyphicon-remove"></span> Apagar
+	          <% end %> 
+	        </h2>
+	      </div>
+	    </div>
+	</div> <!-- /.row -->
+	    <div class="panel panel-default">
+	      <div class="panel-body">
+	        <p>
+	          <strong><%= t("name") %>:</strong>
+	          <%= @cycle.name %>
+	        </p>
+	        <p>
+	          <strong><%= t("description") %>:</strong>
+	          <%= @cycle.description %>
+	        </p>
+	      </div><!-- /panel-body -->
+	    </div><!-- /panel -->
+</div><!-- /container -->

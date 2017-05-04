@@ -1,24 +1,56 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
-
-<p>
-  <strong>Cultivation:</strong>
-  <%= @product.cultivation %>
-</p>
-
-<p>
-  <strong>Cycle:</strong>
-  <%= @product.cycle %>
-</p>
-
-<%= link_to 'Edit', edit_product_path(@product) %> |
-<%= link_to 'Back', products_path %>
+<div class="container">
+	<div class="row">
+	    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+	      <h2><%= @product.name %></h2>
+	    </div>
+	    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	      <div class="text-right">
+	        <h2>
+	          <%= link_to products_path, :class => 'btn btn-primary' do %>
+	            <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+	          <% end %> 
+	          <%= link_to edit_product_path(@product), :class => 'btn btn-success' do %>
+	            <span class="glyphicon glyphicon-list-alt"></span> Editar
+	          <% end %> 
+	          <%= link_to product_path(@product), method: :delete, :class => 'btn btn-danger', data: { confirm: t('Are you sure?')  } do %>
+	            <span class="glyphicon glyphicon-remove"></span> Apagar
+	          <% end %> 
+	        </h2>
+	      </div>
+	    </div>
+	</div> <!-- /.row -->
+	    <div class="panel panel-default">
+	      <div class="panel-body">
+	        <p>
+	          <strong><%= t("name") %>:</strong>
+	          <%= @product.name %>
+	        </p>
+	        <p>
+			  <strong><%= t("cultivation") %>:</strong>
+			  <%= @product.cultivation.name %>
+			</p>
+			<p>
+			  <strong><%= t("cycle") %>:</strong>
+			  <%= @product.cycle.name %>
+			</p>
+			<p>
+	          <strong><%= t("description") %>:</strong>
+	          <%= @product.description %>
+	        </p>
+	        <p><strong>Objetivos relacionados:</strong></p>
+	        <table class="table table-striped">
+			<% @product.purposes.each do |purpose| %>
+				<tr>
+					<td class="text-right"><%= purpose.name %></td>
+					<td>
+					<% num_stars = purpose.products_purposes_relations.map(&:stars).to_sentence.to_i %>
+					<% (1..num_stars).each do %>
+						 <span class="glyphicon glyphicon-star"></span>
+					<% end %>
+					</td>
+				</tr>
+			<% end %>
+			</table>
+	      </div><!-- /panel-body -->
+	    </div><!-- /panel -->
+</div><!-- /container -->
