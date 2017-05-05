@@ -50,4 +50,4 @@ test:
 production:
   <<: *default
   database: semattersement
-
+  host: mysql04-farm62.kinghost.net
