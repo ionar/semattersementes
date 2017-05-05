@@ -69,3 +69,5 @@ gem 'high_voltage', '~> 3.0.0'
 
 gem 'devise-bootstrap-views'
 #gem 'devise-bootstrapped'
+
+gem "therubyracer"
