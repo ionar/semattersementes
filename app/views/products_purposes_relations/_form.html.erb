@@ -2,11 +2,16 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-  <%= @products_purposes_relation.product.name %> <=> <%= @products_purposes_relation.purpose.name %>
-  <%= f.input :stars %>
+  <%= f.association :product, :label => t('product') %>
+  <%= f.association :purpose, :label => t('purpose') %>
+  <%= f.input :stars, :label => t('stars') %>
   </div>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+ 	<div class="actions text-right">
+  		<%= link_to 'Cancelar', :back, :class => 'btn btn-default' %>
+	  <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+	    <span class="glyphicon glyphicon-floppy-disk"></span> Salvar
+	  <% end %>
+    </div>
 <% end %>
+<hr>

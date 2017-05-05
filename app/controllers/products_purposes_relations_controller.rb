@@ -70,6 +70,6 @@ class ProductsPurposesRelationsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def products_purposes_relation_params
       params.fetch(:products_purposes_relation, {})
-      params.require(:products_purposes_relation).permit(:stars)
+      params.require(:products_purposes_relation).permit(:stars, :product_id, :purpose_id)
     end
 end

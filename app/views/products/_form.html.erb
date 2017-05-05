@@ -4,17 +4,18 @@
   <div class="form-inputs">
     <%= f.input :name, :label => t('name') %>
     <%= f.input :description, :label => t('description') %>
-    <%= f.association :cultivation, :label => t('cultivation') %>
-    <%= f.association :cycle, :label => t('cycle') %>
+    <%= f.association :cultivation, :label => t('cultivation'), prompt: t('select') %>
+    <%= f.association :cycle, :label => t('cycle'), prompt: t('select') %>
     <%= f.association :purposes, :label => t('purposes'), as: :check_boxes,
       collection: Purpose.order('name ASC') %>
-      
+
     <div class="actions text-right">
       <%= link_to 'Cancelar', :back, :class => 'btn btn-default' %>
     <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
       <span class="glyphicon glyphicon-floppy-disk"></span> Salvar
     <% end %>
     </div>
+  </div>
 <% end %>
 <hr>
 

@@ -1,29 +1,33 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Products Purposes Relations</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Relacionamento</th>
-      <th>Estrelas</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products_purposes_relations.each do |products_purposes_relation| %>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <h2><%= t("products_purposes_relation") %></h2>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="text-right">
+        <h2>
+          <%= link_to new_products_purposes_relation_path, :class => 'btn btn-primary' do %>
+            <span class="glyphicon glyphicon-plus"></span> Adicionar
+          <% end %>
+        </h2>
+      </div>
+    </div>
+  </div> <!-- /.row -->
+  <table class="table table-striped">
+    <thead>
       <tr>
-      <td><%= products_purposes_relation.product.name %> <=> <%= products_purposes_relation.purpose.name %></td>
-      <td><%= products_purposes_relation.stars %></td>
-        <td><%= link_to 'Show', products_purposes_relation %></td>
-        <td><%= link_to 'Edit', edit_products_purposes_relation_path(products_purposes_relation) %></td>
-        <td><%= link_to 'Destroy', products_purposes_relation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th><%= t('relationship') %></th>
+        <th><%= t('stars') %></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
-<br>
-
-<%= link_to 'New Products Purposes Relation', new_products_purposes_relation_path %>
+    <tbody>
+      <% @products_purposes_relations.each do |products_purposes_relation| %>
+        <tr>
+          <td><%= link_to products_purposes_relation.product.name, products_purposes_relation %> :: <%= link_to products_purposes_relation.purpose.name, products_purposes_relation %></td>
+          <td><%= products_purposes_relation.stars %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div><!-- /.container -->

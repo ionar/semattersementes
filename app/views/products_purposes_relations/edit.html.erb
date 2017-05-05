@@ -1,6 +1,21 @@
-<h1>Editing Products Purposes Relation</h1>
-
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <h2>Editar <%= t("products_purposes_relation") %></h2>
+      <h3><%= @products_purposes_relation.product.name %> <=> <%= @products_purposes_relation.purpose.name %></h3>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="text-right">
+        <h2>
+		  <%= link_to products_purposes_relations_path, :class => 'btn btn-primary' do %>
+		    <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+		  <% end %> 
+		  <%= link_to products_purposes_relation_path(@products_purposes_relation), method: :delete, :class => 'btn btn-danger', data: { confirm: t('Are you sure?')  } do %>
+		    <span class="glyphicon glyphicon-remove"></span> Apagar
+		  <% end %> 
+        </h2>
+      </div>
+    </div>
+  </div> <!-- /.row -->
 <%= render 'form', products_purposes_relation: @products_purposes_relation %>
-
-<%= link_to 'Show', @products_purposes_relation %> |
-<%= link_to 'Back', products_purposes_relations_path %>
+</div><!-- /.container -->
