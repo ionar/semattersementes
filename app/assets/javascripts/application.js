@@ -14,6 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+
+//= require moment
+//= require bootstrap-datetimepicker
+//= require pickers
+//= require moment/pt-br
+
 //= require_tree .
 
 $(document).on("turbolinks:load", function() {
@@ -21,4 +27,7 @@ $(document).on("turbolinks:load", function() {
   $(".auto-close-alert").fadeTo(2000, 500).slideUp(500, function(){
     $(".auto-close-alert").slideUp(500);
   });
+  $('.datepicker').datetimepicker({
+            pickTime: false
+        });
  });

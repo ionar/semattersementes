@@ -27,6 +27,8 @@
 
 @import "devise_bootstrap_views";
 
+@import "bootstrap-datetimepicker";
+
 // Bootstrap body padding for fixed navbar
 //body { padding-top: 60px; }
 
@@ -72,5 +74,12 @@
 	background-color: #164B17;
 	padding-top: 40px;
 	padding-bottom:40px;
-	color: #fff;
+
+	label {
+		color: #fff;
+	}
+
+	h2 {
+		color: #fff;
+	}
 }
