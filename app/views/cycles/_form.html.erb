@@ -4,6 +4,8 @@
   <div class="form-inputs">
     <%= f.input :name, :label => t('name') %>
     <%= f.input :description, :label => t('description') %>
+    <%= f.input :period_initial, :label => t('Inicio'), hint: "início do período em dias, apenas o numero" %>
+    <%= f.input :period_final, :label => t('Fim'), hint: "final do período em dias, apenas o numero" %>
   </div>
 
     <div class="actions text-right">

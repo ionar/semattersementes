@@ -69,6 +69,6 @@ class CyclesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cycle_params
-      params.require(:cycle).permit(:name, :description)
+      params.require(:cycle).permit(:name, :description, :period_initial, :period_final)
     end
 end

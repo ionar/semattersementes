@@ -1,6 +1,6 @@
 class Cycle < ApplicationRecord
 	has_many :products
-	validates :name, presence: true
+	validates :name, :period_initial, :period_final, :description, presence: true
 	validates :name, uniqueness: true
 
 	

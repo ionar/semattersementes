@@ -12,7 +12,7 @@
         <div class="carousel-inner">
             <div class="item active">
                 <!-- Set the first background image using inline CSS below. -->
-                <div class="fill" style="background-image:url('http://placehold.it/1900x1080&text=Slide One');"></div>
+                <div class="fill" style="background-image:url('banners/banners-01.png');"></div>
                 <div class="carousel-caption">
                     <h2>Caption 1</h2>
                 </div>
@@ -51,7 +51,7 @@
               <div class="form-group">
                 <select name="cultivation" class="form-control">
                   <option value="">Cultivo</option>
-                  <%= Cultivation.all.collect do |p| %>
+                  <% Cultivation.all.collect do |p| %>
                   <option value="<%= p.id %>"><%= p.name %></option>
                   <% end %>
                 </select>
@@ -59,7 +59,7 @@
               <div class="form-group">
                 <select name="cycle" class="form-control">
                   <option value="">Ciclo</option>
-                  <%= Cycle.all.collect do |p| %>
+                  <% Cycle.all.collect do |p| %>
                   <option value="<%= p.id %>"><%= p.name %></option>
                   <% end %>
                 </select>
