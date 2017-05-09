@@ -1,0 +1,83 @@
+<!-- Carousel -->
+    <!-- Full Page Image Background Carousel Header -->
+        <header id="myCarousel" class="carousel slide">
+        <!-- Indicators -->
+        <ol class="carousel-indicators">
+        <% @banners.each_with_index do |banner, index| %>
+            <%=
+            if index == 0
+                render inline: "<li data-target='#myCarousel' data-slide-to='#{index}' class='active'></li>"
+            else
+                render inline: "<li data-target='#myCarousel' data-slide-to='#{index}'></li>"
+            end %>
+        <% end %>
+        </ol>
+
+        <!-- Wrapper for Slides -->
+        <div class="carousel-inner">
+           <% @banners.each_with_index do |banner, index| %>
+            <%=
+                if index == 0
+                    render inline: "
+                                    <div class='item active'>
+                                    <!-- Set the first background image using inline CSS below. -->
+                                        <div class='fill' style=\"background-image:url('#{banner.image.url(:original)}');\"></div>
+                                        <div class='carousel-caption'>
+                                            <h2><a class='btn btn-success' href='#{banner.link}'' role='button'>Saiba mais</a></h2>
+                                        </div>
+                                    </div>
+                    "
+                else
+                    render inline: "
+                                    <div class='item'>
+                                    <!-- Set the second background image using inline CSS below. -->
+                                        <div class='fill' style=\"background-image:url('#{banner.image.url(:original)}');\"></div>
+                                        <div class='carousel-caption'>
+                                            <h2><a class='btn btn-success' href='#{banner.link}'' role='button'>Saiba mais</a></h2>
+                                        </div>
+                                    </div>
+                    "
+                end %>
+            <% end %>
+        </div>
+
+        <!-- Controls -->
+        <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+        </a>
+        <a class="right carousel-control" href="#myCarousel" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+        </a>
+    </header>
+<!-- /Carousel -->
+<div id="qual">
+    <div class="container">
+        <h2 class="text-center">QUAL É O RAIX INDICADO PARA O MEU USO?</h2>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-4">
+            <%= simple_form_for :search, :class => 'navbar-form navbar-left form-inline', url: products_path, :method => :get do |f| %>
+            <%= f.input :raix, :autofocus => true, :as => :date_picker, :label => "Data do plantio do Raix" %>
+            <%= f.input :cultura, :as => :date_picker,:label => "Data do plantio da sua cultura comercial" %>
+            <div class="form-group">
+            <label class="control-label" for="search_raix"><abbr title="required">*</abbr> Cultura Comercial</label>
+                        <select name="cultivation" class="form-control">
+                          <option value="">Cultivo</option>
+                          <% Cultivation.all.collect do |p| %>
+                          <option value="<%= p.id %>"><%= p.name %></option>
+                          <% end %>
+                        </select>
+                      </div>
+            <%= f.submit "SOLUÇÃO", class: "btn btn-default" %>
+            <% end %>
+        </div><!-- /col -->
+    </div><!-- /row -->
+    </div><!-- /container -->
+</div><!-- /qual -->
+
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 3000 //changes the speed
+    })
+    </script>

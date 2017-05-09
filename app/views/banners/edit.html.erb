@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <h2>Editar <%= t("banner") %></h2>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="text-right">
+        <h2>
+		  <%= link_to :back, :class => 'btn btn-primary' do %>
+		    <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+		  <% end %> 
+		  <%= link_to banner_path(@banner), method: :delete, :class => 'btn btn-danger', data: { confirm: t('Are you sure?')  } do %>
+		    <span class="glyphicon glyphicon-remove"></span> Apagar
+		  <% end %> 
+        </h2>
+      </div>
+    </div>
+  </div> <!-- /.row -->
+<%= render 'form', banner: @banner %>
+</div><!-- /.container -->

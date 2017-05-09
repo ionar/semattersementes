@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <h2><%= t("banners") %></h2>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="text-right">
+        <h2>
+          <%= link_to new_banner_path, :class => 'btn btn-primary' do %>
+            <span class="glyphicon glyphicon-plus"></span> Adicionar
+          <% end %>
+        </h2>
+      </div>
+    </div>
+  </div> <!-- /.row -->
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Imagem</th>
+        <th><%= t('sequence') %></th>
+        <th>Link</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <% @banners.each do |banner| %>
+        <tr>
+          <td> <%= link_to banner do %>
+          <%= image_tag banner.image.url(:thumb), class: "img-thumbnail" if banner.image.exists? %>
+            <% end %>
+          </td>
+          <td><%= link_to banner.sequence, banner %></td>
+          <td><%= banner.link %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div><!-- /.container -->
