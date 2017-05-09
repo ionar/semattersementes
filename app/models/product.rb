@@ -1,5 +1,6 @@
 class Product < ApplicationRecord
-  belongs_to :cultivation
+  #belongs_to :cultivation
+  has_and_belongs_to_many :cultivation
   belongs_to :cycle
   has_many :products_purposes_relations
   has_many :purposes, through: :products_purposes_relations
