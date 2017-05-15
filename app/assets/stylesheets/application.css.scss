@@ -35,6 +35,13 @@
 // And finally bootswatch style itself
 @import "bootswatch/cosmo/bootswatch";
 
+
+
+.bt-saiba-mais:hover{
+	// opacity: 0.7;
+	filter: contrast(1.1);
+}
+
 #flash-message-wrapper {
     position: fixed;
     width: 100%;

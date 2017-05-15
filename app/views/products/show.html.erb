@@ -27,7 +27,9 @@
 	        </p>
 	        <p>
 			  <strong><%= t("cultivation") %>:</strong>
-			  <%= @product.cultivation.name %>
+			  <% @product.cultivations.each do |cultivation| %>
+			  	<%= cultivation.name %>
+			  <% end %>
 			</p>
 			<p>
 			  <strong><%= t("cycle") %>:</strong>
