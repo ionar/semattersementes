@@ -25,7 +25,7 @@
     <tbody>
       <% @products_purposes_relations.each do |products_purposes_relation| %>
         <tr>
-          <td><%= link_to products_purposes_relation.product, products_purposes_relation %> :: <%= link_to products_purposes_relation.purpose, products_purposes_relation %></td>
+          <td><%= link_to products_purposes_relation.product.name, products_purposes_relation %> :: <%= link_to products_purposes_relation.purpose.name, products_purposes_relation %></td>
           <td><%= products_purposes_relation.stars %></td>
           <td><%= link_to 'Delete', products_purposes_relation, method: :delete, data: { confirm: t('Are you sure?')  }  %></td>
         </tr>
