@@ -27,7 +27,10 @@
         <tr>
           <td><%= link_to product.name, product %></td>
           <td><%= product.cycle.name %></td>
-          <td><%= product.cultivation.name %></td>
+          <td><% product.cultivation.each do |cultivation| %>
+              <%= cultivation.name %>
+          <% end %>
+          </td>
         </tr>
       <% end %>
     </tbody>
