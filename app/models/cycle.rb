@@ -4,5 +4,5 @@ class Cycle < ApplicationRecord
 	validates :name, uniqueness: true
 
 	
-	default_scope { order(name: :asc) }	
+	#default_scope { order(name: :asc) }	
 end
