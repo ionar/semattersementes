@@ -16,5 +16,3 @@
 # Ignore Byebug command history file.
 .byebug_history
 
-#ignore image_uploads
-/public/system/
