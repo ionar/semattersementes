@@ -41,18 +41,25 @@
 	        </p>
 	        <p><strong>Objetivos relacionados:</strong></p>
 	        <table class="table table-striped">
-			<% @product.purposes.each do |purpose| %>
+			<% @product.products_purposes_relations.each do |relation| %>
 				<tr>
-					<td class="text-right"><%= purpose.name %></td>
-					<td>
-					<% num_stars = purpose.products_purposes_relations.map(&:stars).to_sentence.to_i %>
-					<% (1..num_stars).each do %>
-						 <span class="glyphicon glyphicon-star"></span>
-					<% end %>
-					</td>
+					<td><%= relation.purpose.name %></td>
+					<td><%= relation.stars %></td>
 				</tr>
 			<% end %>
 			</table>
 	      </div><!-- /panel-body -->
 	    </div><!-- /panel -->
 </div><!-- /container -->
+
+
+<%# num_stars = purpose.products_purposes_relations.map(&:stars).to_sentence.to_i %>
+					<%# (1..num_stars).each do %>
+						<%# <span class="glyphicon glyphicon-star"></span> %>
+					<%# end %>
+<%# purpose.products_purposes_relations.map(&:id) %>					
+
+					<%#purpose.products_purposes_relations 
+					#ProductsPurposesRelation.joins(:stars).where(:product_id => { :id => params[:participants] } )
+					#beneficios = purpose.products_purposes_relations.includes( :model_options )
+					%>
