@@ -40,9 +40,16 @@ class ProductsPurposesRelationsController < ApplicationController
   # PATCH/PUT /products_purposes_relations/1
   # PATCH/PUT /products_purposes_relations/1.json
   def update
+    #qual é o produto
+    #@blog_post = BlogPost.find(params[:blog_post_id])
+    #@product_parent = Product.where(id: @products_purposes_relation.product_id)
+    @product_parent = Product.find(@products_purposes_relation.product_id)
+
+
     respond_to do |format|
       if @products_purposes_relation.update(products_purposes_relation_params)
-        format.html { redirect_to @products_purposes_relation, notice: t('update_success') }
+        #format.html { redirect_to @products_purposes_relation, notice: t('update_success') }
+        format.html { redirect_to @product_parent, notice: t('update_success') }
         format.json { render :show, status: :ok, location: @products_purposes_relation }
       else
         format.html { render :edit }

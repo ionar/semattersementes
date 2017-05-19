@@ -7,7 +7,7 @@
     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
       <div class="text-right">
         <h2>
-		  <%= link_to products_purposes_relations_path, :class => 'btn btn-primary' do %>
+		  <%= link_to :back, :class => 'btn btn-primary' do %>
 		    <span class="glyphicon glyphicon-chevron-left"></span> Voltar
 		  <% end %> 
 		  <%= link_to products_purposes_relation_path(@products_purposes_relation), method: :delete, :class => 'btn btn-danger', data: { confirm: t('Are you sure?')  } do %>

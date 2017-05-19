@@ -48,6 +48,24 @@
 				</tr>
 			<% end %>
 			</table>
+			<hr>
+			<table class="table table-striped">
+			    <thead>
+			      <tr>
+			        <th><%= t('benefits') %> para <%= @product.name %></th>
+			        <th><%= t('stars') %></th>
+			      </tr>
+			    </thead>
+
+			    <tbody>
+			      <% @benefits.each do |products_purposes_relation| %>
+			        <tr>
+			          <td><%= link_to products_purposes_relation.purpose.name, edit_products_purposes_relation_path(products_purposes_relation) %></td>
+			          <td><%= products_purposes_relation.stars %></td>
+			        </tr>
+			      <% end %>
+			    </tbody>
+			  </table>
 	      </div><!-- /panel-body -->
 	    </div><!-- /panel -->
 </div><!-- /container -->

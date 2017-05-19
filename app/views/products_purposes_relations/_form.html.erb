@@ -1,9 +1,11 @@
 <%= simple_form_for(@products_purposes_relation) do |f| %>
   <%= f.error_notification %>
 
+  <%# @product_parent.name %>
+
   <div class="form-inputs">
-  <%= f.association :product, :label => t('product') %>
-  <%= f.association :purpose, :label => t('purpose') %>
+  <%= f.association :product, :label => t('product'), disabled: true %>
+  <%= f.association :purpose, :label => t('purpose'), disabled: true %>
   <%= f.input :stars, :label => t('stars') %>
   </div>
 

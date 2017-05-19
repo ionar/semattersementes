@@ -4,12 +4,17 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    if params[:search]
     @products = Product.all
+    else
+    @products = Product.all
+    end
   end
 
   # GET /products/1
   # GET /products/1.json
   def show
+    @benefits = ProductsPurposesRelation.where(product_id: @product.id)
   end
 
   # GET /products/new
@@ -27,6 +32,9 @@ class ProductsController < ApplicationController
   def create
     @product = Product.new(product_params)
 
+    #permitted_columns = params[:products_purposes_relations].permit(:product_id, :purpose_id, :stars)
+   # @products_purposes_relation = @product.products_purposes_relations.create(permitted_columns)
+
     respond_to do |format|
       if @product.save
         format.html { redirect_to @product, notice: t('create_success') }
@@ -36,6 +44,7 @@ class ProductsController < ApplicationController
         format.json { render json: @product.errors, status: :unprocessable_entity }
       end
     end
+    
   end
 
   # PATCH/PUT /products/1

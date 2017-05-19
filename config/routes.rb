@@ -4,7 +4,9 @@ Rails.application.routes.draw do
   resources :banners
   devise_for :users
 	resources :products_purposes_relations
-  resources :products
+  resources :products do
+    resources :products_purposes_relations
+  end
   resources :purposes
   resources :cycles
   resources :cultivations
