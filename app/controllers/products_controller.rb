@@ -4,11 +4,15 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    if params[:search]
-    @products = Product.all
-    else
-    @products = Product.all
-    end
+    @products = Product.where(nil) # creates an anonymous scope
+    @products = Product.joins(:cultivation).where(cultivations: { id: params[:cultivation] }) if params[:cultivation].present?
+    #@products = @products.brand(params[:brand]) if params[:brand].present?
+
+    ##if params[:cultivation]
+    ##@products = Product.para_o_cultivo(params[:cultivation])
+    ##else
+    ##@products = Product.all
+    ##end
   end
 
   # GET /products/1

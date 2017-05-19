@@ -27,7 +27,15 @@ $(document).on("turbolinks:load", function() {
   $(".auto-close-alert").fadeTo(2000, 500).slideUp(500, function(){
     $(".auto-close-alert").slideUp(500);
   });
-  $('.datepicker').datetimepicker({
-            pickTime: false
-        });
+    $('.datepicker').datetimepicker({
+         //pickTime: false;
+         //datepickerInput: '.datepickerinput';
+         format: 'DD/MM/YYYY',
+         locale: moment.locale(),
+    });
+      
+    //Script to Activate the Carousel
+    $('.carousel').carousel({
+        interval: 3000 //changes the speed
+    })
  });
