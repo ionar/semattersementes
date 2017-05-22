@@ -1,5 +1,7 @@
 class BannersController < ApplicationController
   before_action :set_banner, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! #, except: [:index, :show]
+  load_and_authorize_resource #Cancancan
 
   # GET /banners
   # GET /banners.json

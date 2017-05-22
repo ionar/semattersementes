@@ -1,5 +1,7 @@
 class ProductsPurposesRelationsController < ApplicationController
   before_action :set_products_purposes_relation, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user! #, except: [:index, :show]
+  load_and_authorize_resource #Cancancan
 
   # GET /products_purposes_relations
   # GET /products_purposes_relations.json

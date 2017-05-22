@@ -76,3 +76,7 @@ gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: '
 gem 'momentjs-rails', '~> 2.9',  :github => 'derekprior/momentjs-rails'
 
 gem "paperclip", "~> 5.0.0"
+
+gem 'cancancan'
+
+
