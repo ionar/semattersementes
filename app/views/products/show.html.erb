@@ -39,6 +39,25 @@
 	          <strong><%= t("description") %>:</strong>
 	          <%= @product.description %>
 	        </p>
+	        <% if user_signed_in? and current_user.admin == true %>
+	       		<table class="table table-striped">
+				    <thead>
+				      <tr>
+				        <th><%= t('benefits') %> para <%= @product.name %></th>
+				        <th><%= t('stars') %></th>
+				      </tr>
+				    </thead>
+
+				    <tbody>
+				      <% @benefits.each do |products_purposes_relation| %>
+				        <tr>
+				          <td><%= link_to products_purposes_relation.purpose.name, edit_products_purposes_relation_path(products_purposes_relation) %></td>
+				          <td><%= products_purposes_relation.stars %></td>
+				        </tr>
+				      <% end %>
+				    </tbody>
+			  	</table>
+			<% else %>
 	        <p><strong>Objetivos relacionados:</strong></p>
 	        <table class="table table-striped">
 			<% @product.products_purposes_relations.each do |relation| %>
@@ -48,24 +67,8 @@
 				</tr>
 			<% end %>
 			</table>
-			<hr>
-			<table class="table table-striped">
-			    <thead>
-			      <tr>
-			        <th><%= t('benefits') %> para <%= @product.name %></th>
-			        <th><%= t('stars') %></th>
-			      </tr>
-			    </thead>
-
-			    <tbody>
-			      <% @benefits.each do |products_purposes_relation| %>
-			        <tr>
-			          <td><%= link_to products_purposes_relation.purpose.name, edit_products_purposes_relation_path(products_purposes_relation) %></td>
-			          <td><%= products_purposes_relation.stars %></td>
-			        </tr>
-			      <% end %>
-			    </tbody>
-			  </table>
+			<hr>		
+			  <% end %>
 	      </div><!-- /panel-body -->
 	    </div><!-- /panel -->
 </div><!-- /container -->
