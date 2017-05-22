@@ -74,60 +74,72 @@
 <%= yield %>
 
 <!-- Footer -->
-<div id="rodape">
+<footer>
   <div class="container">
-          <footer>
+  	<section class="rodape">
               <div class="row">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div style="padding-top: 20px;" class="text-center">
+                    
                       <%= link_to root_path do %>
-                          <%= image_tag 'sematter-logo-195x55-rodape.png', :alt => 'Sematter', :class => 'img-responsive center-block' %>
+                          <%= image_tag 'logo-raix.png', :alt => 'Sematter', :class => 'img-responsive center-block' %>
                         <% end %>
                         <br>
-                    </div>
+
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <div style="padding-top: 20px;">
-                       <strong>Sematter Sementes</strong> <br />
-                        Rua Arno Erich Schwambach, 990 | 89900-000 <br />
+
+                       <span class="texto-verde">Sematter Sementes</span> <br />
+                        Rua Arno Erich Schwambach, 990  <br />
+                        Bairro Industrial, CEP: 89900-000 <br />
                         São Miguel do Oeste - SC <br />
                         Fone: (49)3622-8263 <br />
                         comercial@semattersementes.com.br<br />
-                    </div>
+
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div style="padding-top: 20px;">
-                       <strong>Acesso rápido</strong> <br />
+
+                       <span class="texto-verde">Acesso rápido</span> <br />
                       <%= link_to 'Inicial', root_path  %><br>
                       <%= link_to 'Empresa', page_path('empresa') %> <br>  
                       <%= link_to 'Produtos', products_path %> <br>
                       <%= link_to 'Serviços', page_path('servicos') %> <br>
                       <% # link_to 'Contato', contact_path %>
-                    </div>
+
                   </div>                  
                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                  	<div style="padding-top: 20px;">
-	                    <span class="glyphicon glyphicon-copyright-mark"></span> 2017 SEMATTER - Todos os direitos reservados
+
+	                    <span class="texto-verde">Acesso restrito</span>
 	                    <br>
 	                      <% if user_signed_in? %>
 	                        <%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-user"></span> <%= current_user.email %><% end %>
 	                        <br>
 	                        <%= link_to destroy_user_session_path, method: :delete do %><span class="glyphicon glyphicon-log-out"></span> Sair <% end %>
+	                         <br>
 	                      <% else %>
 	                        <%= link_to new_user_registration_path do %><span class="glyphicon glyphicon-user"></span> Cadastrar-se<% end %>
 	                        <br>
 	                        <%= link_to new_user_session_path do %><span class="glyphicon glyphicon-log-in"></span> Login <% end %>
+	                        <br>
 	                      <% end %>
-	                      <div style="margin-top:20px">
-	                        <%= link_to "http://www.ionar.com.br" do %>
-	                          <%= image_tag 'logo_ionar.png', :alt => 'Ionar', :class => 'img-responsive' %>
-	                        <% end %>
-                      	</div>
-                    </div>
+	                      <%= link_to 'https://mail.zoho.com/' do %>
+	                      <span class="glyphicon glyphicon-envelope"></span> Webmail
+	                      <% end %>
+
                   </div>
               </div><!-- /.row -->
-          </footer>
+              <hr>
+              <div class="row" style="padding-bottom: 50px; padding-top: 30px">
+              	<div class="col-md-8">
+              	<span class="glyphicon glyphicon-copyright-mark"></span> 2017 SEMATTER SEMENTES- Todos os direitos reservados
+              	</div>
+              	<div class="col-md-4">
+					<%= link_to "http://www.ionar.com.br", target: '_blank' do %>
+	              		<%= image_tag 'logo_ionar.png', :alt => 'Ionar', :class => 'pull-right img-responsive' %>
+	            	<% end %>
+              	</div>
+              </div><!-- /.row -->
+    </section><!-- /.rodape -->
   </div><!-- /.container -->
-</div><!-- /rodape -->
+</footer>
 </body>
 </html>
