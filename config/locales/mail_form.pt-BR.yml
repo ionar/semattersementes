@@ -1,0 +1,14 @@
+mail_form:
+  email_message_success: "Sua mensagem foi enviada"
+  email_message_error: "Sua mensagem não foi enviada"
+  models:
+    contact_form: "Nosso formulário de contato no site"
+  attributes:
+    contact_form:
+      email: "E-mail"
+      telephone: "Telefone"
+      message: "Mensagem Enviada"
+  request:
+    title: "Technical information about the user"
+    remote_ip: "IP Address"
+    user_agent: "Browser"

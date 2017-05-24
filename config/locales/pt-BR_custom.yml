@@ -71,3 +71,5 @@ pt-BR:
   period: "Período"
   sequence: "Sequência"
   benefits: "Benefícios"
+  email_message_success: "Sua mensagem foi enviada"
+  email_message_error: "Sua mensagem não foi enviada"

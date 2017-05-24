@@ -50,22 +50,22 @@
 		<div class="collapse navbar-collapse navbar-right" id="menu">
 			<ul class="nav navbar-nav">
 				<li class="<%= static_active?('adubacao-verde') %>"><%= link_to 'ADUBAÇÃO VERDE', page_path('adubacao-verde') %></li>
+				<li class="<%= active?('products')%>"><%= link_to "PRODUTOS", products_path %></li>
 				<li class="<%= static_active?('revenda') %>"><%= link_to "ONDE COMPRAR", page_path('revenda') %></li>
-				<li class="<%= static_active?('noticias') %>"><%= link_to "NOTÍCIAS", page_path('noticias') %></li>
-				<li class="<%= active?('purposes')%>"><%= link_to "Objetivos", purposes_path %></li>
-				<li class="<%= active?('products')%>"><%= link_to "Produtos", products_path %></li>
-				<li class="<%= active?('products_purposes_relations')%>"><%= link_to "Estrelas", products_purposes_relations_path %></li>
+				<li class="<%= static_active?('noticias') %>"><%= link_to "NOTÍCIAS", page_path('noticias') %></li>				
+				<li class="<%= active?('contacts')%>"><%= link_to "CONTATO", contacts_path %></li>
+				<% if user_signed_in? and current_user.admin == true %>
 				<li class="dropdown">
 		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN <span class="caret"></span></a>
 		          <ul class="dropdown-menu">
-		          <li class="<%= active?('banners')%>"><%= link_to "Banners", banners_path %></li>
-		          <li class="<%= active?('cultivations')%>"><%= link_to "Cultivos", cultivations_path %></li>
-				<li class="<%= active?('cycles')%>"><%= link_to "Ciclos", cycles_path %></li>
-				<li class="<%= active?('purposes')%>"><%= link_to "Objetivos", purposes_path %></li>
-				<li class="<%= active?('products')%>"><%= link_to "Produtos", products_path %></li>
-				<li class="<%= active?('products_purposes_relations')%>"><%= link_to "Estrelas", products_purposes_relations_path %></li>
+		          	<li class="<%= active?('banners')%>"><%= link_to "Banners", banners_path %></li>
+		          	<li class="<%= active?('cultivations')%>"><%= link_to "Cultivos", cultivations_path %></li>
+					<li class="<%= active?('cycles')%>"><%= link_to "Ciclos", cycles_path %></li>
+					<li class="<%= active?('purposes')%>"><%= link_to "Objetivos", purposes_path %></li>
+					<li class="<%= active?('products')%>"><%= link_to "Produtos", products_path %></li>
 		          </ul>
-		        </li>	
+		        </li>
+		        <% end %>
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container -->

@@ -86,4 +86,17 @@ Rails.application.configure do
 
   # Adicionado para a gem paperclip - Ionar
   Paperclip.options[:command_path] = "/usr/local/bin/"
+
+  # Para o devise
+  config.action_mailer.default_url_options = { host: 'http://semattersementes.web1511.kinghost.net/'}
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: 'smtp.gmail.com',
+    port: 587,
+    domain: ENV['GMAIL_DOMAIN'],
+    authentication: 'plain',
+    enable_starttls_auto: true,
+    user_name: ENV['GMAIL_USERNAME'],
+    password: ENV['GMAIL_PASSWORD']
+  }
 end

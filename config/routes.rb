@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
   #get 'welcome/index'
 
+  match '/contacts', to: 'contacts#new', via: 'get'
+  resources "contacts", only: [:new, :create]
+
   resources :banners
   devise_for :users
 	resources :products_purposes_relations
@@ -14,6 +17,6 @@ Rails.application.routes.draw do
 
   root :to => "welcome#index"
 
-  # root configurado em config/initializers/high_voltage.rb
+  # root com pagina estatica pode ser configurado em config/initializers/high_voltage.rb
 
 end

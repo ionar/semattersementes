@@ -79,4 +79,4 @@ gem "paperclip", "~> 5.0.0"
 
 gem 'cancancan'
 
-
+gem 'mail_form'

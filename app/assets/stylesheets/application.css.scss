@@ -67,7 +67,7 @@ footer {
 }
 
 .texto-verde{
-	color: #359F6A;
+	color: #bccf00;
 	font-weight: bold;
 	font-size: 17px;
 }
@@ -80,31 +80,59 @@ footer {
     position: fixed;
     width: 100%;
 }
+/* NAVBAR */
 
 .navbar {
 	margin-bottom: 0;
-}
-
-.nav >li >a {
-  text-transform: bold;
-  font-weight: bold;
-}
-
-#cab {
-	height: 150px;
-	background-color: #22463c;
-	/*border-bottom: 2px solid #25839C;*/
-	/*background: image-url('bg_cab_paisagem.jpg') no-repeat scroll center top;*/
-}
-
-.logo-principal{
-	margin-top: 10px;
 }
 
 .navbar-default {
 	background-color: #bccf00;
 	border: 0;
 }
+
+.navbar-default .navbar-nav > .active{
+   color: #000;
+   background: #22463c;
+ }
+
+ .navbar-default .navbar-nav > .active > a,
+ .navbar-default .navbar-nav > .active > a:hover,
+ .navbar-default .navbar-nav > .active > a:focus {
+      color: #fff;
+      background: #22463c;
+ }
+ 
+.navbar-default .navbar-nav > li > a:hover,
+.navbar-default .navbar-nav > li > a:focus {
+    color: #fff;
+   	background: #A2B500;
+}
+
+.nav > li > a {
+  text-transform: bold;
+  font-weight: bold;
+  /*text-shadow: 0 1px 0 #666;*/
+}
+.nav > li > a:hover {
+    color: #FF0000;
+   background: #22463c;
+}
+
+/* NAVBAR END */
+
+
+#cab {
+	height: 100px;
+	background-color: #22463c;
+	/*border-bottom: 2px solid #25839C;*/
+	/*background: image-url('bg_cab_paisagem.jpg') no-repeat scroll center top;*/
+}
+
+.logo-principal{
+	margin-top: 25px;
+}
+
 #qual{
 	background-color: #359F6A;
 	padding-top: 40px;
@@ -118,3 +146,7 @@ footer {
 		color: #fff;
 	}
 }
+
+/* mail_form gem */
+
+.hidden { display: none; }
