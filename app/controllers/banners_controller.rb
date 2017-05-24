@@ -1,7 +1,10 @@
 class BannersController < ApplicationController
   before_action :set_banner, only: [:show, :edit, :update, :destroy]
+  before_action :set_title
   before_action :authenticate_user! #, except: [:index, :show]
   load_and_authorize_resource #Cancancan
+
+
 
   # GET /banners
   # GET /banners.json
@@ -67,6 +70,10 @@ class BannersController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_banner
       @banner = Banner.find(params[:id])
+    end
+
+    def set_title
+      @title = "Banners - Sematter Sementes"
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

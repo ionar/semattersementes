@@ -85,24 +85,28 @@ footer {
 	margin-bottom: 0;
 }
 
+.nav >li >a {
+  text-transform: bold;
+  font-weight: bold;
+}
+
 #cab {
-	height: 75px;
-	background-color: #164B17;
-	border-bottom: 2px solid #0C3515;
-	/*background-image: url('hB_1.png');*/
+	height: 150px;
+	background-color: #22463c;
+	/*border-bottom: 2px solid #25839C;*/
+	/*background: image-url('bg_cab_paisagem.jpg') no-repeat scroll center top;*/
 }
 
 .logo-principal{
 	margin-top: 10px;
 }
 
-
 .navbar-default {
-	background-color: #22463C;
+	background-color: #bccf00;
 	border: 0;
 }
 #qual{
-	background-color: #164B17;
+	background-color: #359F6A;
 	padding-top: 40px;
 	padding-bottom:40px;
 

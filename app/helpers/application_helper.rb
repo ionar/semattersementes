@@ -22,4 +22,12 @@ module ApplicationHelper
 			""
 		end
 	end	
+
+	def static_active?(path)
+		if current_page?page_path(path)
+			"active"
+		else
+			""
+		end
+	end	
 end

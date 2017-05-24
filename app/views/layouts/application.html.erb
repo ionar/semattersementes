@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title>Sematter Sementes</title>
+  <title><%= @title || "Sematter Sementes" %></title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -49,9 +49,9 @@
 		<!-- Collect the nav links, forms, and other content for toggling -->
 		<div class="collapse navbar-collapse navbar-right" id="menu">
 			<ul class="nav navbar-nav">
-				<li class="<%= active?('banners')%>"><%= link_to "Banners", banners_path %></li>
-				<li class="<%= active?('cultivations')%>"><%= link_to "Cultivos", cultivations_path %></li>
-				<li class="<%= active?('cycles')%>"><%= link_to "Ciclos", cycles_path %></li>
+				<li class="<%= static_active?('adubacao-verde') %>"><%= link_to 'ADUBAÇÃO VERDE', page_path('adubacao-verde') %></li>
+				<li class="<%= static_active?('revenda') %>"><%= link_to "ONDE COMPRAR", page_path('revenda') %></li>
+				<li class="<%= static_active?('noticias') %>"><%= link_to "NOTÍCIAS", page_path('noticias') %></li>
 				<li class="<%= active?('purposes')%>"><%= link_to "Objetivos", purposes_path %></li>
 				<li class="<%= active?('products')%>"><%= link_to "Produtos", products_path %></li>
 				<li class="<%= active?('products_purposes_relations')%>"><%= link_to "Estrelas", products_purposes_relations_path %></li>
