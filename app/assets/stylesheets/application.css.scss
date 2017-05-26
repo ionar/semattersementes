@@ -35,6 +35,8 @@
 // And finally bootswatch style itself
 @import "bootswatch/cosmo/bootswatch";
 
+
+/* cores #bccf00 #22463c */
 html,
 body {
     height: 100%;
@@ -51,15 +53,20 @@ a:hover {
 }
 
 footer {
-    background: rgba(0, 0, 0, 0) image-url("bg_footer-sematter.png") no-repeat scroll center top;
+    background: rgba(0, 0, 0, 0) image-url("faixa-shadow.png") no-repeat scroll center top;
     /*height: 520px;*/
     margin-top: 50px;
     width: 100%;
     background-color: #fff;
+    /*border-top: 4px solid #bccf00;*/
 }
 
+.logo-footer{
+    opacity: 0.6;
+    filter: alpha(opacity=60); /* For IE8 and earlier */
+}
 .rodape {
-	padding-top: 220px;
+	padding-top: 40px;
 	color: #666;
   /*background-image: url('fundo-quad.png');*/
   /*border-bottom: 20px solid #313131;*/
@@ -121,6 +128,25 @@ footer {
 
 /* NAVBAR END */
 
+/* TITULOS */
+.cabecalho-pagina {
+    background: #00a0da image-url("bg_titulos.jpg") no-repeat scroll center top / cover ;
+    height: 110px;
+    line-height: 110px;
+}
+
+.titulo-bc h2 {
+    color: #fff;
+    font-size: 2.3em !important;
+    font-weight: 300;
+    line-height: 110px;
+    margin: 0;
+    text-align: left;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    vertical-align: middle;
+}
+
+
 
 #cab {
 	height: 100px;
@@ -134,7 +160,7 @@ footer {
 }
 
 #qual{
-	background-color: #359F6A;
+	background-color: #8a8a8a;
 	padding-top: 40px;
 	padding-bottom:40px;
 

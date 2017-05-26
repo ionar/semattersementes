@@ -1,0 +1,36 @@
+<div class="container">
+  <h3>Mande uma mensagem para nós</h3>
+  <div class="row">
+  	<div class="col-md-4">
+  	<p>
+  	<%= image_tag ('sematter-logo-195x55-rodape.png') %>
+  	</p>
+  	<p>
+  	<span class="texto-verde">Sematter Sementes</span> <br />
+        Rua Arno Erich Schwambach, 990  <br />
+        Bairro Industrial, CEP: 89900-000 <br />
+        São Miguel do Oeste - SC <br />
+        Fone: (49)3622-8263 <br />
+        comercial@semattersementes.com.br
+        </p>
+  	</div><!-- /.col -->
+  	<div class="col-md-4">
+  	mapa
+  	</div><!-- /.col -->
+  	<div class="col-md-4">
+	  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+	    <%= f.input :name, :required => true, label: t('name') %>
+	    <%= f.input :email, :required => true %>
+	    <%= f.input :message, :as => :text, :required => true,  label: t('message') %>
+	    <div class= "hidden">
+	      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+	    </div>
+	    <div>
+	      <br>
+	      <%= f.button :submit, 'Enviar', :class=> "btn btn-primary" %>
+	    </div>
+	  <% end %>
+  	</div><!-- /.col -->
+  </div><!-- /.row -->
+
+</div><!-- /.container -->

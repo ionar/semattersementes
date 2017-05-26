@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-  <title><%= @title || "Sematter Sementes" %></title>
+  <title><%= @page_title || "Sematter Sementes" %></title>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,17 +22,47 @@
     </div><!-- /container -->
   </div>
 <% end %><!-- /flash messages -->
+<div id="menu-lg" class="visible-lg visible-md">
+<div class="container cabecalho">
+                <div class="box-logo">
+                    <%= link_to root_path do %>
+		    			<%= image_tag "sematter-logo-verde-195x55.png", alt: "Sematter Sementes" %>
+		    		<% end %>
+                </div>
+                <div class="box-pesquisa-social pull-right">
+                    <%= link_to 'https://www.facebook.com/semattersementes/', target: '_blank' do %>
+		    			<%= image_tag "link-facebook.png", alt: "Facebook", class: 'img-responsive' %>
+		    		<% end %>
+                </div>
+                <div class="box-menu">
+                    <ul class="list-unstyled">
+                        <li class="">
+                            <li class="<%= static_active?('adubacao-verde') %>"><%= link_to 'ADUBAÇÃO VERDE', page_path('adubacao-verde') %></li>
+							<li class="<%= active?('products')%>"><%= link_to "PRODUTOS", products_path %></li>
+							<li class="<%= static_active?('revenda') %>"><%= link_to "ONDE COMPRAR", page_path('revenda') %></li>
+							<li class="<%= static_active?('noticias') %>"><%= link_to "NOTÍCIAS", page_path('noticias') %></li>				
+							<li class="<%= active?('contacts')%>"><%= link_to "CONTATO", contacts_path %></li>
+							<% if user_signed_in? and current_user.admin == true %>
+								<li class="dropdown">
+						          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN <span class="caret"></span></a>
+						          <ul class="dropdown-menu">
+						          	<li class="<%= active?('banners')%>"><%= link_to "Banners", banners_path %></li>
+						          	<li class="<%= active?('cultivations')%>"><%= link_to "Cultivos", cultivations_path %></li>
+									<li class="<%= active?('cycles')%>"><%= link_to "Ciclos", cycles_path %></li>
+									<li class="<%= active?('purposes')%>"><%= link_to "Objetivos", purposes_path %></li>
+									<li class="<%= active?('products')%>"><%= link_to "Produtos", products_path %></li>
+								  </ul>
+			        			</li>
+		        			<% end %>
+                    </ul>
+                </div>
+            </div>
+        </div>
+</div><!-- /menu-lg -->
 
-<div id="cab">
-	<div class="container">
-		<div class="logo-principal">
-			<%= link_to root_path do %>
-		    	<%= image_tag "sematter-logo-195x55.png", alt: "Sematter Sementes" %>
-		    <% end %>
-		</div>
-	</div>
-</div>
-<nav class="navbar navbar-default">
+
+
+<nav class="navbar navbar-default visible-xs visible-sm">
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
@@ -43,7 +73,7 @@
 			<span class="icon-bar"></span>
 			</button>
 		    <%= link_to root_path, :class => 'navbar-brand' do %>
-		    	<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+		    	<%= image_tag 'sematter-logo-small.png' %>
 		    <% end %>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -69,7 +99,8 @@
 			</ul>
 		</div><!-- /.navbar-collapse -->
 	</div><!-- /.container -->
-</nav>			
+</nav>
+<%= render partial: 'layouts/titulo' unless controller_name == 'welcome' %>
 
 <%= yield %>
 
@@ -79,12 +110,12 @@
   	<section class="rodape">
               <div class="row">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    
+                    <div style="padding-top: 40px">
                       <%= link_to root_path do %>
-                          <%= image_tag 'logo-raix.png', :alt => 'Sematter', :class => 'img-responsive center-block' %>
+                          <%= image_tag 'sematter-logo-195x55-rodape.png', :alt => 'Sematter', :class => 'img-responsive center-block logo-footer' %>
                         <% end %>
                         <br>
-
+					</div>
                   </div>
                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
 
@@ -97,13 +128,13 @@
 
                   </div>
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-
                        <span class="texto-verde">Acesso rápido</span> <br />
                       <%= link_to 'Inicial', root_path  %><br>
-                      <%= link_to 'Empresa', page_path('empresa') %> <br>  
-                      <%= link_to 'Produtos', products_path %> <br>
-                      <%= link_to 'Serviços', page_path('servicos') %> <br>
-                      <% # link_to 'Contato', contact_path %>
+                      <%= link_to 'Adubação verde', page_path('adubacao-verde') %> <br>  
+                      <%= link_to "Produtos", products_path %> <br>
+                      <%= link_to "Onde Comprar", page_path('revenda') %> <br>
+                      <%= link_to "Notícias", page_path('noticias') %> <br>
+                      <%= link_to "Contato", contacts_path %>
 
                   </div>                  
                   <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
@@ -141,5 +172,16 @@
     </section><!-- /.rodape -->
   </div><!-- /.container -->
 </footer>
+<!--
+<div id="cab">
+	<div class="container">
+		<div class="logo-principal">
+			<%# link_to root_path do %>
+		    	<%# image_tag "sematter-logo-195x55.png", alt: "Sematter Sementes" %>
+		    <%# end %>
+		</div>
+	</div>
+</div>
+-->
 </body>
 </html>
