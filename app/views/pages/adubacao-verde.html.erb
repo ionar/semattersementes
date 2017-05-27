@@ -4,7 +4,9 @@
 <div class="container">
 <div class="row">
 	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	<%= image_tag 'adubacao_verde_raix.jpg', :class => 'img-responsive img-thumbnail' %>
+	<%= scroll_reveal animation: 'enter left move 50px' do %>
+		<%= image_tag 'adubacao_verde_raix.jpg', :class => 'img-responsive img-thumbnail' %>
+	<% end %>
 	</div><!-- /col -->
 	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
 	<p>
@@ -31,64 +33,131 @@
 <p>
 A Adubação Verde ou cobertura vegetal, é uma tendência mundial de manejo de solo na entressafra e pode ser utilizada para bene­ficiar todas as culturas comerciais.
 </p>
-[Colocar o nome de cada cultura acima das bolinhas, com no folder: Soja, Feijão, Canola, Linhaça, Milho, Trigo, Arroz, Cana-de-açúcar e Pastagens.]
-<div class="culturas-lista">
-<ul>
-	<li>
-		<div class="cultura"> Soja
+<div class="culturas-lista text-center">
+		
+<%= scroll_reveal animation: 'enter top move 50px, after 0.2s' do %>
+		<div class="cultura">
+			<div class="cultura-titulo">Soja</div>
 			<%= image_tag 'culturas/1_soja.png' %>
 		</div>
-	</li>
-	<li>
-		<div class="cultura"> Feijão
+<% end %>
+		
+<%= scroll_reveal animation: 'enter top move 50px, after 0.4s' do %>
+		<div class="cultura"> 
+			<div class="cultura-titulo">Feijão</div>
 			<%= image_tag 'culturas/2_feijao.png' %>
 		</div>
-	</li>
-	<li>Canola</li>
-	<li>Linhaça</li>
-	<li>Milho</li>
-	<li>Trigo</li>
-	<li>Arroz</li>
-	<li>Cana-de-açúcar</li>
-	<li>Pastagens</li>
-</ul>
-</div>
-<p><span class="texto-verde">Principais benefícios</span></p>
-FERTILIDADE
-<ul>
-	<li>Fixação Biológica de Nitrogênio</li>
-	<li>Reciclagem de Potássio, Enxofre e outros nutrientes</li>
-	<li>Melhoria na infiltração de água do solo</li>
-	<li>Diminuição da compactação do solo</li>
-	<li>Neutralização da acidez potencial do solo</li>
-	<li>Construção de estrutura do solo</li>
-	<li>Manutenção da temperatura do solo</li>
-	<li>Atividade da biomassa durante períodos de estiagem</li>
-</ul>
-EQUILÍBRIO
-<ul>
-	<li>Manutenção de inimigos naturais e agentes polinizadores</li>
-	<li>Controle de Nematoides</li>
-	<li>Controle de plantas infestantes (inclusive resistentes a herbicidas)</li>
-	<li>Fitorremediação do solo</li>
-	<li>Controle de doenças de caule e raiz <i>(Fusarium, Rhizoctonia, Sclerotinia, Macrophomina,
-	Phomopsis, Phytophthora)</i></li>
-	<li>Equilíbrio ambiental</li>
-	<li>Adição de Biomassa de Raiz</li>
-	<li>Duração de palhada após dessecação (tempo de controle contra erosão)</li>
-</ul>
-RENTABILIDADE
-<ul>
-	<li>Aumento da produtividade na safra seguinte</li>
-	<li>Custos menores de manejo</li>
-	<li>Resistência da cultura posterior a estiagens</li>
-	<li>Conservação do solo</li>
-	<li>Utilização como forrageira</li>
-	<li>Tendência mundial de manejo dos solos para altas produtividades</li>
-	<li>Praticidade de implantação</li>
-</ul>
+<% end %>
 
+<%= scroll_reveal animation: 'enter top move 50px, after 0.6s' do %>
+		<div class="cultura"> 
+			<div class="cultura-titulo">Canola</div>
+			<%= image_tag 'culturas/3_canola.png' %>
+		</div>
+<% end %>
+
+<%= scroll_reveal animation: 'enter top move 50px, after 0.8s' do %>
+		<div class="cultura"> 
+			<div class="cultura-titulo">Linhaça</div>
+			<%= image_tag 'culturas/4_linhaca.png' %>
+		</div>
+<% end %>
+
+<%= scroll_reveal animation: 'enter top move 50px, after 1.0s' do %>
+		<div class="cultura"> 
+			<div class="cultura-titulo">Milho</div>
+			<%= image_tag 'culturas/5_milho.png' %>
+		</div>
+<% end %>
+
+<%= scroll_reveal animation: 'enter top move 50px, after 1.2s' do %>
+		<div class="cultura"> 
+			<div class="cultura-titulo">Trigo</div>
+			<%= image_tag 'culturas/6_trigo.png' %>
+		</div>
+<% end %>
+
+<%= scroll_reveal animation: 'enter top move 50px, after 1.4s' do %>
+		<div class="cultura"> 
+			<div class="cultura-titulo">Arroz</div>
+			<%= image_tag 'culturas/7_arroz.png' %>
+		</div>
+<% end %>
+
+<%= scroll_reveal animation: 'enter top move 50px, after 1.6s' do %>
+		<div class="cultura"> 
+			<div class="cultura-titulo">Cana</div>
+			<%= image_tag 'culturas/8_cana.png' %>
+		</div>
+<% end %>
+
+<%= scroll_reveal animation: 'enter top move 50px, after 1.8s' do %>
+		<div class="cultura"> 
+			<div class="cultura-titulo">Pastagens</div>
+			<%= image_tag 'culturas/9_pastagens.png' %>
+		</div>
+<% end %>		
+		<div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>
+<p><span class="texto-verde">Principais benefícios</span></p>
+<div class="row">
+	<div class="col-lg-6 col-md-6">
+		<div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">FERTILIDADE</div>
+		  <!-- List group -->
+		  <ul class="list-group">
+		  	<li class="list-group-item">Fixação Biológica de Nitrogênio</li>
+			<li class="list-group-item">Reciclagem de Potássio, Enxofre e outros nutrientes</li>
+			<li class="list-group-item">Melhoria na infiltração de água do solo</li>
+			<li class="list-group-item">Diminuição da compactação do solo</li>
+			<li class="list-group-item">Neutralização da acidez potencial do solo</li>
+			<li class="list-group-item">Construção de estrutura do solo</li>
+			<li class="list-group-item">Manutenção da temperatura do solo</li>
+			<li class="list-group-item">Atividade da biomassa durante períodos de estiagem</li>
+		  </ul>
+		</div><!-- /panel -->
+	</div><!-- /col -->
+	<div class="col-lg-6 col-md-6">
+		<div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading">RENTABILIDADE</div>
+		  <!-- List group -->
+		  <ul class="list-group">
+			<li class="list-group-item">Aumento da produtividade na safra seguinte</li>
+			<li class="list-group-item">Custos menores de manejo</li>
+			<li class="list-group-item">Resistência da cultura posterior a estiagens</li>
+			<li class="list-group-item">Conservação do solo</li>
+			<li class="list-group-item">Utilização como forrageira</li>
+			<li class="list-group-item">Tendência mundial de manejo dos solos para altas produtividades</li>
+			<li class="list-group-item">Praticidade de implantação</li>
+		  </ul>
+		</div><!-- /panel -->
+	</div><!-- /col -->	
+</div><!-- /row -->
+
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading">EQUILÍBRIO</div>
+  <!-- List group -->
+  <ul class="list-group">
+	<li class="list-group-item">Manutenção de inimigos naturais e agentes polinizadores</li>
+	<li class="list-group-item">Controle de Nematoides</li>
+	<li class="list-group-item">Controle de plantas infestantes (inclusive resistentes a herbicidas)</li>
+	<li class="list-group-item">Fitorremediação do solo</li>
+	<li class="list-group-item">Controle de doenças de caule e raiz <i>(Fusarium, Rhizoctonia, Sclerotinia, Macrophomina,
+	Phomopsis, Phytophthora)</i></li>
+	<li class="list-group-item">Equilíbrio ambiental</li>
+	<li class="list-group-item">Adição de Biomassa de Raiz</li>
+	<li class="list-group-item">Duração de palhada após dessecação (tempo de controle contra erosão)</li>
+  </ul>
+</div><!-- /panel -->
 
 <p><span class="texto-verde">Recomendações de Plantio</span></p>
 [Imagem recomendações]
+
+<%= scroll_reveal content: 'Foo', animation: 'enter left and move 50px over 1.33s' %>
 </div>

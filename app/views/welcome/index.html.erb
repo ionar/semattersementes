@@ -24,7 +24,7 @@
                                     <!-- Set the first background image using inline CSS below. -->
                                         <div class='fill' style=\"background-image:url('#{banner.image.url(:original)}');\"></div>
                                         <div class='carousel-caption'>
-                                            <h2><a href='#{banner.link}'><img src='#{btn}' class='img-responsive center-block bt-saiba-mais'></a></h2>
+                                            <h2><a href='#{banner.link}'><img src='#{btn}' class='img-responsive center-block bt-saiba-mais' alt='Saiba mais'></a></h2>
                                         </div>
                                     </div>
                     "
@@ -34,7 +34,7 @@
                                     <!-- Set the second background image using inline CSS below. -->
                                         <div class='fill' style=\"background-image:url('#{banner.image.url(:original)}');\"></div>
                                         <div class='carousel-caption'>
-                                            <h2><a href='#{banner.link}'><img src='#{btn}' class='img-responsive center-block bt-saiba-mais'></a></h2>
+                                            <h2><a href='#{banner.link}'><img src='#{btn}' class='img-responsive center-block bt-saiba-mais' alt='Saiba mais'></a></h2>
                                         </div>
                                     </div>
                     "
@@ -52,6 +52,7 @@
     </header>
 <!-- /Carousel -->
 <div id="qual">
+<%= scroll_reveal animation: 'enter left move 50px' do %>
     <div class="container">
         <h2 class="text-center">QUAL É O RAIX INDICADO PARA O MEU USO?</h2>
     <div class="row">
@@ -91,5 +92,6 @@
         </div><!-- /col -->
     </div><!-- /row -->
     </div><!-- /container -->
+    <% end %><!-- /scrollrevealjs -->
 </div><!-- /qual -->
 

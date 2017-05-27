@@ -1,18 +1,20 @@
-.culturas-lista > ul {
-	display: inline;
-}
-.culturas-lista > ul > li {
-    display: inline;
-    list-style: none;
-    margin: 0;
-    border: 1px solid #FF0000;
-   /* background-color: #ff0000;*/
+.culturas-lista{
+	text-align: center;
 }
 
 .cultura{
 	width: 120px;
-	height: 200px;
-	border: 1px solid #dd0000;
-
+	height: 150px;
+	float: left;
+	background-color: #22463c;
+	margin-right: 2px;
+}
+.cultura-titulo{
+	text-align: center;
+	font-weight: bold;
+	background-color: #bccf00;
+	text-transform: uppercase;
+	color: #fff;
+	border-bottom: 2px solid #ccc;
 }
 

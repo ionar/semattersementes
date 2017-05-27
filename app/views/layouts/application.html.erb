@@ -23,7 +23,7 @@
   </div>
 <% end %><!-- /flash messages -->
 <div id="menu-lg" class="visible-lg visible-md">
-<div class="container cabecalho">
+	<div class="container cabecalho">
                 <div class="box-logo">
                     <%= link_to root_path do %>
 		    			<%= image_tag "sematter-logo-verde-195x55.png", alt: "Sematter Sementes" %>
@@ -34,10 +34,13 @@
 		    			<%= image_tag "link-facebook.png", alt: "Facebook", class: 'img-responsive' %>
 		    		<% end %>
                 </div>
+            	<%= scroll_reveal animation: 'enter top move 50px, after 0.2s' do %>
                 <div class="box-menu">
                     <ul class="list-unstyled">
                         <li class="">
+                        
                             <li class="<%= static_active?('adubacao-verde') %>"><%= link_to 'ADUBAÇÃO VERDE', page_path('adubacao-verde') %></li>
+                        
 							<li class="<%= active?('products')%>"><%= link_to "PRODUTOS", products_path %></li>
 							<li class="<%= static_active?('revenda') %>"><%= link_to "ONDE COMPRAR", page_path('revenda') %></li>
 							<li class="<%= static_active?('noticias') %>"><%= link_to "NOTÍCIAS", page_path('noticias') %></li>				
@@ -56,8 +59,8 @@
 		        			<% end %>
                     </ul>
                 </div>
-            </div>
-        </div>
+            	<% end %> <!-- /scrollreveal -->
+    </div>
 </div><!-- /menu-lg -->
 
 

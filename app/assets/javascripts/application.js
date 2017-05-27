@@ -20,9 +20,12 @@
 //= require pickers
 //= require moment/pt-br
 
+//= require scrollReveal
+
 //= require_tree .
 
 $(document).on("turbolinks:load", function() {
+
   //alert("page has loaded!");
   $(".auto-close-alert").fadeTo(2000, 500).slideUp(500, function(){
     $(".auto-close-alert").slideUp(500);
@@ -38,4 +41,10 @@ $(document).on("turbolinks:load", function() {
     $('.carousel').carousel({
         interval: 3000 //changes the speed
     })
+    $(function() {
+      window.scrollReveal = new scrollReveal();
+    });
  });
+
+
+

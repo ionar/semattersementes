@@ -134,6 +134,7 @@ footer {
     height: 110px;
     line-height: 110px;
     margin-bottom: 20px;
+    /*background-attachment: fixed;*/
 }
 
 .titulo-bc h2 {
@@ -161,9 +162,13 @@ footer {
 }
 
 #qual{
-	background-color: #8a8a8a;
+	background-color: #22463c;
 	padding-top: 40px;
 	padding-bottom:40px;
+	/*background-size: cover;
+    background-repeat: no-repeat;
+    background-image: image-url('milharal3.jpg'); 
+    background-attachment: fixed;*/
 
 	label {
 		color: #fff;
