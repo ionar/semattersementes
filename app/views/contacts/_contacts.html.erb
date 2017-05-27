@@ -3,7 +3,9 @@
   	<div class="col-md-4">
   	<h3>Faça-nos uma visita</h3>
   	<p>
-  	<%= image_tag 'agronegocio.jpg', alt: 'Sematter Sementes', class: 'img-thumbnail img-responsive' %>
+    <%= scroll_reveal animation: 'enter top move 50px, after 0.4s' do %>
+  	 <%= image_tag 'agronegocio.jpg', alt: 'Sematter Sementes', class: 'img-thumbnail img-responsive' %>
+     <% end %>
   	</p>
   	<p>
   	<span class="texto-verde">Sematter Sementes</span> <br />
@@ -19,7 +21,7 @@
   	</div><!-- /.col -->
   	<div class="col-md-4">
   	<h3>Mande uma mensagem para nós</h3>
-	  <%= simple_form_for @contact, :html => {:class => 'form-horizontal' } do |f| %>
+	  <%= simple_form_for @contact do |f| %>
 	    <%= f.input :name, :required => true, label: t('name') %>
 	    <%= f.input :email, :required => true %>
 	    <%= f.input :message, :as => :text, :required => true,  label: t('message') %>
