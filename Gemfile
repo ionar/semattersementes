@@ -82,3 +82,5 @@ gem 'cancancan'
 gem 'mail_form'
 
 gem "scrollreveal-rails"  
+
+gem 'jquery-turbolinks'

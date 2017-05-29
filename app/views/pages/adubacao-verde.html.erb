@@ -2,35 +2,36 @@
 <% @content_title = "Adubação Verde" %>
 
 <div class="container">
-<div class="row">
-	<div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
-	<%= scroll_reveal animation: 'enter left move 50px' do %>
-		<%= image_tag 'adubacao_verde_raix.jpg', :class => 'img-responsive img-thumbnail' %>
-	<% end %>
-	</div><!-- /col -->
-	<div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
-	<p>
-	<span class="texto-verde">O que é Adubação Verde?</span>
+<div id="aduba-fundo">
+ <div class="aduba-caption">
+ 	<div class="row">
+ 		<div class="col-lg-8 col-md-8 col-md-offset-2 col-lg-offset-2">
+ 		<h2 class="text-center" style="color:#bccf00">O que é adubação verde?</h2>
+ 		<p class="text-center lead"><strong>O Raix é um Mix de Sementes inovador para Adubação Verde e cobertura vegetal, capaz de transformar o solo nas entressafras. A combinação de plantas inteligentes proporciona múltiplos benefícios para o solo, renovando os nutrientes de forma natural e melhorando aspectos físicos, químicos e biológicos.</strong></p>
+		<p class="text-center lead"><strong>
+			O resultado é um aumento expressivo do potencial produtivo das culturas comerciais semeadas posteriormente. Fazendo a manutenção inteligente do solo, o Raix reduz custos e aumenta a produtividade, maximizando a lucratividade da lavoura. </strong></p>
+		</div><!-- /col -->
+	</div><!-- /row -->
+ </div><!--/aduba-caption-->
+</div><!--/aduba-fundo -->
+<div id="raix-fundo">
+ 	<div class="row">
+		<div class="col-lg-2 col-md-2">
+		<div class="logo-raix">
+ 			<%= image_tag 'logo-raix-branco', alt: 'Raix', height: '50' %>
+ 		</div>
+ 		</div><!-- /col -->
+ 		<div class="col-lg-8 col-md-8">
+ 		<p class="text-center lead">As variedades do Raix oferecem diferentes combinações de sementes para atender às necessidades especí­cas de cada tipo de solo e objetivos do produtor. Todas as variedades proporcionam múltiplos benefícios ao solo e ganhos de produtividade na safra seguinte.</p>
+	<p class="text-center lead">Para encontrar as misturas adequadas e as proporções perfeitas para cada variedade do Raix, a Sematter Sementes investiu em estudos científi­cos rigorosos. Os testes foram conduzidos nas principais regiões produtoras do Brasil com a consultoria de pesquisadores de diversos países.
 	</p>
-	<p>
-	O Raix é um Mix de Sementes inovador para Adubação Verde e cobertura vegetal, capaz de transformar o solo nas entressafras. A combinação de plantas inteligentes proporciona múltiplos benefícios para o solo, renovando os nutrientes de forma natural e melhorando aspectos físicos, químicos e biológicos.
-	</p>
-	<p>
-	O resultado é um aumento expressivo do potencial produtivo das culturas comerciais semeadas posteriormente. Fazendo a manutenção inteligente do solo, o Raix reduz custos e aumenta a produtividade, maximizando a lucratividade da lavoura.
-	</p>
-	[Logo do Raix]
-	<p>
-	As variedades do Raix oferecem diferentes combinações de sementes para atender às necessidades especí­cas de cada tipo de solo e objetivos do produtor. Todas as variedades proporcionam múltiplos benefícios ao solo e ganhos de produtividade na safra seguinte.
-	</p>
-	<p>
-	Para encontrar as misturas adequadas e as proporções perfeitas para cada variedade do Raix, a Sematter Sementes investiu em estudos científi­cos rigorosos. Os testes foram conduzidos nas principais regiões produtoras do Brasil com a consultoria de pesquisadores de diversos países.
-	</p>
-	[fotos]
-	</div><!-- /col -->
-</div><!-- /row -->
+ 		</div><!-- /col -->
+ 		</div><!-- /row -->
+</div><!--/raix-fundo -->
 
-<p><span class="texto-verde">Culturas que podem ser beneficiadas</span></p>
-<p>
+
+<h2>Culturas que podem ser beneficiadas</h2>
+<p class="lead">
 A Adubação Verde ou cobertura vegetal, é uma tendência mundial de manejo de solo na entressafra e pode ser utilizada para bene­ficiar todas as culturas comerciais.
 </p>
 <div class="culturas-lista text-center">
@@ -100,12 +101,12 @@ A Adubação Verde ou cobertura vegetal, é uma tendência mundial de manejo de 
 		<div class="clearfix"></div>
 </div>
 <div class="clearfix"></div>
-<p><span class="texto-verde">Principais benefícios</span></p>
+<h2>Principais benefícios</h2>
 <div class="row">
-	<div class="col-lg-6 col-md-6">
+	<div class="col-lg-4 col-md-4">
 		<div class="panel panel-default">
 		  <!-- Default panel contents -->
-		  <div class="panel-heading">FERTILIDADE</div>
+		  <div class="panel-heading"><span class="texto-verde">FERTILIDADE</span></div>
 		  <!-- List group -->
 		  <ul class="list-group">
 		  	<li class="list-group-item">Fixação Biológica de Nitrogênio</li>
@@ -119,10 +120,10 @@ A Adubação Verde ou cobertura vegetal, é uma tendência mundial de manejo de 
 		  </ul>
 		</div><!-- /panel -->
 	</div><!-- /col -->
-	<div class="col-lg-6 col-md-6">
+	<div class="col-lg-4 col-md-4">
 		<div class="panel panel-default">
 		  <!-- Default panel contents -->
-		  <div class="panel-heading">RENTABILIDADE</div>
+		  <div class="panel-heading"><span class="texto-verde">RENTABILIDADE</span></div>
 		  <!-- List group -->
 		  <ul class="list-group">
 			<li class="list-group-item">Aumento da produtividade na safra seguinte</li>
@@ -134,28 +135,27 @@ A Adubação Verde ou cobertura vegetal, é uma tendência mundial de manejo de 
 			<li class="list-group-item">Praticidade de implantação</li>
 		  </ul>
 		</div><!-- /panel -->
-	</div><!-- /col -->	
+	</div><!-- /col -->
+	<div class="col-lg-4 col-md-4">
+		<div class="panel panel-default">
+		  <!-- Default panel contents -->
+		  <div class="panel-heading"><span class="texto-verde">EQUILÍBRIO</span></div>
+		  <!-- List group -->
+		  <ul class="list-group">
+			<li class="list-group-item">Manutenção de inimigos naturais e agentes polinizadores</li>
+			<li class="list-group-item">Controle de Nematoides</li>
+			<li class="list-group-item">Controle de plantas infestantes (inclusive resistentes a herbicidas)</li>
+			<li class="list-group-item">Fitorremediação do solo</li>
+			<li class="list-group-item">Controle de doenças de caule e raiz <i>(Fusarium, Rhizoctonia, Sclerotinia, Macrophomina,
+			Phomopsis, Phytophthora)</i></li>
+			<li class="list-group-item">Equilíbrio ambiental</li>
+			<li class="list-group-item">Adição de Biomassa de Raiz</li>
+			<li class="list-group-item">Duração de palhada após dessecação (tempo de controle contra erosão)</li>
+		  </ul>
+		</div><!-- /panel -->
+	</div><!-- /col -->
 </div><!-- /row -->
 
-
-
-<div class="panel panel-default">
-  <!-- Default panel contents -->
-  <div class="panel-heading">EQUILÍBRIO</div>
-  <!-- List group -->
-  <ul class="list-group">
-	<li class="list-group-item">Manutenção de inimigos naturais e agentes polinizadores</li>
-	<li class="list-group-item">Controle de Nematoides</li>
-	<li class="list-group-item">Controle de plantas infestantes (inclusive resistentes a herbicidas)</li>
-	<li class="list-group-item">Fitorremediação do solo</li>
-	<li class="list-group-item">Controle de doenças de caule e raiz <i>(Fusarium, Rhizoctonia, Sclerotinia, Macrophomina,
-	Phomopsis, Phytophthora)</i></li>
-	<li class="list-group-item">Equilíbrio ambiental</li>
-	<li class="list-group-item">Adição de Biomassa de Raiz</li>
-	<li class="list-group-item">Duração de palhada após dessecação (tempo de controle contra erosão)</li>
-  </ul>
-</div><!-- /panel -->
-
-<p><span class="texto-verde">Recomendações de Plantio</span></p>
-[Imagem recomendações]
+<h2>Recomendações de Plantio</h2>
+<%= image_tag 'recomendacoes_plantio.png', alt: "Recomendações", class: 'img-responsive' %>
 </div>

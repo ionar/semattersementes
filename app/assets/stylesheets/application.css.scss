@@ -37,6 +37,8 @@
 
 
 /* cores #bccf00 #22463c */
+
+
 html,
 body {
     height: 100%;
@@ -50,6 +52,11 @@ a {
 a:hover {
     color: #666;
     text-decoration: underline;
+}
+
+.turbolinks-progress-bar {
+  height: 5px;
+  background-color: #22463c;
 }
 
 footer {

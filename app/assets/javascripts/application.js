@@ -11,7 +11,9 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
+//= require scrollReveal
 //= require turbolinks
 //= require bootstrap-sprockets
 
@@ -20,11 +22,17 @@
 //= require pickers
 //= require moment/pt-br
 
-//= require scrollReveal
 
 //= require_tree .
 
-$(document).on("turbolinks:load", function() {
+$(function() {
+  window.scrollReveal = new scrollReveal();
+});
+
+//$(document).on("turbolinks:load", function() {
+//$(document).on("page:change", function() {
+document.addEventListener("turbolinks:load", function() {
+//  $(document).on('ready page:load', function () {
 
   //alert("page has loaded!");
   $(".auto-close-alert").fadeTo(2000, 500).slideUp(500, function(){
@@ -41,9 +49,9 @@ $(document).on("turbolinks:load", function() {
     $('.carousel').carousel({
         interval: 3000 //changes the speed
     })
-    $(function() {
-      window.scrollReveal = new scrollReveal();
-    });
+
+    window.scrollReveal = ScrollReveal({ reset: true });
+
  });
 
 
