@@ -155,9 +155,10 @@
                       <%= link_to "Contato", contacts_path %>
 					<div class="visible-xs"><hr></div>
                   </div>                  
-                  <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 text-center">
-                  <div class="visible-md visible-sm"><hr></div>
-	                  <div id="fb-root"></div>
+                  <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 text-center" >
+                  	<div id='plugin-social' data-turbolinks-permanent>
+                  		<div class="visible-md visible-sm"><hr></div>
+	                  	<div id="fb-root"></div>
 						<script>(function(d, s, id) {
 						  var js, fjs = d.getElementsByTagName(s)[0];
 						  if (d.getElementById(id)) return;
@@ -167,7 +168,8 @@
 						}(document, 'script', 'facebook-jssdk'));</script>
 	               
 	                  <div class="fb-page" data-href="https://www.facebook.com/semattersementes/"  data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/semattersementes/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/semattersementes/">Sematter Sementes</a></blockquote></div>
-	            </div>
+	                </div>
+	              </div>
               </div><!-- /.row -->
               <hr>
               <div class="row" style="padding-bottom: 50px; padding-top: 30px">

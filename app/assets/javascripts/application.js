@@ -50,8 +50,6 @@ document.addEventListener("turbolinks:load", function() {
         interval: 3000 //changes the speed
     })
 
-    window.scrollReveal = ScrollReveal({ reset: true });
-
  });
 
 
