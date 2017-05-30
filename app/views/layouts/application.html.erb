@@ -76,7 +76,7 @@
 			<span class="icon-bar"></span>
 			</button>
 		    <%= link_to root_path, :class => 'navbar-brand' do %>
-		    	<%= image_tag 'sematter-logo-small.png' %>
+		    	<%= image_tag 'sematter-logo-small.png', class: 'img-responsive' %>
 		    <% end %>
 		</div>
 		<!-- Collect the nav links, forms, and other content for toggling -->
@@ -113,16 +113,29 @@
   	<section class="rodape">
               <div class="row">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div style="padding-top: 40px">
-                    <%= scroll_reveal animation: 'enter bottom move 50px, after 0.4s' do %>
-                      <%= link_to root_path do %>
-                          <%= image_tag 'sematter-logo-195x55-rodape.png', :alt => 'Sematter', :class => 'img-responsive center-block logo-footer' %>
-                        <% end %>
-                        <br>
-                    <% end %>
+                    <div>
+	                    <%= scroll_reveal animation: 'enter bottom move 50px, after 0.4s' do %>
+	                      <%= link_to root_path do %>
+	                          <%= image_tag 'sematter-logo-verde-195x55.png', :alt => 'Sematter', :class => 'img-responsive center-block logo-footer' %>
+	                        <% end %>
+	                    <% end %>
 					</div>
+	                    <br><br>
+	                      <% if user_signed_in? %>
+	                        <%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-user"></span> <%= current_user.email %><% end %>
+	                        <br>
+	                        <%= link_to destroy_user_session_path, method: :delete do %><span class="glyphicon glyphicon-log-out"></span> Sair <% end %>
+	                         <br>
+	                      <% else %>
+	                        <%= link_to new_user_session_path do %><span class="glyphicon glyphicon-log-in"></span> Login <% end %>
+	                        <br>
+	                      <% end %>
+	                      <%= link_to 'https://mail.zoho.com/' do %>
+	                      <span class="glyphicon glyphicon-envelope"></span> Webmail
+	                      <% end %>
+	                      <div class="visible-xs"><hr></div>
                   </div>
-                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                  <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
 
                        <span class="texto-verde">Sematter Sementes</span> <br />
                         Rua Arno Erich Schwambach, 990  <br />
@@ -130,9 +143,9 @@
                         São Miguel do Oeste - SC <br />
                         Fone: (49)3622-8263 <br />
                         comercial@semattersementes.com.br<br />
-
+					<div class="visible-xs"><hr></div>
                   </div>
-                  <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                  <div class="col-lg-2 col-md-4 col-sm-3 col-xs-12">
                        <span class="texto-verde">Acesso rápido</span> <br />
                       <%= link_to 'Inicial', root_path  %><br>
                       <%= link_to 'Adubação verde', page_path('adubacao-verde') %> <br>  
@@ -140,28 +153,21 @@
                       <%= link_to "Onde Comprar", page_path('revenda') %> <br>
                       <%= link_to "Notícias", page_path('noticias') %> <br>
                       <%= link_to "Contato", contacts_path %>
-
+					<div class="visible-xs"><hr></div>
                   </div>                  
-                  <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-
-	                    <span class="texto-verde">Acesso restrito</span>
-	                    <br>
-	                      <% if user_signed_in? %>
-	                        <%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-user"></span> <%= current_user.email %><% end %>
-	                        <br>
-	                        <%= link_to destroy_user_session_path, method: :delete do %><span class="glyphicon glyphicon-log-out"></span> Sair <% end %>
-	                         <br>
-	                      <% else %>
-	                        <%= link_to new_user_registration_path do %><span class="glyphicon glyphicon-user"></span> Cadastrar-se<% end %>
-	                        <br>
-	                        <%= link_to new_user_session_path do %><span class="glyphicon glyphicon-log-in"></span> Login <% end %>
-	                        <br>
-	                      <% end %>
-	                      <%= link_to 'https://mail.zoho.com/' do %>
-	                      <span class="glyphicon glyphicon-envelope"></span> Webmail
-	                      <% end %>
-
-                  </div>
+                  <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 text-center">
+                  <div class="visible-md visible-sm"><hr></div>
+	                  <div id="fb-root"></div>
+						<script>(function(d, s, id) {
+						  var js, fjs = d.getElementsByTagName(s)[0];
+						  if (d.getElementById(id)) return;
+						  js = d.createElement(s); js.id = id;
+						  js.src = "//connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v2.9";
+						  fjs.parentNode.insertBefore(js, fjs);
+						}(document, 'script', 'facebook-jssdk'));</script>
+	               
+	                  <div class="fb-page" data-href="https://www.facebook.com/semattersementes/"  data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/semattersementes/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/semattersementes/">Sematter Sementes</a></blockquote></div>
+	            </div>
               </div><!-- /.row -->
               <hr>
               <div class="row" style="padding-bottom: 50px; padding-top: 30px">

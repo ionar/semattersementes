@@ -12,6 +12,10 @@ class Product < ApplicationRecord
 	
 	default_scope { order(name: :asc) }  
 
+  def to_param
+    [id, name.parameterize].join("-")
+  end
+
   #scope :para_o_cultivo, -> (cultivo) { where cultivation_id: cultivo }
   #scope :storage, -> (storage_id) { where storage_id: storage_id }
 end
