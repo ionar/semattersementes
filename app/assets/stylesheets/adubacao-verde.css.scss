@@ -18,29 +18,31 @@
 	border-bottom: 2px solid #ccc;
 }
 
+/*
 #aduba-fundo{
 	height: 550px;
 	background: image-url('adubacao_verde.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;
-	background-color: #2C83E3;
+	//background-color: #2C83E3;
 	background-position: bottom center;
 	border-bottom: 5px solid #bccf00;
 	padding-top: 60px;
 }
+.aduba-caption{
+	background-color: #000;
+	background: rgba(0, 0, 0, 0.6);
+	color: #fff;
+	text-shadow: 0 1px 0 #000;
+}
+*/
 #raix-fundo{
 	background-color: #22463c;
 	color: #fff;
 	text-shadow: 0 1px 0 #000;
 	//padding-top: 60px;
 	padding: 20px;
-}
-
-.aduba-caption{
-	background-color: #000;
-	background: rgba(0, 0, 0, 0.6);
-	color: #fff;
-	text-shadow: 0 1px 0 #000;
+	border-bottom: 5px solid #bccf00;
 }
 
 .logo-raix{
@@ -54,16 +56,17 @@
   	justify-content: center;
 }
 
+
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
   .logo-raix{
-  	padding-top: 100px;
+  	padding-top: 70px;
   }
 }
 
 /* Large Devices, Wide Screens */
 @media only screen and (min-width : 1200px) {
   .logo-raix{
-  	padding-top: 100px;
+  	padding-top: 50px;
   }
 }
