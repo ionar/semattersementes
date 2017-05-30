@@ -4,6 +4,7 @@
 	      <h2><%= @product.name %></h2>
 	    </div>
 	    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	    <% if user_signed_in? and current_user.admin == true %>
 	      <div class="text-right">
 	        <h2>
 	          <%= link_to products_path, :class => 'btn btn-primary' do %>
@@ -17,6 +18,7 @@
 	          <% end %> 
 	        </h2>
 	      </div>
+	    <% end %>
 	    </div>
 	</div> <!-- /.row -->
 	    <div class="panel panel-default">
@@ -26,7 +28,7 @@
 	          <%= @product.name %>
 	        </p>
 	        <p>
-			  <strong><%= t("cultivation") %>:</strong>
+			  <strong><%= t("cultivations") %>:</strong>
 			  <% @product.cultivation.each do |cultivation| %>
 			  	<%= cultivation.name %>
 			  <% end %>
@@ -58,12 +60,22 @@
 				    </tbody>
 			  	</table>
 			<% else %>
-	        <p><strong>Objetivos relacionados:</strong></p>
+	        <p><strong>Aplicações:</strong></p>
 	        <table class="table table-striped">
 			<% @product.products_purposes_relations.each do |relation| %>
 				<tr>
-					<td><%= relation.purpose.name %></td>
-					<td><%= relation.stars %></td>
+					<td>
+					<div class="text-right">
+						<%= relation.purpose.name %>
+					</div>
+					</td>
+					<td>
+						<div class="texto-verde">
+							<% (1..relation.stars).each do %>
+								<span class="glyphicon glyphicon-star"></span>
+							<% end %>
+						</div>
+					<%# relation.stars %></td>
 				</tr>
 			<% end %>
 			</table>
