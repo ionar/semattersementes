@@ -15,6 +15,7 @@ class ProductsController < ApplicationController
     ##else
     ##@products = Product.all
     ##end
+    @cycles = Cycle.all
   end
 
   # GET /products/1

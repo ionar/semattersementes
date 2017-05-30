@@ -1,4 +1,13 @@
+<% @page_title = @product.name + " - Sematter Sementes" %>
+<% @content_title = "Produtos" %>
+
 <div class="container">
+<ol class="breadcrumb">
+  <li><%= link_to 'Inical', root_path %></li>
+  <li><%= link_to 'Produtos', products_path %></li>
+  <li class="active"><%= @product.name %></li>
+</ol>
+<div class="prod-raix"></div>
 	<div class="row">
 	    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 	      <h2><%= @product.name %></h2>
@@ -21,24 +30,20 @@
 	    <% end %>
 	    </div>
 	</div> <!-- /.row -->
-	    <div class="panel panel-default">
-	      <div class="panel-body">
-	        <p>
-	          <strong><%= t("name") %>:</strong>
-	          <%= @product.name %>
-	        </p>
-	        <p>
-			  <strong><%= t("cultivations") %>:</strong>
-			  <% @product.cultivation.each do |cultivation| %>
-			  	<%= cultivation.name %>
-			  <% end %>
+	<div class="faixa-product-titulo"></div>
+			<p class="lead">
+			  <%= t("cycle") %>:
+			  <strong><%= @product.cycle.name %></strong>
+			</p>	
+	        <p class="lead">
+			  Indicado para a cultura de:
+			  <ol class="breadcrumb">
+				  <% @product.cultivation.each do |cultivation| %>
+				  	<li><%= cultivation.name %></li>
+				  <% end %>
+			  </ol>
 			</p>
-			<p>
-			  <strong><%= t("cycle") %>:</strong>
-			  <%= @product.cycle.name %>
-			</p>
-			<p>
-	          <strong><%= t("description") %>:</strong>
+			<p class="lead">
 	          <%= @product.description %>
 	        </p>
 	        <% if user_signed_in? and current_user.admin == true %>
@@ -60,6 +65,8 @@
 				    </tbody>
 			  	</table>
 			<% else %>
+		<div class="panel panel-default">
+	      <div class="panel-body">
 	        <p><strong>Aplicações:</strong></p>
 	        <table class="table table-striped">
 			<% @product.products_purposes_relations.each do |relation| %>
