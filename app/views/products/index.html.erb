@@ -29,12 +29,10 @@
       <ul class="list-group">
         <% cycle.products.each do |product| %>
         <li class="list-group-item">
-          <%= link_to product.name, product %> - 
-          <% product.cultivation.each do |cultivation| %>
-          <span class="badge">
-            <%= cultivation.name %>
-            </span>
-          <% end %>
+          <%= link_to product.name, product %> 
+          <div class="produtos-cultivos">
+          <small><%= product.cultivation.map(&:name).join(" - ") %></small>
+          </div>
         </li>
       <% end %>
       </ul>
@@ -44,3 +42,9 @@
 </div><!-- /.row -->
 
 </div><!-- /.container -->
+
+         <%# product.cultivation.each do |cultivation| 
+          <div class="produtos-cultivos">
+            <%# cultivation.name 
+          </div>
+          <%# end %>
