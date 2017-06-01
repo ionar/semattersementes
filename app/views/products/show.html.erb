@@ -10,7 +10,9 @@
 <div class="prod-raix"></div>
 	<div class="row">
 	    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-	      <h2><%= @product.name %></h2>
+	    <div class="product-titulo">
+	      <h2><%= image_tag 'rx_medio.png', alt: "Raix", class: 'rx-image' %><%= @product.name.upcase.sub(/RX /, "") %></h2>
+	      </div>
 	    </div>
 	    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 	    <% if user_signed_in? and current_user.admin == true %>
@@ -33,15 +35,12 @@
 	<div class="faixa-product-titulo"></div>
 			<p class="lead">
 			  <%= t("cycle") %>:
-			  <strong><%= @product.cycle.name %></strong>
-			</p>	
+			  <strong><%= @product.cycle.name %></strong> (<%= @product.cycle.description %>)
+			</p>
+
 	        <p class="lead">
-			  Indicado para a cultura de:
-			  <ol class="breadcrumb">
-				  <% @product.cultivation.each do |cultivation| %>
-				  	<li><%= cultivation.name %></li>
-				  <% end %>
-			  </ol>
+			  Indicado para a cultura de: <strong>
+			  <%= @product.cultivation.map(&:name).join(" - ") %></strong>
 			</p>
 			<p class="lead">
 	          <%= @product.description %>
@@ -76,11 +75,12 @@
 						<%= relation.purpose.name %>
 					</div>
 					</td>
-					<td>
-						<div class="texto-verde">
-							<% (1..relation.stars).each do %>
-								<span class="glyphicon glyphicon-star"></span>
-							<% end %>
+					<td><div class="stars">
+							<div class="texto-verde">
+								<% (1..relation.stars).each do %>
+									<span class="glyphicon glyphicon-star"></span>
+								<% end %>
+							</div>
 						</div>
 					<%# relation.stars %></td>
 				</tr>
