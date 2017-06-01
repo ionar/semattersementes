@@ -29,7 +29,9 @@
       <ul class="list-group">
         <% cycle.products.each do |product| %>
         <li class="list-group-item">
-          <%= link_to product.name, product %> 
+          <%= link_to product, class: 'link-produto' do %>
+          <%= image_tag 'rx-mini-margens.png', alt: "Raix", class: 'rx-image' %><%= product.name.upcase.sub(/RX /, "") %>
+          <% end %>
           <div class="produtos-cultivos">
           <small><%= product.cultivation.map(&:name).join(" - ") %></small>
           </div>
