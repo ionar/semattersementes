@@ -33,7 +33,7 @@
           <%= image_tag 'rx-mini-margens.png', alt: "Raix", class: 'rx-image' %><%= product.name.upcase.sub(/RX /, "") %>
           <% end %>
           <div class="produtos-cultivos">
-          <small><%= product.cultivation.map(&:name).join(" - ") %></small>
+          <small><%= product.cultivation.map(&:name).join("/") %></small>
           </div>
         </li>
       <% end %>
