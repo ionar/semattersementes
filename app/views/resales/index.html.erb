@@ -27,11 +27,17 @@
     <%= render partial: 'map' %>
     </div> <!-- /.col -->
         <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
-         <h2> <%= 'Representantes para o estado de <strong>'.html_safe + params[:province] + '</strong>'.html_safe if params[:province].present? %></h2>
+         <h2><%= if params[:province].present?
+         'Representantes para o estado de <strong>'.html_safe + params[:province] + '</strong>'.html_safe
+            else
+              'Encontre seu representante'
+            end
+            %>
+         </h2>
 
               <% @resales.each do |resale| %>
                 <div class="well">
-                  <h3><%= resale.name %></h3>
+                  <h3><strong><%= resale.name %></strong></h3>
                  <%= resale.company_name %><br>
                   <%= resale.address %><br>
                   <%= resale.neighborhood %><br>

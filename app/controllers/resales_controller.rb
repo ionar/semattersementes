@@ -6,7 +6,8 @@ class ResalesController < ApplicationController
   # GET /resales
   # GET /resales.json
   def index
-    @resales = Resale.where(nil) # creates an anonymous scope
+    #@resales = Resale.where(nil) # creates an anonymous scope
+    @resales = {}
     @resales = Resale.where(province: params[:province]) if params[:province].present?
     #@resales = Resale.all
   end
