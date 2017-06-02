@@ -1,0 +1,77 @@
+<div class="container">
+  <div class="row">
+      <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+        <h2><%= @resale.name %></h2>
+      </div>
+      <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+        <div class="text-right">
+          <h2>
+            <%= link_to resales_path, :class => 'btn btn-primary' do %>
+              <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+            <% end %> 
+            <%= link_to edit_resale_path(@resale), :class => 'btn btn-success' do %>
+              <span class="glyphicon glyphicon-list-alt"></span> Editar
+            <% end %> 
+            <%= link_to resale_path(@resale), method: :delete, :class => 'btn btn-danger', data: { confirm: t('Are you sure?')  } do %>
+              <span class="glyphicon glyphicon-remove"></span> Apagar
+            <% end %> 
+          </h2>
+        </div>
+      </div>
+  </div> <!-- /.row -->
+      <div class="panel panel-default">
+        <div class="panel-body">
+          <p>
+            <strong><%= t('name') %>:</strong>
+            <%= @resale.name %>
+          </p>
+
+          <p>
+            <strong><%= t('company_name') %>:</strong>
+            <%= @resale.company_name %>
+          </p>
+
+          <p>
+            <strong><%= t('cnpj') %>:</strong>
+            <%= @resale.cnpj %>
+          </p>
+
+          <p>
+            <strong><%= t('address') %>:</strong>
+            <%= @resale.address %>
+          </p>
+
+          <p>
+            <strong><%= t('neighborhood') %>:</strong>
+            <%= @resale.neighborhood %>
+          </p>
+          <p>
+            <strong><%= t('cep') %>:</strong>
+            <%= @resale.cep %>
+          </p>
+          <p>
+            <strong><%= t('city') %>:</strong>
+            <%= @resale.city %>
+          </p>
+          <p>
+            <strong><%= t('province') %>:</strong>
+            <%= @resale.province %>
+          </p>
+
+          <p>
+            <strong><%= t('phone') %>:</strong>
+            <%= @resale.phone %>
+          </p>
+
+          <p>
+            <strong><%= t('email') %>:</strong>
+            <%= @resale.email %>
+          </p>
+
+          <p>
+            <strong><%= t('territory') %>:</strong>
+            <%= @resale.territory %>
+          </p>          
+        </div><!-- /panel-body -->
+      </div><!-- /panel -->
+</div><!-- /container -->

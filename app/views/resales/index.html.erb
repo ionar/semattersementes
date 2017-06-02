@@ -1,0 +1,49 @@
+<% @page_title = "Revendas - Sematter Sementes" %>
+<% @content_title = "Onde comprar" %>
+<div class="container">
+<ol class="breadcrumb">
+  <li><%= link_to 'Inical', root_path %></li>
+  <li class="active">Revendas</li>
+</ol>
+<% if user_signed_in? and current_user.admin == true %>
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+      <h2><%= t("resales") %></h2>
+    </div>
+    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+      <div class="text-right">
+        <h2>   
+          <%= link_to new_resale_path, :class => 'btn btn-primary' do %>
+            <span class="glyphicon glyphicon-plus"></span> Adicionar
+          <% end %>
+        
+        </h2>
+      </div>
+    </div>
+  </div> <!-- /.row -->
+  <% end %>
+  <div class="row">
+    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+    <%= render partial: 'map' %>
+    </div> <!-- /.col -->
+        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+         <h2> <%= 'Representantes para o estado de <strong>'.html_safe + params[:province] + '</strong>'.html_safe if params[:province].present? %></h2>
+
+              <% @resales.each do |resale| %>
+                <div class="well">
+                  <h3><%= resale.name %></h3>
+                 <%= resale.company_name %><br>
+                  <%= resale.address %><br>
+                  <%= resale.neighborhood %><br>
+                  <%= 'CEP:' + resale.cep + '<br>'.html_safe if resale.cep.present? %>
+                  <%= resale.city %> - <%= resale.province %><br>
+                  Fone: <%= resale.phone %><br>
+                  <%= 'e-mail:' + resale.email + '<br>'.html_safe if resale.email.present? %>
+                  Atua em: <%= resale.territory %>
+                </div>
+              <% end %>
+
+        </div> <!-- /.col -->
+  </div> <!-- /.row -->
+
+</div><!-- /.container -->

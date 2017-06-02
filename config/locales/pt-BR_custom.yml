@@ -74,3 +74,8 @@ pt-BR:
   email_message_success: "Sua mensagem foi enviada"
   email_message_error: "Sua mensagem não foi enviada"
   message: "Mensagem"
+  resale: "Revenda"
+  resales: "Revendas"
+  company_name: "Razão social"
+  neighborhood: "Bairro"
+  territory: "Área de atuação"

@@ -25,9 +25,9 @@
 
 //= require_tree .
 
-$(function() {
-  window.scrollReveal = new scrollReveal();
-});
+ $(function() {
+  window.scrollReveal = new scrollReveal({ reset: true });
+ });
 
 //$(document).on("turbolinks:load", function() {
 //$(document).on("page:change", function() {
@@ -50,7 +50,9 @@ document.addEventListener("turbolinks:load", function() {
         interval: 3000 //changes the speed
     })
 
+
  });
 
-
-
+document.addEventListener("turbolinks:visit", function() {
+  //window.scrollReveal = new scrollReveal();
+ });

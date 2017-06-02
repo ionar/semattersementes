@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :resales
   #get 'welcome/index'
 
   match '/contacts', to: 'contacts#new', via: 'get'
