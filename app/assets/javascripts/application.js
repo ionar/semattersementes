@@ -26,7 +26,7 @@
 //= require_tree .
 
  $(function() {
-  window.scrollReveal = new scrollReveal({ reset: true });
+  window.scrollReveal = new scrollReveal();
  });
 
 //$(document).on("turbolinks:load", function() {

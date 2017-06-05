@@ -20,44 +20,49 @@
     </div>
   </div> <!-- /.row -->
 <% @cycles.each do |cycle| %>
- <div class="well"><span class="texto-verde">Ciclo <%= cycle.name %></span></div>
-  <% cycle.products.in_groups_of(6, false).each do |group| %>
-    <div class="row">
-    <% group.each do |product| %>
-        <%= link_to product, class: 'col-lg-2 col-md-3 col-sm-4 col-xs-6 link-produto' do %>
-            <div class="box-produto">
-              <div class="no-hover">
-                <div class="no-hover-head">
-                </div>
-                <div class="no-hover-body">                      
-                      <%= image_tag 'mistura-redondo.png', alt: "Mistura", class: 'img-responsive' %>
-                </div><!-- /no-hover-body -->
-                <div class="no-hover-footer">
-                  <div class="product-titulo">
-                    <%= image_tag 'rx_medio.png', alt: "Raix", class: 'rx-image' %><%= product.name.upcase.sub(/RX /, "") %>
-                    </div>
-                  <span class="sombra"></span>
-                </div>
-              </div><!-- /no-hover -->  
-              <div class="hover">
-                <div class="hover-head">
-                  <%= image_tag 'rx_medio-branco.png', alt: "Raix", class: 'rx-image' %><%= product.name.upcase.sub(/RX /, "") %>
-                </div>
-                <div class="hover-body">
-                      <%= image_tag 'mistura-logo.jpg', alt: "Mistura", class: 'img-responsive' %>
-                </div><!-- /no-hover-body -->
-                <div class="hover-footer">                  
-                      Indicado para a cultura de 
-                      <%= product.cultivation.map(&:name).join(", ") %>
-                </div>
-              </div><!-- /hover -->  
-              
-            </div><!-- /box-produto -->
-        <% end %><!-- a/col -->
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <span class="texto-verde">Ciclo <%= cycle.name %><small> - <%= cycle.description %></small></span>
+    </div>
+    <div class="panel-body">
+       <% cycle.products.in_groups_of(6, false).each do |group| %>
+        <div class="row">
+        <% group.each do |product| %>
+          <%= link_to product, class: 'col-lg-2 col-md-3 col-sm-3 col-xs-6 link-produto' do %>
+              <div class="box-produto">
+                <div class="no-hover">
+                  <div class="no-hover-head">
+                  </div>
+                  <div class="no-hover-body">                      
+                        <%= image_tag 'mistura-redondo.png', alt: "Mistura", class: 'img-responsive' %>
+                  </div><!-- /no-hover-body -->
+                  <div class="no-hover-footer">
+                    <div class="product-titulo">
+                      <%= image_tag 'rx_medio.png', alt: "Raix", class: 'rx-image' %><%= product.name.upcase.sub(/RX /, "") %>
+                      </div>
+                    <span class="sombra"></span>
+                  </div>
+                </div><!-- /no-hover -->  
+                <div class="hover">
+                  <div class="hover-head">
+                    <%= image_tag 'rx_medio-branco.png', alt: "Raix", class: 'rx-image' %><%= product.name.upcase.sub(/RX /, "") %>
+                  </div>
+                  <div class="hover-body">
+                        <%= image_tag 'mistura-logo.jpg', alt: "Mistura", class: 'img-responsive' %>
+                  </div><!-- /no-hover-body -->
+                  <div class="hover-footer">                  
+                        Indicado para a cultura de 
+                        <%= product.cultivation.map(&:name).join(", ") %>
+                  </div>
+                </div><!-- /hover -->  
+                
+              </div><!-- /box-produto -->
+          <% end %><!-- a/col -->
+      <% end %>
+      </div><!-- /row -->
     <% end %>
-    </div><!-- /row -->
-  <% end %>
-  <hr>
+    </div><!-- /panel-body -->
+  </div><!-- /panel -->
 <% end %>
 </div><!-- /.container -->
 
