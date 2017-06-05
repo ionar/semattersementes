@@ -34,6 +34,8 @@
             end
             %>
          </h2>
+         <%= '<h3>Esolha um estado no mapa</h3>'.html_safe unless params[:province].present? %>
+         <%= '<h3>Até o momento, não há representantes para esse estado</h3>'.html_safe if @resales.empty? %>
 
               <% @resales.each do |resale| %>
                 <div class="well">

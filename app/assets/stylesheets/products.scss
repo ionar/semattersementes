@@ -2,6 +2,212 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+// INDEX
+
+/*
+
+
+.box-produto .no-hover .box-img {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.box-produto .no-hover .box-img img {
+    max-width: 60%;
+    -webkit-border-top-right-radius: 50%;
+    -webkit-border-bottom-right-radius: 0;
+    -webkit-border-bottom-left-radius: 0;
+    -webkit-border-top-left-radius: 0;
+    -moz-border-radius-topright: 50%;
+    -moz-border-radius-bottomright: 0;
+    -moz-border-radius-bottomleft: 0;
+    -moz-border-radius-topleft: 0;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%
+}
+
+
+
+
+
+.box-produto.hover {
+    background: #0381C7;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    opacity: 0;
+    z-index: 999;
+    position: absolute;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    text-align: center
+}
+
+
+.box-produto.hover .box-img {
+    position: relative;
+    text-align: center;
+    margin-top: 5px;
+    overflow: hidden
+}
+
+.box-produto.hover .box-img img {
+    max-width: 100%
+}
+
+.box-produto.hover p {
+    color: #fff;
+    font-size: .9em;
+    line-height: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: 600
+}
+
+.box-produto.hover .btn-saiba-mais {
+    display: inline-block;
+    border: 2px solid #EDE99E;
+    border-radius: 10px;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    font-size: .7em;
+    font-weight: 600;
+    color: #EDE99E;
+    margin-top: 10px;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out
+}
+
+.box-produto.hover .btn-saiba-mais:hover {
+    color: #e1da5d;
+    border: 2px solid #e1da5d
+}
+
+
+.box-produto .no-hover .no-hover-box {
+	height: 170px;
+	border: 1px solid #FF0000;
+	background: image-url('mistura-redondo.png');
+	background-size: 100%;
+	background-repeat: no-repeat;
+	background-color: #22463c;
+	//background-position: center;
+
+}
+
+/***********************************************/
+.link-produto, .link-produto:hover{
+	//border: 1px solid #000;
+	text-decoration: none;
+}
+.box-produto {
+	//height:200px;
+	//width: 100%;
+	//border: 1px solid #FF0000;
+	//overflow: hidden;
+	position: relative;
+}
+
+.box-produto:hover {
+ 	.no-hover{
+		opacity: 0;
+	}
+	.hover{
+		opacity: 1;
+	}
+}
+
+.box-produto .no-hover {
+	//z-index:999;
+	//overflow: hidden;
+	opacity: 1;
+    -webkit-transition: all .2s ease-out;
+    -moz-transition: all .2s ease-out;
+    -o-transition: all .2s ease-out;
+    transition: all .2s ease-out;
+    //height: 100%;
+    //width: 100%;
+    position: relative;
+    text-align: center;
+
+	.no-hover-head{
+		height: 45px;
+		//background-color: #22463c;
+	}
+
+	.no-hover-body{
+		//height: 100px;
+		//background-color: #CCCCCC;
+	}
+
+	.no-hover-footer{
+		height: 70px;
+		//background-color: #0000ff;
+		padding-top: 10px;
+		color: #22463c;
+    	font-weight: 600;
+    	font-size: 30px;
+	}
+
+	.sombra {
+    display: block;
+    height: 15px;
+    background: image-url('sombra.png') no-repeat center;
+    margin-bottom: 20px
+	}
+}
+
+.box-produto .hover {
+	//z-index: 1;
+	overflow: hidden;
+    -webkit-transition: all .3s ease-out;
+    -moz-transition: all .3s ease-out;
+    -o-transition: all .3s ease-out;
+    transition: all .3s ease-out;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    //height: 100%;
+    //width: 100%;
+    text-align: center;
+
+	.hover-head{
+		border-top: 4px solid #bccf00;
+		height: 45px;
+		background-color: #22463c;
+		color: #fff;
+    	font-weight: 600;
+    	font-size: 30px;
+	}
+
+	.hover-body{
+		//height: 100px;
+		//background-color: #FF3333;
+	}
+
+	.hover-footer{
+		height: 70px;
+		background-color: #22463c;
+		color: #fff;
+		padding: 10px 5px 5px 5px;
+	}
+}
+
 .prod-raix {
 	height: 150px;
 	background: image-url('placa.jpg');
@@ -11,28 +217,6 @@
 	background-position: bottom center;
 	border-bottom: 5px solid #bccf00;
 	//padding-top: 60px;
-}
-.faixa-product-titulo{
-	height: 5px;
-	background-color: #bccf00;
-}
-.produtos-cultivos{
-	color:#999;
-	text-align: right;
-	//border: 1px solid #FF0000;
-	float: right;
-}
-.link-produto{
-	font-weight:bold;
-	color: #2D5B4D;
-	padding: 0 3px 0 3px;
-}
-.link-produto:hover{
-	text-decoration: none;
-	font-weight:bold;
-	color: #22463c;
-	background-color:#d9d9d9;
-	padding: 0 3px 0 3px;
 }
 
 .rx-image{

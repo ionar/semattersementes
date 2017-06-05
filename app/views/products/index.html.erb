@@ -19,34 +19,72 @@
       </div>
     </div>
   </div> <!-- /.row -->
-<div class="row">
 <% @cycles.each do |cycle| %>
- <div class="col-lg-4 col-md-4">
- <div class="panel panel-default">
-      <!-- Default panel contents -->
-      <div class="panel-heading"><span class="texto-verde">Ciclo <%= cycle.name %></span></div>
-      <!-- List group -->
-      <ul class="list-group">
-        <% cycle.products.each do |product| %>
-        <li class="list-group-item">
-          <%= link_to product, class: 'link-produto' do %>
-          <%= image_tag 'rx-mini-margens.png', alt: "Raix", class: 'rx-image' %><%= product.name.upcase.sub(/RX /, "") %>
-          <% end %>
-          <div class="produtos-cultivos">
-          <small><%= product.cultivation.map(&:name).join("/") %></small>
-          </div>
-        </li>
-      <% end %>
-      </ul>
-    </div><!-- /panel -->
-  </div><!-- /.col -->
+ <div class="well"><span class="texto-verde">Ciclo <%= cycle.name %></span></div>
+  <% cycle.products.in_groups_of(6, false).each do |group| %>
+    <div class="row">
+    <% group.each do |product| %>
+        <%= link_to product, class: 'col-lg-2 col-md-2 col-sm-2 col-xs-2 link-produto' do %>
+            <div class="box-produto">
+              <div class="no-hover">
+                <div class="no-hover-head">
+                </div>
+                <div class="no-hover-body">                      
+                      <%= image_tag 'mistura-redondo.png', alt: "Mistura", class: 'img-responsive' %>
+                </div><!-- /no-hover-body -->
+                <div class="no-hover-footer">
+                  <div class="product-titulo">
+                    <%= image_tag 'rx_medio.png', alt: "Raix", class: 'rx-image' %><%= product.name.upcase.sub(/RX /, "") %>
+                    </div>
+                  <span class="sombra"></span>
+                </div>
+              </div><!-- /no-hover -->  
+              <div class="hover">
+                <div class="hover-head">
+                  <%= image_tag 'rx_medio-branco.png', alt: "Raix", class: 'rx-image' %><%= product.name.upcase.sub(/RX /, "") %>
+                </div>
+                <div class="hover-body">
+                      <%= image_tag 'mistura-logo.jpg', alt: "Mistura", class: 'img-responsive' %>
+                </div><!-- /no-hover-body -->
+                <div class="hover-footer">                  
+                      Indicado para a cultura de 
+                      <%= product.cultivation.map(&:name).join(", ") %>
+                </div>
+              </div><!-- /hover -->  
+              
+            </div><!-- /box-produto -->
+        <% end %><!-- a/col -->
+    <% end %>
+    </div><!-- /row -->
+  <% end %>
+  <hr>
 <% end %>
-</div><!-- /.row -->
-
 </div><!-- /.container -->
 
-         <%# product.cultivation.each do |cultivation| 
-          <div class="produtos-cultivos">
-            <%# cultivation.name 
-          </div>
-          <%# end %>
+
+<%#
+
+<div class="no-hover">
+                <div class="no-hover-head">
+                No hover
+                </div>
+                <div class="no-hover-body">
+                      <%= image_tag 'rx-mini-margens.png', alt: "Raix", class: 'rx-image' %><%# product.name.upcase.sub(/RX /, "") %#>
+                </div><!-- /no-hover-body -->
+                <div class="no-hover-footer">
+                      
+                </div>
+              </div><!-- /no-hover -->
+
+<div class="hover">
+                <div class="hover-head">
+                Não sou ninguém
+                </div>
+                <div class="hover-body">
+                      <%= image_tag 'rx-mini-margens.png', alt: "Raix", class: 'rx-image' %><%# product.name.upcase.sub(/RX /, "") 
+                </div><!-- /no-hover-body -->
+                <div class="hover-footer">
+                      <small> Indicado para a cultura de: <%= product.cultivation.map(&:name).join("/") </small>
+                </div>
+              </div><!-- /hover -->          
+%>              
