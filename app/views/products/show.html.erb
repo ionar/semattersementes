@@ -32,15 +32,13 @@
 	    <% end %>
 	    </div>
 	</div> <!-- /.row -->
-	<!--<div class="faixa-product-titulo"></div>-->
 			<p class="lead">
 			  <%= t("cycle") %>:
 			  <strong><%= @product.cycle.name %></strong> (<%= @product.cycle.description %>)
 			</p>
 
-	        <p class="lead">
-			  Indicado para a cultura de: <strong>
-			  <%= @product.cultivation.map(&:name).join(" - ") %></strong>
+	        <p class="lead"><strong>Adubação verde indicada para a cultura de: </strong>
+			  <%= @product.cultivation.map(&:name).join(" - ") %>
 			</p>
 			<p class="lead">
 	          <%= @product.description %>
