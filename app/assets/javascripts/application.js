@@ -11,10 +11,9 @@
 // about supported directives.
 //
 //= require jquery
-//= require jquery.turbolinks
 //= require jquery_ujs
 //= require scrollReveal
-//= require turbolinks
+//#Disable turbolinks //= require turbolinks
 //= require bootstrap-sprockets
 
 //= require moment

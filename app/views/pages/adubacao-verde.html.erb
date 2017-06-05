@@ -8,17 +8,21 @@
 </ol>
  	<div class="row">
  		<div class="col-lg-4 col-md-4">
+ 		<%= scroll_reveal animation: 'enter left move 50px, after 0.1s' do %>
  			<div class="foto-adubacao-verde">
  				<%= image_tag 'adubacao_verde2.jpg', alt: "Adubação Verde", class: 'img-responsive img-thumbnail' %>
  			</div>
+ 		<% end %>
 		</div><!-- /col -->
  		<div class="col-lg-8 col-md-8">
- 		<h2 class="text-center" style="color:#bccf00; font-weight: bold">O que é adubação verde?</h2>
- 		<p class="lead">O Raíx é um <strong>Mix de Sementes</strong> inovador para <strong>Adubação Verde</strong> e cobertura vegetal, capaz de transformar o solo nas entressafras. A combinação inteligente de plantas proporciona múltiplos benefícios para o solo, renovando os nutrientes de forma natural e melhorando aspectos físicos, químicos e biológicos.</p>
-		<p class="lead">O resultado é um aumento expressivo do <strong>potencial produtivo</strong> das culturas comerciais semeadas posteriormente. Fazendo a manutenção inteligente do solo, o Raíx reduz custos e <strong>aumenta a produtividade</strong>, maximizando a <strong>lucratividade da lavoura</strong>.</p>
+ 		<%= scroll_reveal animation: 'enter bottom, move 50px, after 0.3s' do %>
+	 		<h2 class="text-center" style="color:#bccf00; font-weight: bold">O que é adubação verde?</h2>
+	 		<p class="lead">O Raíx é um <strong>Mix de Sementes</strong> inovador para <strong>Adubação Verde</strong> e cobertura vegetal, capaz de transformar o solo nas entressafras. A combinação inteligente de plantas proporciona múltiplos benefícios para o solo, renovando os nutrientes de forma natural e melhorando aspectos físicos, químicos e biológicos.</p>
+			<p class="lead">O resultado é um aumento expressivo do <strong>potencial produtivo</strong> das culturas comerciais semeadas posteriormente. Fazendo a manutenção inteligente do solo, o Raíx reduz custos e <strong>aumenta a produtividade</strong>, maximizando a <strong>lucratividade da lavoura</strong>.</p>
+		<% end %>
 		</div><!-- /col -->		
 	</div><!-- /row --> 		
-
+<%= scroll_reveal animation: 'enter bottom, move 100px, after 0.3s' do %>
 <div id="raix-fundo">
  	<div class="row">
  		<div class="col-lg-8 col-md-8">
@@ -33,7 +37,7 @@
  		</div><!-- /col --> 		
  		</div><!-- /row -->
 </div><!--/raix-fundo -->
-
+<% end %>
 
 <h2 style="font-weight: bold">Culturas que podem ser beneficiadas</h2>
 <p class="lead">
@@ -109,6 +113,7 @@ A Adubação Verde ou cobertura vegetal, é uma tendência mundial de manejo de 
 <h2 style="font-weight: bold">Principais benefícios</h2>
 <div class="row">
 	<div class="col-lg-4 col-md-4">
+		<%= scroll_reveal animation: 'enter left, move 50px, after 0.3s' do %>
 		<div class="panel panel-default">
 		  <!-- Default panel contents -->
 		  <div class="panel-heading"><span class="texto-verde">FERTILIDADE</span></div>
@@ -124,8 +129,10 @@ A Adubação Verde ou cobertura vegetal, é uma tendência mundial de manejo de 
 			<li class="list-group-item">Atividade da biomassa durante períodos de estiagem</li>
 		  </ul>
 		</div><!-- /panel -->
+		<% end %>
 	</div><!-- /col -->
 	<div class="col-lg-4 col-md-4">
+	<%= scroll_reveal animation: 'enter left, move 50px, after 0.6s' do %>
 		<div class="panel panel-default">
 		  <!-- Default panel contents -->
 		  <div class="panel-heading"><span class="texto-verde">RENTABILIDADE</span></div>
@@ -140,8 +147,10 @@ A Adubação Verde ou cobertura vegetal, é uma tendência mundial de manejo de 
 			<li class="list-group-item">Praticidade de implantação</li>
 		  </ul>
 		</div><!-- /panel -->
+		<% end %>
 	</div><!-- /col -->
 	<div class="col-lg-4 col-md-4">
+	<%= scroll_reveal animation: 'enter left, move 50px, after 0.9s' do %>
 		<div class="panel panel-default">
 		  <!-- Default panel contents -->
 		  <div class="panel-heading"><span class="texto-verde">EQUILÍBRIO</span></div>
@@ -158,6 +167,7 @@ A Adubação Verde ou cobertura vegetal, é uma tendência mundial de manejo de 
 			<li class="list-group-item">Duração de palhada após dessecação (tempo de controle contra erosão)</li>
 		  </ul>
 		</div><!-- /panel -->
+		<% end %>
 	</div><!-- /col -->
 </div><!-- /row -->
 <!--

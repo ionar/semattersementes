@@ -52,8 +52,10 @@
               <% end %>
         </div> <!-- /.col -->
         <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-    <%= render partial: 'map' %>
-    </div> <!-- /.col -->
+        <%= scroll_reveal animation: 'enter right' do %>
+          <%= render partial: 'map' %>
+        <% end %>
+        </div> <!-- /.col -->
   </div> <!-- /.row -->
 
 </div><!-- /.container -->

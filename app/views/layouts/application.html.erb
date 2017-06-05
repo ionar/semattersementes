@@ -8,8 +8,11 @@
   <meta name="description" content="Sematter Sementes">
   <meta name="author" content="@michielin">
   <%= csrf_meta_tags %>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%# stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+
+  <%# javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application' %>
   <%= render 'application/favicon' %>
 </head>
 <body>
@@ -24,23 +27,25 @@
 <% end %><!-- /flash messages -->
 <div id="menu-lg" class="visible-lg visible-md">
 	<div class="container cabecalho">
+				<%= scroll_reveal animation: 'enter left' do %>
                 <div class="box-logo">
                     <%= link_to root_path do %>
 		    			<%= image_tag "sematter-logo-verde-195x55.png", alt: "Sematter Sementes" %>
 		    		<% end %>
                 </div>
+                <% end %>
+                <%= scroll_reveal animation: 'enter top, after 0.2s' do %>
                 <div class="box-pesquisa-social pull-right">
                     <%= link_to 'https://www.facebook.com/semattersementes/', target: '_blank' do %>
 		    			<%= image_tag "link-facebook.png", alt: "Facebook", class: 'img-responsive' %>
 		    		<% end %>
                 </div>
-            	<%= scroll_reveal animation: 'enter top move 50px, after 0.2s' do %>
+                <% end %>
+            	<%= scroll_reveal animation: 'enter top' do %>
                 <div class="box-menu">
                     <ul class="list-unstyled">
                         <li class="">
-                        
                             <li class="<%= static_active?('adubacao-verde') %>"><%= link_to 'ADUBAÇÃO VERDE', page_path('adubacao-verde') %></li>
-                        
 							<li class="<%= active?('products')%>"><%= link_to "PRODUTOS", products_path %></li>
 							<li class="<%= active?('resales')%>"><%= link_to "ONDE COMPRAR", resales_path %></li>
 							<li class="<%= static_active?('noticias') %>"><%= link_to "NOTÍCIAS", page_path('noticias') %></li>				
@@ -113,12 +118,11 @@
   	<section class="rodape">
               <div class="row">
                   <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
-                    <div>
-	                    <%= scroll_reveal animation: 'enter bottom move 50px, after 0.4s' do %>
+                  <%= scroll_reveal animation: 'enter bottom move 50px, after 0.2s' do %>
+                    <div>	                    
 	                      <%= link_to root_path do %>
 	                          <%= image_tag 'sematter-logo-verde-195x55.png', :alt => 'Sematter', :class => 'img-responsive center-block logo-footer' %>
 	                        <% end %>
-	                    <% end %>
 					</div>
 	                    <br><br>
 	                      <% if user_signed_in? %>
@@ -134,8 +138,10 @@
 	                      <span class="glyphicon glyphicon-envelope"></span> Webmail
 	                      <% end %>
 	                      <div class="visible-xs"><hr></div>
-                  </div>
+	              <% end %>
+                  </div><!-- /col -->
                   <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
+                  <%= scroll_reveal animation: 'enter bottom move 50px, after 0.4s' do %>
 
                        <span class="texto-verde">Sematter Sementes</span> <br />
                         Rua Arno Erich Schwambach, 990  <br />
@@ -144,8 +150,10 @@
                         Fone: (49)3622-8263 <br />
                         comercial@semattersementes.com.br<br />
 					<div class="visible-xs"><hr></div>
+					<% end %>
                   </div>
                   <div class="col-lg-2 col-md-4 col-sm-3 col-xs-12">
+                  <%= scroll_reveal animation: 'enter bottom move 50px, after 0.6s' do %>
                        <span class="texto-verde">Acesso rápido</span> <br />
                       <%= link_to 'Inicial', root_path  %><br>
                       <%= link_to 'Adubação verde', page_path('adubacao-verde') %> <br>  
@@ -154,8 +162,10 @@
                       <%= link_to "Notícias", page_path('noticias') %> <br>
                       <%= link_to "Contato", contacts_path %>
 					<div class="visible-xs"><hr></div>
+					<% end %>
                   </div>                  
                   <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12 text-center" >
+                  <%= scroll_reveal animation: 'enter bottom move 50px, after 0.8s' do %>
                   	<div id='plugin-social' data-turbolinks-permanent>
                   		<div class="visible-md visible-sm"><hr></div>
 	                  	<div id="fb-root"></div>
@@ -169,16 +179,21 @@
 	               
 	                  <div class="fb-page" data-href="https://www.facebook.com/semattersementes/"  data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/semattersementes/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/semattersementes/">Sematter Sementes</a></blockquote></div>
 	                </div>
+	                <% end %>
 	              </div>
               </div><!-- /.row -->
               <hr>
               <div class="row" style="padding-bottom: 50px; padding-top: 30px">
               	<div class="col-md-8">
+              	<%= scroll_reveal animation: 'enter bottom move 50px, after 1s' do %>
               	<span class="glyphicon glyphicon-copyright-mark"></span> 2017 SEMATTER SEMENTES- Todos os direitos reservados
               	</div>
+              	<% end %>
               	<div class="col-md-4">
+              	<%= scroll_reveal animation: 'enter bottom move 50px, after 1.2s' do %>
 					<%= link_to "http://www.ionar.com.br", target: '_blank' do %>
 	              		<%= image_tag 'logo_ionar.png', :alt => 'Ionar', :class => 'pull-right img-responsive' %>
+	            	<% end %>
 	            	<% end %>
               	</div>
               </div><!-- /.row -->
