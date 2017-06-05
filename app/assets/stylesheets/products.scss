@@ -6,13 +6,6 @@
 
 /*
 
-
-.box-produto .no-hover .box-img {
-    position: relative;
-    text-align: center;
-    overflow: hidden;
-}
-
 .box-produto .no-hover .box-img img {
     max-width: 60%;
     -webkit-border-top-right-radius: 50%;
@@ -36,80 +29,6 @@
 }
 
 
-
-
-
-.box-produto.hover {
-    background: #0381C7;
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    transition: all .3s ease-out;
-    opacity: 0;
-    z-index: 999;
-    position: absolute;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    text-align: center
-}
-
-
-.box-produto.hover .box-img {
-    position: relative;
-    text-align: center;
-    margin-top: 5px;
-    overflow: hidden
-}
-
-.box-produto.hover .box-img img {
-    max-width: 100%
-}
-
-.box-produto.hover p {
-    color: #fff;
-    font-size: .9em;
-    line-height: 14px;
-    padding-left: 15px;
-    padding-right: 15px;
-    text-align: center;
-    margin-top: 10px;
-    font-weight: 600
-}
-
-.box-produto.hover .btn-saiba-mais {
-    display: inline-block;
-    border: 2px solid #EDE99E;
-    border-radius: 10px;
-    text-transform: uppercase;
-    padding: 3px 10px;
-    font-size: .7em;
-    font-weight: 600;
-    color: #EDE99E;
-    margin-top: 10px;
-    -webkit-transition: all .3s ease-out;
-    -moz-transition: all .3s ease-out;
-    -o-transition: all .3s ease-out;
-    transition: all .3s ease-out
-}
-
-.box-produto.hover .btn-saiba-mais:hover {
-    color: #e1da5d;
-    border: 2px solid #e1da5d
-}
-
-
-.box-produto .no-hover .no-hover-box {
-	height: 170px;
-	border: 1px solid #FF0000;
-	background: image-url('mistura-redondo.png');
-	background-size: 100%;
-	background-repeat: no-repeat;
-	background-color: #22463c;
-	//background-position: center;
-
-}
-
 /***********************************************/
 .link-produto, .link-produto:hover{
 	//border: 1px solid #000;
@@ -119,7 +38,7 @@
 	//height:200px;
 	//width: 100%;
 	//border: 1px solid #FF0000;
-	//overflow: hidden;
+	overflow: hidden;
 	position: relative;
 }
 
