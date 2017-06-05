@@ -23,10 +23,7 @@
   </div> <!-- /.row -->
   <% end %>
   <div class="row">
-    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
-    <%= render partial: 'map' %>
-    </div> <!-- /.col -->
-        <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
+    <div class="col-lg-7 col-md-7 col-sm-12 col-xs-12">
          <h2><%= if params[:province].present?
          'Representantes para o estado de <strong>'.html_safe + params[:province] + '</strong>'.html_safe
             else
@@ -35,7 +32,10 @@
             %>
          </h2>
          <%= '<h3>Esolha um estado no mapa</h3>'.html_safe unless params[:province].present? %>
-         <%= '<h3>Até o momento, não há representantes para esse estado</h3>'.html_safe if @resales.empty? %>
+         <%= if params[:province].present? and @resales.empty?
+         '<h3>Até o momento, não há representantes para esse estado</h3>'.html_safe 
+         end 
+         %>
 
               <% @resales.each do |resale| %>
                 <div class="well">
@@ -50,8 +50,10 @@
                   Atua em: <%= resale.territory %>
                 </div>
               <% end %>
-
         </div> <!-- /.col -->
+        <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12">
+    <%= render partial: 'map' %>
+    </div> <!-- /.col -->
   </div> <!-- /.row -->
 
 </div><!-- /.container -->
