@@ -1,0 +1,28 @@
+<% @page_title = "Notícias - Sematter Sementes" %>
+<% @content_title = "Notícias" %>
+
+<div class="container">
+<ol class="breadcrumb">
+  <li><%= link_to 'Inical', root_path %></li>
+  <li class="active">Notícias</li>
+</ol>
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="text-right">
+      <% if user_signed_in? and current_user.admin == true %>
+        <h2>
+          <%= link_to new_news_path, :class => 'btn btn-primary' do %>
+            <span class="glyphicon glyphicon-plus"></span> Adicionar
+          <% end %>
+        </h2>
+        <% end %>
+      </div>
+    </div>
+  </div> <!-- /.row -->
+    <% @news.each do |news| %>
+    <p class="lead">
+      <%= link_to news.title, news %>
+      </p>
+    <hr>
+    <% end %>
+</div><!-- /.container -->

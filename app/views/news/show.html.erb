@@ -1,0 +1,39 @@
+<% @page_title = "Notícias - Sematter Sementes" %>
+<% @content_title = "Notícias" %>
+
+<div class="container">
+	<ol class="breadcrumb">
+	  <li><%= link_to 'Inical', root_path %></li>
+	  <li><%= link_to 'Noticias', news_index_path %></li>
+	  <li class="active"><%= @news.title %></li>
+	</ol>
+<div class="row">
+	    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+	    <div class="product-titulo">
+	      <h2><%= @news.title %></h2>
+	      </div>
+	    </div>
+	    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+	    <% if user_signed_in? and current_user.admin == true %>
+	      <div class="text-right">
+	        <h2>
+	          <%= link_to news_index_path, :class => 'btn btn-primary' do %>
+	            <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+	          <% end %> 
+	          <%= link_to edit_news_path(@news), :class => 'btn btn-success' do %>
+	            <span class="glyphicon glyphicon-list-alt"></span> Editar
+	          <% end %> 
+	          <%= link_to news_path(@news), method: :delete, :class => 'btn btn-danger', data: { confirm: t('Are you sure?')  } do %>
+	            <span class="glyphicon glyphicon-remove"></span> Apagar
+	          <% end %> 
+	        </h2>
+	      </div>
+	    <% end %>
+	    </div>
+	</div> <!-- /.row -->
+<p><%=l @news.created_at, format: :long %></p>
+	<p class="lead">
+	  <%= @news.description %>
+	</p>
+
+</div><!-- /container -->

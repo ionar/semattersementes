@@ -30,8 +30,9 @@
 
 //$(document).on("turbolinks:load", function() {
 //$(document).on("page:change", function() {
-document.addEventListener("turbolinks:load", function() {
+//document.addEventListener("turbolinks:load", function() {
 //  $(document).on('ready page:load', function () {
+$( document ).ready(function() {  
 
   //alert("page has loaded!");
   $(".auto-close-alert").fadeTo(2000, 500).slideUp(500, function(){
@@ -50,8 +51,4 @@ document.addEventListener("turbolinks:load", function() {
     })
 
 
- });
-
-document.addEventListener("turbolinks:visit", function() {
-  //window.scrollReveal = new scrollReveal();
  });
