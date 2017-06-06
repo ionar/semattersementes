@@ -15,15 +15,16 @@
 
         <!-- Wrapper for Slides -->
         <div class="carousel-inner">
+        <% btn = image_path('bt-saiba-mais.png') %>
            <% @banners.each_with_index do |banner, index| %>
-            <%=
+            <%=          
                 if index == 0
                     render inline: "
                                     <div class='item active'>
                                     <!-- Set the first background image using inline CSS below. -->
                                         <div class='fill' style=\"background-image:url('#{banner.image.url(:original)}');\"></div>
                                         <div class='carousel-caption'>
-                                            <h2><a href='#{banner.link}'><img src='bt-saiba-mais.png' class='img-responsive center-block bt-saiba-mais'></a></h2>
+                                            <h2><a href='#{banner.link}'><img src='#{btn}' class='img-responsive center-block bt-saiba-mais' alt='Saiba mais'></a></h2>
                                         </div>
                                     </div>
                     "
@@ -33,7 +34,7 @@
                                     <!-- Set the second background image using inline CSS below. -->
                                         <div class='fill' style=\"background-image:url('#{banner.image.url(:original)}');\"></div>
                                         <div class='carousel-caption'>
-                                            <h2><a href='#{banner.link}'><img src='bt-saiba-mais.png' class='img-responsive center-block bt-saiba-mais'></a></h2>
+                                            <h2><a href='#{banner.link}'><img src='#{btn}' class='img-responsive center-block bt-saiba-mais' alt='Saiba mais'></a></h2>
                                         </div>
                                     </div>
                     "
@@ -51,33 +52,46 @@
     </header>
 <!-- /Carousel -->
 <div id="qual">
+<%= scroll_reveal animation: 'enter left move 50px' do %>
     <div class="container">
         <h2 class="text-center">QUAL É O RAIX INDICADO PARA O MEU USO?</h2>
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
-            <%= simple_form_for :search, :class => 'navbar-form navbar-left form-inline', url: products_path, :method => :get do |f| %>
-            <%= f.input :raix, :as => :date_picker, :label => "Data do plantio do Raix" %>
-            <%= f.input :cultura, :as => :date_picker,:label => "Data do plantio da sua cultura comercial" %>
-            <div class="form-group">
-            <label class="control-label" for="search_raix"><abbr title="required">*</abbr> Cultura Comercial</label>
-                        <select name="cultivation" class="form-control">
-                          <option value="">Cultivo</option>
-                          <% Cultivation.all.collect do |p| %>
-                          <option value="<%= p.id %>"><%= p.name %></option>
-                          <% end %>
-                        </select>
-                      </div>
-            <%= f.submit "SOLUÇÃO", class: "btn btn-default" %>
-            <% end %>
+        <%= form_tag(products_path, :role => 'search', :method => :get) do %>
+          <div class="form-group">
+          <label class="control-label" for="data-raix">Data do plantio do Raix</label>
+            <div class='input-group date datepicker'>                
+                <%= text_field_tag 'data-raix', nil, placeholder: 'Data do plantio do Raix', :class => 'form-control datepickerinput' %>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
+          <div class="form-group">
+          <label class="control-label" for="data-raix">Data do plantio do Raix</label>
+            <div class='input-group date datepicker'>                
+                <%= text_field_tag 'data-cultura', nil, placeholder: 'Data do plantio da sua cultura comercial', :class => 'form-control datepickerinput' %>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-calendar"></span>
+                </span>
+            </div>
+          </div>
+        <div class="form-group">
+        <label class="control-label" for="cultivation">Cultura Comercial</label>
+                    <select name="cultivation" class="form-control" id="cultivation">
+                      <option value="">Cultivo</option>
+                      <% Cultivation.all.collect do |p| %>
+                      <option value="<%= p.id %>"><%= p.name %></option>
+                      <% end %>
+                    </select>
+                  </div>
+                 <%= button_tag(type: "submit", class: "btn btn-default") do %>
+                    <span class="glyphicon glyphicon-zoom-in"></span> Buscar
+                <% end %>
+        <% end %>
         </div><!-- /col -->
     </div><!-- /row -->
     </div><!-- /container -->
+    <% end %><!-- /scrollrevealjs -->
 </div><!-- /qual -->
 
-
-    <!-- Script to Activate the Carousel -->
-    <script>
-    $('.carousel').carousel({
-        interval: 3000 //changes the speed
-    })
-    </script>
