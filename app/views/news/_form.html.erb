@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
     <%= f.input :title, label: t('title') %>
-    <%= f.input :description, label: t('description') %>
+    <%= f.input :description, label: t('description'), as: :wysihtml5, wysihtml5: { locale: "pt-BR" } %>
   </div>
 
     <div class="actions text-right">

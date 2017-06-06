@@ -33,7 +33,7 @@
 	</div> <!-- /.row -->
 <p><%=l @news.created_at, format: :long %></p>
 	<p class="lead">
-	  <%= @news.description %>
+	  <%= @news.description.html_safe %>
 	</p>
 
 </div><!-- /container -->

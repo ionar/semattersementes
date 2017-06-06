@@ -82,3 +82,5 @@ gem 'cancancan'
 gem 'mail_form'
 
 gem "scrollreveal-rails"  
+
+gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'

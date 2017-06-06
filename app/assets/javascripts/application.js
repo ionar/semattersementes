@@ -21,6 +21,8 @@
 //= require pickers
 //= require moment/pt-br
 
+//= require bootstrap-wysihtml5
+
 
 //= require_tree .
 
