@@ -6,6 +6,7 @@
   <li><%= link_to 'Inical', root_path %></li>
   <li class="active">Adubação Verde</li>
 </ol>
+	<%= scroll_reveal animation: 'enter left' do %>
  	<div class="row parte1 center-align">
  		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
  			<%# image_tag 'adubacao-arvores.png', alt: "Árvores", class: 'img-responsive', style: 'vertical-align: bottom' %>
@@ -18,6 +19,8 @@
 	 		</p>
  		</div><!-- /col --> 
  	</div><!-- /row -->
+ 	<% end %>
+ 	<%= scroll_reveal animation: 'enter right' do %>
  	<div class="row parte2 vertical-align">
  		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
  		<p class="lead paragrafo-dizeres">
@@ -31,6 +34,8 @@
  			<%= image_tag 'adubacao-troca.png', alt: "Troca", class: 'img-responsive', style: 'vertical-align: bottom' %>
  		</div><!-- /col -->  
  	</div><!-- /row -->
+ 	<% end %>
+ 	<%= scroll_reveal animation: 'enter left' do %>
  	<div class="row parte3 vertical-align">
  		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
  			<%= image_tag 'adubacao-raizes.png', alt: "Raizes", class: 'img-responsive', style: 'vertical-align: bottom' %>
@@ -44,6 +49,8 @@
 		</p>
  		</div><!-- /col -->  
  	</div><!-- /row -->
+ 	<% end %>
+ 	<%= scroll_reveal animation: 'enter right' do %>
  	 <div class="row parte4 vertical-align">
  		<div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
  		<p class="lead paragrafo-dizeres">
@@ -57,6 +64,8 @@
  		<%= image_tag 'adubacao-crescimento.png', alt: "Crescimento", class: 'img-responsive', style: 'vertical-align: bottom' %>
  		</div><!-- /col -->  
  	</div><!-- /row -->
+ 	<% end %>
+ 	<%= scroll_reveal animation: 'enter left' do %>
  	<div class="row parte5 vertical-align">
  		<div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
  			<%= image_tag 'adubacao-paises.png', alt: "Mundo", class: 'img-responsive' %>
@@ -70,5 +79,6 @@
 		E se tivesse uma forma de combinar na proporção exata essas plantas inteligentes para a obtenção da melhor performance do solo? Queremos apresentar o Raíx para você. Saiba mais.
 		</p>
  		</div><!-- /col -->  
- 	</div><!-- /row --> 	
+ 	</div><!-- /row --> 
+ 	<% end %>	
 </div><!-- /container -->
