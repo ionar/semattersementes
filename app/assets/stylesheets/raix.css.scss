@@ -1,0 +1,63 @@
+.culturas-lista{
+	text-align: center;
+}
+
+.cultura{
+	width: 120px;
+	height: 150px;
+	float: left;
+	background-color: #22463c;
+	margin-right: 2px;
+}
+.cultura-titulo{
+	text-align: center;
+	font-weight: bold;
+	background-color: #bccf00;
+	text-transform: uppercase;
+	color: #fff;
+	border-bottom: 2px solid #ccc;
+}
+
+#raix-fundo{
+	background-color: #22463c;
+	color: #fff;
+	text-shadow: 0 1px 0 #000;
+	//padding-top: 60px;
+	padding: 20px;
+	border-bottom: 5px solid #bccf00;
+}
+
+.logo-raix{
+	/*
+	height: 100%;
+  	min-height: 100%;
+  	display: -webkit-flex;
+  	display: flex;
+  	-webkit-align-items: center;
+  	align-items: center;
+  	-webkit-justify-content: center;
+  	justify-content: center;
+  	*/
+}
+
+
+/* Medium Devices, Desktops */
+@media only screen and (min-width : 992px) {
+  .logo-raix{
+  	padding-top: 70px;
+  }
+  .foto-adubacao-verde{
+  	padding-top: 70px;
+  }
+}
+
+/* Large Devices, Wide Screens */
+@media only screen and (min-width : 1200px) {
+  .logo-raix{
+  	padding-top: 50px;
+  }
+  .foto-adubacao-verde{
+  	padding-top: 30px;
+  }
+}
+

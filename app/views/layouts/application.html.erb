@@ -46,6 +46,7 @@
                     <ul class="list-unstyled">
                         <li class="">
                             <li class="<%= static_active?('adubacao-verde') %>"><%= link_to 'ADUBAÇÃO VERDE', page_path('adubacao-verde') %></li>
+                            <li class="<%= static_active?('raix') %>"><%= link_to 'RAÍX', page_path('raix') %></li>
 							<li class="<%= active?('products')%>"><%= link_to "PRODUTOS", products_path %></li>
 							<li class="<%= active?('resales')%>"><%= link_to "ONDE COMPRAR", resales_path %></li>
 							<li class="<%= active?('news')%>"><%= link_to "NOTÍCIAS", news_index_path %></li>				
@@ -88,9 +89,10 @@
 		<div class="collapse navbar-collapse navbar-right" id="menu">
 			<ul class="nav navbar-nav">
 				<li class="<%= static_active?('adubacao-verde') %>"><%= link_to 'ADUBAÇÃO VERDE', page_path('adubacao-verde') %></li>
+				<li class="<%= static_active?('raix') %>"><%= link_to 'RAÍX', page_path('raix') %></li>
 				<li class="<%= active?('products')%>"><%= link_to "PRODUTOS", products_path %></li>
 				<li class="<%= active?('resales')%>"><%= link_to "ONDE COMPRAR", resales_path %></li>
-				<li class="<%= static_active?('noticias') %>"><%= link_to "NOTÍCIAS", page_path('noticias') %></li>				
+				<li class="<%= active?('noticias') %>"><%= link_to "NOTÍCIAS", news_index_path %></li>				
 				<li class="<%= active?('contacts')%>"><%= link_to "CONTATO", contacts_path %></li>
 				<% if user_signed_in? and current_user.admin == true %>
 				<li class="dropdown">

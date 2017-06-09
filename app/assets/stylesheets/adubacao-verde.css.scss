@@ -1,63 +1,34 @@
-.culturas-lista{
-	text-align: center;
-}
 
-.cultura{
-	width: 120px;
-	height: 150px;
-	float: left;
-	background-color: #22463c;
-	margin-right: 2px;
+.parte1 {
+	//background-color: #FFF9DF;
+	color: #333;
+	background: image-url('adubacao-arvores.png');
+	//background-size: cover;
+	background-repeat: no-repeat;
+	background-position: bottom left;
 }
-.cultura-titulo{
-	text-align: center;
-	font-weight: bold;
-	background-color: #bccf00;
-	text-transform: uppercase;
+.parte2 {
+	background-color: #7CC144;
 	color: #fff;
-	border-bottom: 2px solid #ccc;
 }
-
-#raix-fundo{
-	background-color: #22463c;
+.parte3 {
+	background-color: #38932C;
 	color: #fff;
-	text-shadow: 0 1px 0 #000;
-	//padding-top: 60px;
-	padding: 20px;
-	border-bottom: 5px solid #bccf00;
+}
+.parte4 {
+	background-color: #1C6611;
+	color: #fff;
+}
+.parte5 {
+	background-color: #154D0D;
+	color: #fff;
 }
 
-.logo-raix{
-	/*
-	height: 100%;
-  	min-height: 100%;
-  	display: -webkit-flex;
-  	display: flex;
-  	-webkit-align-items: center;
-  	align-items: center;
-  	-webkit-justify-content: center;
-  	justify-content: center;
-  	*/
+.paragrafo-dizeres {
+	padding: 10px;
 }
 
-
-/* Medium Devices, Desktops */
-@media only screen and (min-width : 992px) {
-  .logo-raix{
-  	padding-top: 70px;
-  }
-  .foto-adubacao-verde{
-  	padding-top: 70px;
-  }
+.vertical-align {
+    display: flex;
+    align-items: center;
 }
-
-/* Large Devices, Wide Screens */
-@media only screen and (min-width : 1200px) {
-  .logo-raix{
-  	padding-top: 50px;
-  }
-  .foto-adubacao-verde{
-  	padding-top: 30px;
-  }
-}
-
