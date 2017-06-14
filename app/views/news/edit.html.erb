@@ -19,4 +19,32 @@
     </div>
   </div> <!-- /.row -->
 <%= render 'form', news: @news %>
+
+
+<% if user_signed_in? and current_user.admin == true %>
+  <div class="panel panel-default">
+    <div class="panel-heading"><span class="texto-verde">Enviar fotos</span></div>
+    <div class="panel-body">
+      <% @news.photonoticias.each do |photonoticia| %>
+    <p>
+    <strong>#<%= photonoticia.id %></strong>
+
+  <%= image_tag photonoticia.image.url(:thumb) %>
+   <%= link_to 'DELETE', news_photonoticia_path(@news, photonoticia), class: 'btn btn-success btn-xs', method: 'delete', data: { confirm: t('Are you sure?')}  %>
+    </p>
+  <% end %>
+
+  <%= form_for([@news, @news.photonoticias.build]) do |f| %>
+    <p>
+    <%= f.label :image, 'Foto' %><br />
+    <%= f.file_field :image %>
+    </p>
+    <%= button_tag(type: "submit", class: "btn btn-default") do %>
+          <span class="glyphicon glyphicon-floppy-disk"></span> Enviar foto
+      <% end %>
+  <% end %>
+    </div>
+  </div><!-- /panel -->
+<% end %>
+
 </div><!-- /.container -->

@@ -38,7 +38,9 @@
 
 @import "bootstrap-wysihtml5/bootstrap3-wysihtml5";
 
-/* cores #bccf00 #22463c */
+@import "lightbox-bootstrap";
+
+/* cores #A6C10B #004438 */
 
 
 html,
@@ -56,13 +58,20 @@ a:hover {
     text-decoration: underline;
 }
 
-.turbolinks-progress-bar {
-  height: 5px;
-  background-color: #22463c;
+.faixinha-verde{
+  height: 6px;
+  background-color: #004438;
+  -webkit-box-shadow: 0px 6px 5px -4px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 6px 5px -4px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 6px 5px -4px rgba(0, 0, 0, 0.3);
 }
 
+.faixinha-verde-meio{
+  height: 6px;
+  background-color:#A6C10B;
+}
 .badge{
-  background-color: #bccf00;
+  background-color: #A6C10B;
 }
 
 footer {
@@ -71,7 +80,7 @@ footer {
     margin-top: 50px;
     width: 100%;
     background-color: #fff;
-    /*border-top: 4px solid #bccf00;*/
+    /*border-top: 4px solid #A6C10B;*/
 }
 
 .logo-footer{
@@ -89,7 +98,7 @@ footer {
 }
 
 .texto-verde{
-	color: #bccf00;
+	color: #A6C10B;
 	font-weight: bold;
 	font-size: 17px;
 }
@@ -109,20 +118,20 @@ footer {
 }
 
 .navbar-default {
-	background-color: #bccf00;
+	background-color: #A6C10B;
 	border: 0;
 }
 
 .navbar-default .navbar-nav > .active{
    color: #000;
-   background: #22463c;
+   background: #004438;
  }
 
  .navbar-default .navbar-nav > .active > a,
  .navbar-default .navbar-nav > .active > a:hover,
  .navbar-default .navbar-nav > .active > a:focus {
       color: #fff;
-      background: #22463c;
+      background: #004438;
  }
  
 .navbar-default .navbar-nav > li > a:hover,
@@ -138,14 +147,14 @@ footer {
 }
 .nav > li > a:hover {
     color: #FF0000;
-   background: #22463c;
+   background: #004438;
 }
 
 /* NAVBAR END */
 
 /* TITULOS */
 .cabecalho-pagina {
-    background: #22463c image-url("bg_titulos.jpg") no-repeat scroll center top / cover ;
+    background: #004438 image-url("bg_titulos.jpg") no-repeat scroll center top / cover ;
     height: 110px;
     line-height: 110px;
     margin-bottom: 20px;
@@ -164,14 +173,6 @@ footer {
 }
 
 
-
-#cab {
-	height: 100px;
-	background-color: #22463c;
-	/*border-bottom: 2px solid #25839C;*/
-	/*background: image-url('bg_cab_paisagem.jpg') no-repeat scroll center top;*/
-}
-
 .auto-close-alert {
 	z-index: 999;
 }
@@ -181,7 +182,7 @@ footer {
 }
 
 #qual{
-	background-color: #22463c;
+	background-color: #004438;
 	padding-top: 40px;
 	padding-bottom:40px;
 	/*background-size: cover;

@@ -25,26 +25,20 @@
     </div><!-- /container -->
   </div>
 <% end %><!-- /flash messages -->
-<div id="menu-lg" class="visible-lg visible-md">
+<div id="menu-lg" class="visible-lg">
 	<div class="container cabecalho">
 				<%= scroll_reveal animation: 'enter left' do %>
                 <div class="box-logo">
                     <%= link_to root_path do %>
-		    			<%= image_tag "sematter-logo-verde-195x55.png", alt: "Sematter Sementes" %>
+		    			<%= image_tag "novo-sematter-logo.png", alt: "Sematter Sementes" %>
 		    		<% end %>
                 </div>
                 <% end %>
-                <%= scroll_reveal animation: 'enter top, after 0.2s' do %>
-                <div class="box-pesquisa-social pull-right">
-                    <%= link_to 'https://www.facebook.com/semattersementes/', target: '_blank' do %>
-		    			<%= image_tag "link-facebook.png", alt: "Facebook", class: 'img-responsive' %>
-		    		<% end %>
-                </div>
-                <% end %>
+
             	<%= scroll_reveal animation: 'enter top' do %>
                 <div class="box-menu">
                     <ul class="list-unstyled">
-                        <li class="">
+                        <li class="<%= static_active?('quem-somos') %>"><%= link_to 'QUEM SOMOS', page_path('quem-somos') %></li>
                             <li class="<%= static_active?('adubacao-verde') %>"><%= link_to 'ADUBAÇÃO VERDE', page_path('adubacao-verde') %></li>
                             <li class="<%= static_active?('raix') %>"><%= link_to 'RAÍX', page_path('raix') %></li>
 							<li class="<%= active?('products')%>"><%= link_to "PRODUTOS", products_path %></li>
@@ -69,47 +63,57 @@
     </div>
 </div><!-- /menu-lg -->
 
+<div id="menu-xs" class="visible-md visible-xs visible-sm">
 
+	<nav class="navbar navbar-default">
+		<div class="container">
+			<!-- Brand and toggle get grouped for better mobile display -->
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
+				<span class="sr-only">Toggle navigation</span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				<span class="icon-bar"></span>
+				</button>
+			    <%= link_to root_path, :class => 'navbar-brand' do %>
+			    	<%= image_tag 'sematter-logo-small.png', class: 'img-responsive' %>
+			    <% end %>
+			</div>
+			<!-- Collect the nav links, forms, and other content for toggling -->
+			<div class="collapse navbar-collapse navbar-right" id="menu">
+				<ul class="nav navbar-nav">
+					<li class="<%= static_active?('quem-somos') %>"><%= link_to 'QUEM SOMOS', page_path('quem-somos') %></li>
+					<li class="<%= static_active?('adubacao-verde') %>"><%= link_to 'ADUBAÇÃO VERDE', page_path('adubacao-verde') %></li>
+					<li class="<%= static_active?('raix') %>"><%= link_to 'RAÍX', page_path('raix') %></li>
+					<li class="<%= active?('products')%>"><%= link_to "PRODUTOS", products_path %></li>
+					<li class="<%= active?('resales')%>"><%= link_to "ONDE COMPRAR", resales_path %></li>
+					<li class="<%= active?('noticias') %>"><%= link_to "NOTÍCIAS", news_index_path %></li>				
+					<li class="<%= active?('contacts')%>"><%= link_to "CONTATO", contacts_path %></li>
+					<% if user_signed_in? and current_user.admin == true %>
+					<li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN <span class="caret"></span></a>
+			          <ul class="dropdown-menu">
+			          	<li class="<%= active?('banners')%>"><%= link_to "Banners", banners_path %></li>
+			          	<li class="<%= active?('cultivations')%>"><%= link_to "Cultivos", cultivations_path %></li>
+						<li class="<%= active?('cycles')%>"><%= link_to "Ciclos", cycles_path %></li>
+						<li class="<%= active?('purposes')%>"><%= link_to "Objetivos", purposes_path %></li>
+						<li class="<%= active?('products')%>"><%= link_to "Produtos", products_path %></li>
+			          </ul>
+			        </li>
+			        <% end %>
+				</ul>
+			</div><!-- /.navbar-collapse -->
+		</div><!-- /.container -->
+	</nav>
+</div><!-- /menu-xs -->
 
-<nav class="navbar navbar-default visible-xs visible-sm">
+<div class="faixinha-verde">
 	<div class="container">
-		<!-- Brand and toggle get grouped for better mobile display -->
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#menu">
-			<span class="sr-only">Toggle navigation</span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			<span class="icon-bar"></span>
-			</button>
-		    <%= link_to root_path, :class => 'navbar-brand' do %>
-		    	<%= image_tag 'sematter-logo-small.png', class: 'img-responsive' %>
-		    <% end %>
+		<div class="col-lg-6 col-md-6 col-sm-6 col-xs-8 faixinha-verde-meio col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-2 visible-lg">
 		</div>
-		<!-- Collect the nav links, forms, and other content for toggling -->
-		<div class="collapse navbar-collapse navbar-right" id="menu">
-			<ul class="nav navbar-nav">
-				<li class="<%= static_active?('adubacao-verde') %>"><%= link_to 'ADUBAÇÃO VERDE', page_path('adubacao-verde') %></li>
-				<li class="<%= static_active?('raix') %>"><%= link_to 'RAÍX', page_path('raix') %></li>
-				<li class="<%= active?('products')%>"><%= link_to "PRODUTOS", products_path %></li>
-				<li class="<%= active?('resales')%>"><%= link_to "ONDE COMPRAR", resales_path %></li>
-				<li class="<%= active?('noticias') %>"><%= link_to "NOTÍCIAS", news_index_path %></li>				
-				<li class="<%= active?('contacts')%>"><%= link_to "CONTATO", contacts_path %></li>
-				<% if user_signed_in? and current_user.admin == true %>
-				<li class="dropdown">
-		          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN <span class="caret"></span></a>
-		          <ul class="dropdown-menu">
-		          	<li class="<%= active?('banners')%>"><%= link_to "Banners", banners_path %></li>
-		          	<li class="<%= active?('cultivations')%>"><%= link_to "Cultivos", cultivations_path %></li>
-					<li class="<%= active?('cycles')%>"><%= link_to "Ciclos", cycles_path %></li>
-					<li class="<%= active?('purposes')%>"><%= link_to "Objetivos", purposes_path %></li>
-					<li class="<%= active?('products')%>"><%= link_to "Produtos", products_path %></li>
-		          </ul>
-		        </li>
-		        <% end %>
-			</ul>
-		</div><!-- /.navbar-collapse -->
-	</div><!-- /.container -->
-</nav>
+	</div>
+</div>
+
 <%= render partial: 'layouts/titulo' unless controller_name == 'welcome' %>
 
 <%= yield %>
@@ -202,16 +206,5 @@
     </section><!-- /.rodape -->
   </div><!-- /.container -->
 </footer>
-<!--
-<div id="cab">
-	<div class="container">
-		<div class="logo-principal">
-			<%# link_to root_path do %>
-		    	<%# image_tag "sematter-logo-195x55.png", alt: "Sematter Sementes" %>
-		    <%# end %>
-		</div>
-	</div>
-</div>
--->
 </body>
 </html>

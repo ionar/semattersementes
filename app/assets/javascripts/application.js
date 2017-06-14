@@ -20,6 +20,7 @@
 //= require bootstrap-datetimepicker
 //= require pickers
 //= require moment/pt-br
+//= require lightbox-bootstrap
 
 //= require bootstrap-wysihtml5
 

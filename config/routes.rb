@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  resources :news
+  resources :news do
+    resources :photonoticias
+  end
   resources :resales
   #get 'welcome/index'
 

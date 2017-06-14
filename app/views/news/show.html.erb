@@ -36,4 +36,14 @@
 	  <%= @news.description.html_safe %>
 	</p>
 
+	<div class="panel panel-default">
+  <div class="panel-body">
+   	<% @news.photonoticias.each do |photonoticia| %>
+   		<%= link_to photonoticia.image.url, class: 'link-foto-galeria', data: { toggle: 'lightbox', gallery: 'example-gallery' } do %>
+			<%= image_tag photonoticia.image.url(:thumb), class: 'img-thumbnail' %>
+		<% end %>
+	<% end %>
+  </div>
+</div>
+
 </div><!-- /container -->
