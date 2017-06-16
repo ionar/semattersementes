@@ -54,3 +54,26 @@
 	color: #fff;
 	font-size:26px;
 }
+
+#qual{
+	background: #004438 image-url("welcome-bg-textura.jpg") no-repeat scroll center top / cover ;
+	padding-top: 40px;
+	padding-bottom:40px;
+	/*background-size: cover;
+    background-repeat: no-repeat;
+    background-image: image-url('milharal3.jpg'); 
+    background-attachment: fixed;*/
+
+	label {
+		color: #fff;
+	}
+
+	h2 {
+		color: #fff;
+	}
+
+	.transparencia {
+		background-color:rgba(0, 0, 0, 0.3);
+		padding-bottom: 20px;
+	}
+}

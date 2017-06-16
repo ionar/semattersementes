@@ -51,6 +51,7 @@
   <div class="container">
     <div class="row welcome-margens">
       <div class="col-lg-offset-1 col-lg-3 col-md-3 col-sm-3">
+      <%= scroll_reveal animation: 'enter left, after 0.1s' do %>
         <div id="o-que-e-adubacao-verde" class="text-center">
           <span class="welcome-titulos">O que é <br><strong>adubação verde</strong>?</span>
           <h3>
@@ -59,8 +60,10 @@
           <% end %>
           </h3>
         </div>
+        <% end %>
       </div><!-- /col -->
         <div class="col-lg-offset-1 col-lg-3 col-md-3 col-sm-3">
+        <%= scroll_reveal animation: 'enter left, after 0.4s' do %>
           <div id="conheca-o-raix" class="text-center">
           <span class="welcome-titulos">Conheça o<br></span>
           <%= image_tag 'welcome-raix-small.png', alt: 'Raíx' %>
@@ -70,8 +73,10 @@
           <% end %>
           </h3>
         </div>
+        <% end %>
       </div><!-- /col -->
         <div class="col-lg-offset-1 col-lg-3 col-md-3 col-sm-3">
+        <%= scroll_reveal animation: 'enter left, after 0.7s' do %>
         <div id="fique-por-dentro" class="text-center">
           <span class="welcome-titulos">Fique por dentro<br><strong>Blog da Sematter</strong></span>
           <h3>
@@ -80,12 +85,14 @@
           <% end %>
           </h3>
         </div>
+        <% end %>
       </div><!-- /col -->
     </div><!-- /row -->
   </div><!-- /container -->
 </div>
 <%= render partial: 'layouts/faixinha-verde' %>
 <div class="container">
+<%= scroll_reveal animation: 'enter right' do %>
     <div class="row welcome-margens">
       <div class="col-lg-4 col-md-4 col-sm-4 text-center">
       <%= image_tag 'welcome-depoimento.jpg', alt: "Depoimento", class: 'img-circle' %>
@@ -100,11 +107,12 @@
         </p>
       </div><!-- /col -->         
     </div><!-- /row -->
+<% end %>
 </div><!-- /container -->
 
 <div id="qual">
 <%= scroll_reveal animation: 'enter left move 50px' do %>
-    <div class="container">
+    <div class="container transparencia">
         <h2 class="text-center">QUAL É O RAIX INDICADO PARA O MEU USO?</h2>
     <div class="row">
         <div class="col-sm-4 col-sm-offset-4">
