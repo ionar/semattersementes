@@ -3,7 +3,7 @@
 
   <div class="form-inputs">
   <%= image_tag @banner.image.url(:medium), class: "img-thumbnail" if @banner.image.exists? %>
-  	<%= f.input :image, as: :file, hint: "A imagem deve ter o tamanho 1900x350 pixels" %>
+  	<%= f.input :image, as: :file, hint: "A imagem deve ter o tamanho 1920x420 pixels" %>
     <%= f.input :link, hint: "Endereço completo, no formato: http://semattersementes.com.br/xxx/xxx" %>
     <%= f.input :sequence, label: t('sequence'), hint: "Ordem na qual aparecerá no site" %>
   </div>
