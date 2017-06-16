@@ -21,7 +21,7 @@
   </div> <!-- /.row -->
     <% @news.each do |news| %>
     <p class="lead">
-    <%= image_tag news.photonoticias.first.image.url(:thumb), class: 'img-thumbnail'  %>
+    <%= image_tag news.photonoticias.first.image.url(:thumb), class: 'img-thumbnail' if news.photonoticias.present?  %>
         <%= link_to news.title, news %>
       </p>
     <hr>
