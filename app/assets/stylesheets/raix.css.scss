@@ -26,10 +26,25 @@
 	text-shadow: 0 1px 0 #000;
 	//padding-top: 60px;
 	padding: 20px;
-	border-bottom: 5px solid #bccf00;
+	border-bottom: 5px solid #A7C20B;
 	font-weight:600;
 }
 
+.raix-onde-comprar {
+	margin-top: 60px;
+	border: 3px solid transparent;
+}
+
+.raix-onde-comprar:hover {
+	margin-top: 60px;
+	border: 3px solid #A7C20B;
+-webkit-filter: contrast(150%);
+   -moz-filter: contrast(150%);
+    -ms-filter: contrast(150%);
+     -o-filter: contrast(150%);
+filter: contrast(150%);
+
+}
 
 /* Medium Devices, Desktops */
 @media only screen and (min-width : 992px) {
