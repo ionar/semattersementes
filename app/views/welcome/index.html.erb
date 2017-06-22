@@ -22,17 +22,15 @@
                 if index == 0
                     render inline: "
                                     <div class='item active'>
-                                    <a href='#{banner.link}'>
-                                        <img src='#{banner.image.url(:original)}' alt='...'>
-                                    </a>
+                                      <div onclick=\"javascript:location.href='#{banner.link}'\" class='fill' style=\"background-image:url('#{banner.image.url(:original)}');\">
+                                      </div>
                                     </div>
                     "
                 else
                     render inline: "
                                     <div class='item'>
-                                    <a href='#{banner.link}'>
-                                        <img src='#{banner.image.url(:original)}' alt='...'>
-                                    </a>
+                                      <div onclick=\"javascript:location.href='#{banner.link}'\" class='fill' style=\"background-image:url('#{banner.image.url(:original)}');\">
+                                      </div>
                                     </div>
                     "
                 end %>
