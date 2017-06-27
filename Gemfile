@@ -86,3 +86,5 @@ gem "scrollreveal-rails"
 gem 'bootstrap-wysihtml5-rails', github: 'nerian/bootstrap-wysihtml5-rails'
 
 gem 'lightbox-bootstrap-rails', '3.3.0.3'
+
+gem 'social-share-button'

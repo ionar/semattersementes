@@ -19,11 +19,30 @@
       </div>
     </div>
   </div> <!-- /.row -->
+  <div class="row">
+    <div class="col-lg-8 col-md-8 col-sm-12" style="border-right: 1px solid #c4c4c4">
     <% @news.each do |news| %>
+    <h4 class="titulo-noticia"><%= news.title %></h4>
+    <%= social_share_button_tag(news.title) %>
     <p class="lead">
-    <%= image_tag news.photonoticias.first.image.url(:thumb), class: 'img-thumbnail' if news.photonoticias.present?  %>
-        <%= link_to news.title, news %>
+      <%= image_tag news.photonoticias.first.image.url(:thumb), class: 'img-thumbnail' if news.photonoticias.present?  %>
+      <%# link_to news.title, news %>
       </p>
     <hr>
     <% end %>
+    </div><!-- /col -->
+    <div class="col-lg-4 col-md-4 col-sm-12">
+      <div class="fb-page" data-href="https://www.facebook.com/semattersementes/"  data-small-header="false" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="false"><blockquote cite="https://www.facebook.com/semattersementes/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/semattersementes/">Sematter Sementes</a></blockquote></div>
+    <hr>
+    <h3>DESTAQUES</h3>
+    <% @news.each do |news| %>
+      <h4 class="texto-verde"><%= link_to news.title, news %></h4>      
+      <p class="lead">
+        <%= image_tag news.photonoticias.first.image.url(:thumb), class: 'img-thumbnail' if news.photonoticias.present?  %>
+        <%# link_to news.title, news %>
+        </p>
+      <hr>
+    <% end %>
+    </div><!-- /col -->
+  </div> <!-- /.row -->
 </div><!-- /.container -->

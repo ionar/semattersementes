@@ -24,6 +24,7 @@
 
 //= require bootstrap-wysihtml5
 
+//= require social-share-button
 
 //= require_tree .
 

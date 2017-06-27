@@ -40,6 +40,8 @@
 
 @import "lightbox-bootstrap";
 
+@import "social-share-button";
+
 /* cores #A6C10B #004438 */
 
 
@@ -58,6 +60,18 @@ a:hover {
     color: #666;
     text-decoration: underline;
 }
+
+//share social buttons
+$size: 24px;
+
+.social-share-button {
+  .ssb-icon {
+    background-size: $size $size;
+    height: $size;
+    width: $size;
+  }
+}
+//
 
 .faixinha-verde{
   height: 6px;
