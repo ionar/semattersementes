@@ -45,9 +45,11 @@
                   </div><!-- /no-hover-body -->
                   <div class="hover-footer">                  
                         Indicado para a cultura de 
-                        <%= product.cultivation.map(&:name).join(", ") %> <hr>
+                        <%= product.cultivation.map(&:name).join(", ") %> <br>
+                        <span class="texto-verde" style="text-transform: uppercase;">
                         CICLO <%= product.cycle.name.upcase %> <br>
                       <i><%= product.cycle.description %></i>
+                      </span>
                   </div>
                 </div><!-- /hover -->                  
               </div><!-- /box-produto -->

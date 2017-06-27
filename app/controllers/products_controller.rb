@@ -6,8 +6,8 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    products = Product.where(nil) # creates an anonymous scope
-    products = Product.joins(:cultivation).where(cultivations: { id: params[:cultivation] }) if params[:cultivation].present?
+    @products = Product.where(nil) # creates an anonymous scope
+    @products = Product.joins(:cultivation).where(cultivations: { id: params[:cultivation] }) if params[:cultivation].present?
   
 
     ##if params[:cultivation]
