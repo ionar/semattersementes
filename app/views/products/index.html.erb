@@ -43,13 +43,13 @@
                   <div class="hover-body">
                         <%= image_tag 'mistura-logo.jpg', alt: "Mistura", class: 'img-responsive btn-block' %>
                   </div><!-- /no-hover-body -->
-                  <div class="hover-footer">                  
-                        Indicado para a cultura de 
-                        <%= product.cultivation.map(&:name).join(", ") %> <br>
+                  <div class="hover-footer">                                          
                         <span class="texto-verde" style="text-transform: uppercase;">
                         CICLO <%= product.cycle.name.upcase %> <br>
                       <i><%= product.cycle.description %></i>
-                      </span>
+                      </span><br>
+                      Indicado para a cultura de 
+                        <%= product.cultivation.map(&:name).join(", ") %> 
                   </div>
                 </div><!-- /hover -->                  
               </div><!-- /box-produto -->
