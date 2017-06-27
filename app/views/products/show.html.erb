@@ -7,17 +7,16 @@
   <li><%= link_to 'Produtos', products_path %></li>
   <li class="active"><%= @product.name %></li>
 </ol>
-<div class="prod-raix"></div>
 	<div class="row">
 	    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
 	    <div class="product-titulo">
-	      <h2><%= image_tag 'rx_medio.png', alt: "Raix", class: 'rx-image' %><%= @product.name.upcase.sub(/RX /, "") %></h2>
+	      <h1><%= image_tag 'rx-large.png', alt: "Raix", class: 'rx-image' %><%= @product.name.upcase.sub(/RX /, "") %></h1>
 	      </div>
 	    </div>
 	    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
 	    <% if user_signed_in? and current_user.admin == true %>
 	      <div class="text-right">
-	        <h2>
+	        <h1>
 	          <%= link_to products_path, :class => 'btn btn-primary' do %>
 	            <span class="glyphicon glyphicon-chevron-left"></span> Voltar
 	          <% end %> 
@@ -27,77 +26,78 @@
 	          <%= link_to product_path(@product), method: :delete, :class => 'btn btn-danger', data: { confirm: t('Are you sure?')  } do %>
 	            <span class="glyphicon glyphicon-remove"></span> Apagar
 	          <% end %> 
-	        </h2>
+	        </h1>
 	      </div>
 	    <% end %>
 	    </div>
 	</div> <!-- /.row -->
+	<div class="row">
+		<div class="col-lg-9 col-md-9 col-sm-9">
 			<p class="lead">
-			  <%= t("cycle") %>:
-			  <strong><%= @product.cycle.name %></strong> (<%= @product.cycle.description %>)
-			</p>
+				  <strong><%= t("description") %>:</strong>
+				  <%= @product.description %>
+				</p>
+				<p class="lead">
+				  <strong><%= t("cycle") %>:</strong>
+				  <%= @product.cycle.name %> (<%= @product.cycle.description %>)
+				</p>
 
-	        <p class="lead"><strong>Adubação verde indicada para a cultura de: </strong>
-			  <%= @product.cultivation.map(&:name).join(" - ") %>
-			</p>
-			<p class="lead">
-	          <%= @product.description %>
-	        </p>
-	        <% if user_signed_in? and current_user.admin == true %>
-	       		<table class="table table-striped">
-				    <thead>
-				      <tr>
-				        <th><%= t('benefits') %> para <%= @product.name %></th>
-				        <th><%= t('stars') %></th>
-				      </tr>
-				    </thead>
+		        <p class="lead"><strong>Indicado para: </strong>
+				  <%= @product.cultivation.map(&:name).join(" - ") %>
+				</p>
+		        <% if user_signed_in? and current_user.admin == true %>
+		       		<table class="table table-striped">
+					    <thead>
+					      <tr>
+					        <th><%= t('benefits') %> para <%= @product.name %></th>
+					        <th><%= t('stars') %></th>
+					      </tr>
+					    </thead>
 
-				    <tbody>
-				      <% @benefits.each do |products_purposes_relation| %>
-				        <tr>
-				          <td><%= link_to products_purposes_relation.purpose.name, edit_products_purposes_relation_path(products_purposes_relation) %></td>
-				          <td><%= products_purposes_relation.stars %></td>
-				        </tr>
-				      <% end %>
-				    </tbody>
-			  	</table>
-			<% else %>
-		<div class="panel panel-default">
-	      <div class="panel-body">
-	        <p><strong>Aplicações:</strong></p>
-	        <table class="table table-striped">
-			<% @product.products_purposes_relations.each do |relation| %>
-				<tr>
-					<td>
-					<div class="text-left">
-						<%= relation.purpose.name %>
-					</div>
-					</td>
-					<td><div class="stars">
-							<div class="texto-verde">
-								<% (1..relation.stars).each do %>
-									<span class="glyphicon glyphicon-star"></span>
-								<% end %>
-							</div>
+					    <tbody>
+					      <% @benefits.each do |products_purposes_relation| %>
+					        <tr>
+					          <td><%= link_to products_purposes_relation.purpose.name, edit_products_purposes_relation_path(products_purposes_relation) %></td>
+					          <td><%= products_purposes_relation.stars %></td>
+					        </tr>
+					      <% end %>
+					    </tbody>
+				  	</table>
+				<% else %>
+			<div class="panel panel-default">
+		      <div class="panel-body">
+		        <p><strong>Aplicações:</strong></p>
+		        <table class="table table-striped">
+				<% @product.products_purposes_relations.each do |relation| %>
+					<tr>
+						<td>
+						<div class="text-left">
+							<%= relation.purpose.name %>
 						</div>
-					<%# relation.stars %></td>
-				</tr>
-			<% end %>
-			</table>
-			<hr>		
-			  <% end %>
-	      </div><!-- /panel-body -->
-	    </div><!-- /panel -->
+						</td>
+						<td><div class="stars">
+								<div class="texto-verde">
+									<% (1..relation.stars).each do %>
+										<span class="glyphicon glyphicon-star"></span>
+									<% end %>
+								</div>
+							</div>
+						<%# relation.stars %></td>
+					</tr>
+				<% end %>
+				</table>	
+				  <% end %>
+		      </div><!-- /panel-body -->
+		    </div><!-- /panel -->
+		</div><!-- /col -->
+		<div class="col-lg-3 col-md-3 col-sm-3 text-center">
+		<%= image_tag 'product-ilustrative1.jpg', alt: 'Imagem ilustrativa', class: 'img-responsive img-thumbnail' %>
+		<hr>
+		<%= image_tag 'product-ilustrative2.jpg', alt: 'Imagem ilustrativa', class: 'img-responsive img-thumbnail' %>
+		<hr>
+		<%= image_tag 'product-ilustrative3.jpg', alt: 'Imagem ilustrativa', class: 'img-responsive img-thumbnail' %>
+		</div><!-- /col -->		
+	</div> <!-- /.row -->
+
+			
 </div><!-- /container -->
-
-
-<%# num_stars = purpose.products_purposes_relations.map(&:stars).to_sentence.to_i %>
-					<%# (1..num_stars).each do %>
-						<%# <span class="glyphicon glyphicon-star"></span> %>
-					<%# end %>
-<%# purpose.products_purposes_relations.map(&:id) %>					
-
-					<%#purpose.products_purposes_relations 
-					#ProductsPurposesRelation.joins(:stars).where(:product_id => { :id => params[:participants] } )
-					#beneficios = purpose.products_purposes_relations.includes( :model_options )
-					%>
