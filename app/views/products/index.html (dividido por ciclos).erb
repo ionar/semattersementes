@@ -19,12 +19,20 @@
       </div>
     </div>
   </div> <!-- /.row -->
-  <div class="row">
-    <% @products.each do |product| %>        
-      <%= link_to product, class: 'col-lg-2 col-md-3 col-sm-3 col-xs-6 link-produto' do %>
+<% @cycles.each do |cycle| %>
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <span class="texto-verde">Ciclo <%= cycle.name %><small> - <%= cycle.description %></small></span>
+    </div>
+    <div class="panel-body">
+       <% cycle.products.in_groups_of(6, false).each do |group| %>
+        <div class="row">
+        <% group.each do |product| %>
+          <%= link_to product, class: 'col-lg-2 col-md-3 col-sm-3 col-xs-6 link-produto' do %>
               <div class="box-produto">
                 <div class="no-hover">
                   <div class="no-hover-head">
+                  <%= product.cycle.description %>
                   </div>
                   <div class="no-hover-body">                      
                         <%= image_tag 'mistura-redondo.png', alt: "Mistura", class: 'img-responsive' %>
@@ -49,9 +57,14 @@
                         CICLO <%= product.cycle.name.upcase %> <br>
                       <i><%= product.cycle.description %></i>
                   </div>
-                </div><!-- /hover -->                  
+                </div><!-- /hover -->  
+                
               </div><!-- /box-produto -->
-      <% end %><!-- a/col -->
+          <% end %><!-- a/col -->
+      <% end %>
+      </div><!-- /row -->
     <% end %>
-  </div><!-- /row -->  
+    </div><!-- /panel-body -->
+  </div><!-- /panel -->
+<% end %>
 </div><!-- /.container -->

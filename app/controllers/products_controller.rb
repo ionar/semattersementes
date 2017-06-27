@@ -15,7 +15,7 @@ class ProductsController < ApplicationController
     ##else
     ##@products = Product.all
     ##end
-    @cycles = Cycle.all
+    ##@cycles = Cycle.all
 
     #category = Category.where(:name => params[:name]).first
     #@posts = category.posts
