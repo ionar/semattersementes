@@ -5,41 +5,38 @@
 </ol>
   <div class="row">
   	<div class="col-md-4">
-  	<h3>Faça-nos uma visita</h3>
-  	<p>
+    <%= scroll_reveal animation: 'enter left, after 0.4s' do %>
+    <h4 style="color: #004438"><strong>MANDE UMA MENSAGEM PARA NÓS</strong></h4>
+    <%= simple_form_for @contact do |f| %>
+      <%= f.input :name, :required => true, label: t('name') %>
+      <%= f.input :email, :required => true %>
+      <%= f.input :message, :as => :text, :required => true,  label: t('message') %>
+      <div class= "hidden">
+        <%= f.input :nickname, :hint => 'Leave this field blank!' %>
+      </div>
+      <div>
+        <br>
+        <%= f.button :submit, 'Enviar', :class=> "btn btn-primary" %>
+      </div>
+    <% end %>
+    <% end %>
+    </div><!-- /.col -->
+  	<div class="col-md-4">
+  	 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.008777691865!2d-53.50520368545173!3d-26.744095983200488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fa5c75c950c0fb%3A0x616516427ca6fc31!2sSematter+Sementes!5e0!3m2!1spt-BR!2sus!4v1496673744205" width="100%" height="420" frameborder="0" style="border:0" allowfullscreen></iframe>
+  	</div><!-- /.col -->
+    <div class="col-md-4">
     <%= scroll_reveal animation: 'enter left, move 50px, after 0.4s' do %>
-  	 <%= image_tag 'agronegocio.jpg', alt: 'Sematter Sementes', class: 'img-thumbnail img-responsive' %>
+     <%= image_tag 'sematter-fachada.jpg', alt: 'Sematter Sementes', class: 'img-thumbnail img-responsive' %>
      <% end %>
-  	</p>
-  	<p>
-  	<span class="texto-verde">Sematter Sementes</span> <br />
+    <p>
+    <span class="texto-verde">Sematter Sementes</span> <br />
         Rua Arno Erich Schwambach, 990  <br />
         Bairro Industrial, CEP: 89900-000 <br />
         São Miguel do Oeste - SC <br />
         Fone: (49)3622-8263 <br />
         comercial@semattersementes.com.br
         </p>
-  	</div><!-- /.col -->
-  	<div class="col-md-4">
-  	 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.008777691865!2d-53.50520368545173!3d-26.744095983200488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fa5c75c950c0fb%3A0x616516427ca6fc31!2sSematter+Sementes!5e0!3m2!1spt-BR!2sus!4v1496673744205" width="100%" height="420" frameborder="0" style="border:0" allowfullscreen></iframe>
-  	</div><!-- /.col -->
-  	<div class="col-md-4">
-    <%= scroll_reveal animation: 'enter left, after 0.4s' do %>
-  	<h3>Mande uma mensagem para nós</h3>
-	  <%= simple_form_for @contact do |f| %>
-	    <%= f.input :name, :required => true, label: t('name') %>
-	    <%= f.input :email, :required => true %>
-	    <%= f.input :message, :as => :text, :required => true,  label: t('message') %>
-	    <div class= "hidden">
-	      <%= f.input :nickname, :hint => 'Leave this field blank!' %>
-	    </div>
-	    <div>
-	      <br>
-	      <%= f.button :submit, 'Enviar', :class=> "btn btn-primary" %>
-	    </div>
-	  <% end %>
-    <% end %>
-  	</div><!-- /.col -->
+    </div><!-- /.col -->    
   </div><!-- /.row -->
 
 </div><!-- /.container -->
