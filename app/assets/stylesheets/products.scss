@@ -156,9 +156,7 @@
 }
 
 #busca-faixa {
-  	background-color: #e1e1e1;
-  	background-image: image-url('faixa-shadow.png');
-  	background-repeat: no-repeat;
+	background: #e1e1e1 image-url("faixa-shadow.png") no-repeat scroll center top;
   	padding: 10px;
 }
 
