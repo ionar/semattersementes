@@ -41,7 +41,8 @@
           </div>
             <%= button_tag(type: "submit", class: "btn btn-busca") do %>
               <%= image_tag 'rx_busca.png', alt: 'Buscar', class: 'img-rx-busca', width: '27' %>
-            <% end %>
+            <% end %> 
+            <%= link_to 'Mostrar todos', products_path, class: 'btn btn-warning' %>
         <% end %>
       </div><!-- /#busca-faixa -->
     </div><!-- /col -->
