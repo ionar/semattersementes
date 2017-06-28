@@ -27,7 +27,7 @@
     <%= social_share_button_tag(news.title) %>
     <p class="lead">
       <%= image_tag news.photonoticias.first.image.url(:thumb), class: 'img-thumbnail' if news.photonoticias.present?  %>
-      <%= news.description %>
+      <%= news.description.html_safe %>
       </p>
     <hr>
     <% end %>
@@ -38,7 +38,7 @@
     <h3>DESTAQUES</h3>
     <% @news.each do |news| %>
       <h4 class="texto-verde"><%= link_to news.title, news %></h4>        
-      <p class="lead">
+      <p>
         <%= image_tag news.photonoticias.first.image.url(:thumb), class: 'img-thumbnail' if news.photonoticias.present?  %>
         <%= news.abstract %>
         </p>
