@@ -6,12 +6,14 @@ class NewsController < ApplicationController
   # GET /news
   # GET /news.json
   def index
-    @news = News.all
+    @news = News.order('id desc').page(params['page']).per(5)
+    @ultimas = News.last(4).reverse
   end
 
   # GET /news/1
   # GET /news/1.json
   def show
+    @ultimas = News.last(4).reverse
   end
 
   # GET /news/new

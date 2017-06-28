@@ -32,14 +32,15 @@
 	    <% end %>
 	    </div>
 	</div> <!-- /.row -->
+	<div class="row">
+		<div class="col-lg-8 col-md-8 col-sm-12" style="border-right: 1px solid #c4c4c4">
 		<p class="lead">
 	  <%= @news.abstract %>
 	</p>
-<p><%=l @news.created_at, format: :long %></p>
+	<p><%=l @news.created_at, format: :long %></p>
 	<p class="lead">
 	  <%= @news.description.html_safe %>
 	</p>
-
 	<div class="panel panel-default">
   <div class="panel-body">
    	<% @news.photonoticias.each do |photonoticia| %>
@@ -49,5 +50,10 @@
 	<% end %>
   </div>
 </div>
+		</div> <!-- /.col -->
+		<div class="col-lg-4 col-md-4 col-sm-12">
+		<%= render partial: 'ultimas' %>
+		</div> <!-- /.col -->		
+	</div> <!-- /.row -->
 
 </div><!-- /container -->
