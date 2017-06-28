@@ -22,11 +22,11 @@
   <div class="row">
     <div class="col-lg-8 col-md-8 col-sm-12" style="border-right: 1px solid #c4c4c4">
     <% @news.each do |news| %>
-    <h4 class="titulo-noticia"><%= news.title %></h4>
-    <h5 class="titulo-noticia"><%= news.abstract %></h5>
+    <h4 class="titulo-noticia"><%= news.title %></h4>    
     <%= social_share_button_tag(news.title) %>
-    <p class="lead">
-      <%= image_tag news.photonoticias.first.image.url(:thumb), class: 'img-thumbnail' if news.photonoticias.present?  %>
+    <h5 class="titulo-noticia"><%= news.abstract %></h5>
+    <p>
+      <%= image_tag news.photonoticias.first.image.url(:medium), align: 'left', class: 'img-thumbnail' if news.photonoticias.present?  %>
       <%= news.description.html_safe %>
       </p>
     <hr>
