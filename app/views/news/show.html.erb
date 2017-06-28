@@ -32,6 +32,9 @@
 	    <% end %>
 	    </div>
 	</div> <!-- /.row -->
+		<p class="lead">
+	  <%= @news.abstract %>
+	</p>
 <p><%=l @news.created_at, format: :long %></p>
 	<p class="lead">
 	  <%= @news.description.html_safe %>

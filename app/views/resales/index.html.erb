@@ -43,7 +43,8 @@
              %>
                   <% @resales.each do |resale| %>
                     <div class="well">
-                      <h3><strong><%= resale.name %></strong></h3>
+                      <h3><strong><%= resale.city %> - <%= resale.province %></strong></h3>
+                      <strong style="text-transform: uppercase;"><%= resale.name %></strong><br>
                      <%= resale.company_name %><br>
                       <%= resale.address %><br>
                       <%= resale.neighborhood %><br>
