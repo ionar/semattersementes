@@ -154,3 +154,17 @@
 	overflow: hidden;
 	//border: 1px solid #FF0000;
 }
+
+#busca-faixa {
+  	background-color: #e1e1e1;
+  	background-image: image-url('faixa-shadow.png');
+  	background-repeat: no-repeat;
+  	padding: 10px;
+}
+
+.btn-busca{
+	background-color: #004438;
+}
+.btn-busca:hover{
+	background-color: #22463c;
+}

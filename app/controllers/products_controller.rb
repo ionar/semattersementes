@@ -8,7 +8,8 @@ class ProductsController < ApplicationController
   def index
     @products = Product.where(nil) # creates an anonymous scope
     @products = Product.joins(:cultivation).where(cultivations: { id: params[:cultivation] }) if params[:cultivation].present?
-  
+    @products = @products.joins(:cycle).where(cycles: {id: params[:cycle]}) if params[:cycle].present?
+    ##@products = @products.cycle(params[:cycle]) if params[:cycle].present?
 
     ##if params[:cultivation]
     ##@products = Product.para_o_cultivo(params[:cultivation])
