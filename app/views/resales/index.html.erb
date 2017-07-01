@@ -53,6 +53,10 @@
                       Fone: <%= resale.phone %><br>
                       <%= 'e-mail:' + resale.email + '<br>'.html_safe if resale.email.present? %>
                       Atua em: <%= resale.territory %>
+                      <% if user_signed_in? and current_user.admin == true %>
+                      <hr>
+                        <%= link_to 'Editar Revenda', edit_resale_path(resale), class: 'btn btn-default' %>
+                      <% end %>
                     </div>
                   <% end %>
             </div> <!-- /.col -->
