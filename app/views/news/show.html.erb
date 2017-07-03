@@ -38,6 +38,7 @@
 	  <%= @news.abstract %>
 	</p>
 	<p><%=l @news.created_at, format: :long %></p>
+	<%= @news.youtube.html_safe if @news.youtube.present? %>
 	<p class="lead">
 	  <%= @news.description.html_safe %>
 	</p>

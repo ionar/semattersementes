@@ -9,30 +9,34 @@
 </ol>
 	<div class="row">
 	    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">
-	    <div class="product-titulo">
-	      <h1><%= image_tag 'rx-large.png', alt: "Raix", class: 'rx-image' %><%= @product.name.upcase.sub(/RX /, "") %></h1>
-	      </div>
-	    </div>
+	    	<div class="product-titulo">
+	      		<h1><%= image_tag 'rx-large.png', alt: "Raix", class: 'rx-image' %><%= @product.name.upcase.sub(/RX /, "") %></h1>
+	      	</div>
+	    </div><!-- /.col -->
 	    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-	    <% if user_signed_in? and current_user.admin == true %>
-	      <div class="text-right">
-	        <h1>
-	          <%= link_to products_path, :class => 'btn btn-primary' do %>
-	            <span class="glyphicon glyphicon-chevron-left"></span> Voltar
-	          <% end %> 
-	          <%= link_to edit_product_path(@product), :class => 'btn btn-success' do %>
-	            <span class="glyphicon glyphicon-list-alt"></span> Editar
-	          <% end %> 
-	          <%= link_to product_path(@product), method: :delete, :class => 'btn btn-danger', data: { confirm: t('Are you sure?')  } do %>
-	            <span class="glyphicon glyphicon-remove"></span> Apagar
-	          <% end %> 
-	        </h1>
-	      </div>
-	    <% end %>
-	    </div>
+		    <% if user_signed_in? and current_user.admin == true %>
+		      <div class="text-right">
+		        <h1>
+		          <%= link_to products_path, :class => 'btn btn-primary' do %>
+		            <span class="glyphicon glyphicon-chevron-left"></span> Voltar
+		          <% end %> 
+		          <%= link_to edit_product_path(@product), :class => 'btn btn-success' do %>
+		            <span class="glyphicon glyphicon-list-alt"></span> Editar
+		          <% end %> 
+		          <%= link_to product_path(@product), method: :delete, :class => 'btn btn-danger', data: { confirm: t('Are you sure?')  } do %>
+		            <span class="glyphicon glyphicon-remove"></span> Apagar
+		          <% end %> 
+		        </h1>
+		      </div>
+		    <% end %>
+	    </div><!-- /.col -->
 	</div> <!-- /.row -->
 	<div class="row">
 		<div class="col-lg-12 col-md-12 col-sm-12">
+			<p>
+			 <strong><%= t("photo") %>:</strong>
+			  <%= image_tag(@product.photo(:thumb), alt: @product.name) %>
+			</p>
 		    <p class="lead">
 			 <strong><%= t("description") %>:</strong>
 			  <%= @product.description %>
@@ -68,31 +72,31 @@
 					    </tbody>
 				  	</table>
 				<% else %>
-			<div class="panel panel-default">
-		      <div class="panel-body">
-		        <p><strong>Aplicações:</strong></p>
-		        <table class="table table-striped">
-				<% @product.products_purposes_relations.each do |relation| %>
-					<tr>
-						<td>
-						<div class="text-left">
-							<%= relation.purpose.name %>
-						</div>
-						</td>
-						<td><div class="stars">
-								<div class="texto-verde">
-									<% (1..relation.stars).each do %>
-										<span class="glyphicon glyphicon-star"></span>
-									<% end %>
+					<div class="panel panel-default">
+				      <div class="panel-body">
+				        <p><strong>Aplicações:</strong></p>
+				        <table class="table table-striped">
+						<% @product.products_purposes_relations.each do |relation| %>
+							<tr>
+								<td>
+								<div class="text-left">
+									<%= relation.purpose.name %>
 								</div>
-							</div>
-						<%# relation.stars %></td>
-					</tr>
-				<% end %>
-				</table>	
-				  <% end %>
-		      </div><!-- /panel-body -->
-		    </div><!-- /panel -->
+								</td>
+								<td><div class="stars">
+										<div class="texto-verde">
+											<% (1..relation.stars).each do %>
+												<span class="glyphicon glyphicon-star"></span>
+											<% end %>
+										</div>
+									</div>
+								<%# relation.stars %></td>
+							</tr>
+						<% end %>
+						</table>				  
+				      </div><!-- /panel-body -->
+				    </div><!-- /panel -->
+		    	<% end %>
 		</div><!-- /col -->
 		<div class="col-lg-3 col-md-3 col-sm-3 text-center">
 		<%= image_tag 'product-ilustrative1.jpg', alt: 'Imagem ilustrativa', class: 'img-responsive img-thumbnail' %>

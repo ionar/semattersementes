@@ -25,6 +25,7 @@
     <h4 class="titulo-noticia"><%= link_to news.title, news %></h4>    
     <%= social_share_button_tag(news.title) %>
     <h5 class="titulo-noticia"><%= news.abstract %></h5>
+    <%= news.youtube.html_safe if news.youtube.present?  %>
     <p>
       <%= image_tag news.photonoticias.first.image.url(:medium), align: 'left', class: 'img-thumbnail margem-10' if news.photonoticias.present?  %>
       <%= news.description.html_safe %>

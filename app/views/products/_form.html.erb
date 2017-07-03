@@ -2,6 +2,10 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
+  <div class="panel panel-default">
+    <%= image_tag(@product.photo(:thumb), alt: @product.name) if @product.photo.exists? %>
+    <%= f.input :photo, as: :file, :label => 'Foto mistura', :hint => 'A foto deve ter o tamanho de 450x450px' %>
+  </div>
     <%= f.input :name, :label => t('name') %>
     <%= f.input :description, :label => t('description') %>
     <%= f.association :cultivation, :label => t('cultivation'), as: :check_boxes %>
