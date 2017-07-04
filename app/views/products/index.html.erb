@@ -55,8 +55,10 @@
                 <div class="no-hover">
                   <div class="no-hover-head">
                   </div>
-                  <div class="no-hover-body">                      
-                        <%= image_tag 'mistura-redondo.png', alt: "Mistura", class: 'img-responsive' %>
+                  <div class="no-hover-body">
+                  <%= image_tag(product.photo(:medium), alt: product.name, class: 'img-responsive img-circle') %>
+                                       
+                        <%# image_tag 'mistura.jpg', alt: "Mistura", class: 'img-responsive img-circle' %>
                   </div><!-- /no-hover-body -->
                   <div class="no-hover-footer">
                     <div class="product-titulo">
@@ -69,8 +71,8 @@
                   <div class="hover-head">
                     <%= image_tag 'rx_medio-branco.png', alt: "Raix", class: 'rx-image' %><%= product.name.upcase.sub(/RX /, "") %>
                   </div>
-                  <div class="hover-body">
-                        <%= image_tag 'mistura-logo.jpg', alt: "Mistura", class: 'img-responsive btn-block' %>
+                  <div class="hover-body" style="background-image:url('<%= product.photo.url(:original)%>);')">
+                  <%= image_tag 'logo-raix-sobreposto.png', alt: "Raix", class: 'img-responsive btn-block' %>                 
                   </div><!-- /no-hover-body -->
                   <div class="hover-footer">                                          
                         <span class="texto-verde" style="text-transform: uppercase;">
