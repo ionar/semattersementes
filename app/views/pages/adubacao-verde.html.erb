@@ -6,36 +6,96 @@
   <li><%= link_to 'Inical', root_path %></li>
   <li class="active">Adubação Verde</li>
 </ol>
-<div class="row">
-	<div class="col-lg-4 col-md-4 col-sm-4">
-		<%= image_tag 'aduba-o-que-eh.jpg', alt: 'O que é?', class: 'img-responsive' %>
-	</div><!-- /col -->
-	<div class="col-lg-8 col-md-8 col-sm-8">
-	<h2 style="color:#004438; font-weight: bold">O QUE É ADUBAÇÃO VERDE?</h2>
-	<p class="lead paragrafo-dizeres">
-	A adubação verde é uma técnica de manejo que consiste na cobertura do solo com plantas capazes de repor naturalmente os nutrientes consumidos pela lavoura semeada e colhida na safra anterior. 
-	</p>
-	<p class="lead paragrafo-dizeres">
-	Além disso, a adubação verde proporciona outros benefícios, como a produção de palhada, descompactação do solo, redução de nematoides e outras doenças, entre outras vantagens.
-	</p>
-	<p class="lead paragrafo-dizeres">
-	A adubação verde é uma ferramenta utilizada principalmente por produtores rurais de alta produtividade nas principais regiões agrícolas do Brasil e de outros países com forte tradição em tecnologias agrícolas, como os Estados Unidos, Canadá, França e demais países europeus.
-	</p>
-	<p class="lead paragrafo-dizeres">
-	A utilização de adubação verde é uma tendência mundial porque aumenta a produtividade das safras seguintes, reduz custos de manejo e aumentam a lucratividade das fazendas. A adubação verde também é considerada uma ferramenta de manejo sustentável, contribuindo para a conservação do solo e a redução do consumo de defensivos e fertilizantes industriais.
-	</p>
-	<p class="lead paragrafo-dizeres">
-	O conceito de adubação verde está alinhado à técnica de Plantio Direto, pois as plantas utilizadas para este fim também proporcionam a formação de palhada. Desta forma, a adubação verde poder ser utilizada para melhorar a produtividade das safras seguintes de grãos como soja e milho ou qualquer outra cultura comercial.
-	</p>
-	<p class="lead paragrafo-dizeres">
-	Pesquisas e estudos científicos recentes permitiram a modernização das técnicas de adubação verde. Os métodos mais antigos e disseminados utilizam apenas leguminosas para fixar nitrogênio ao solo, com poucos benefícios paralelos. 
-	</p>
-	<p class="lead paragrafo-dizeres">
-	A técnica mais avançada de Adubação Verde é a mistura de sementes conhecida como Raíx. As fórmulas desenvolvidas pela Sematter combinam diversos tipos de culturas, cobrindo o solo com diversas plantas e proporcionando múltiplos benefícios. A adubação verde com o Raíx é precisamente planejada de acordo com as culturas comerciais que serão semeadas posteriormente na lavoura.
-	</p>	
-	<p class="lead paragrafo-dizeres">
-	Saiba mais sobre a adubação verde com o <strong><%= link_to 'Raíx aqui', page_path('raix') %></strong>.
-	</p>
-	</div><!-- /col -->	
-</div><!-- /row -->
 </div><!-- /container -->
+<div class="row">
+	<div class="container">
+		<div class="col-lg-4 col-md-4 col-sm-4">
+		<%= scroll_reveal animation: 'enter left, after 0.1s' do %>
+			<div class="saco-raix">			
+				<%= image_tag 'lavoura1.jpg', alt: 'O que é?', class: 'img-responsive img-thumbnail' %>
+			</div>
+			<% end %>
+		</div><!-- /col -->
+		<div class="col-lg-8 col-md-8 col-sm-8">
+		<%= scroll_reveal animation: 'enter right, after 0.3s' do %>
+			<h2 style="color:#004438; font-weight: bold">O QUE É ADUBAÇÃO VERDE?</h2>
+		<% end %>
+		<%= scroll_reveal animation: 'enter right, after 0.5s' do %>
+			<p class="lead paragrafo-dizeres">
+			A adubação verde é uma técnica de manejo que consiste na cobertura do solo com plantas capazes de repor naturalmente os nutrientes consumidos pela lavoura semeada e colhida na safra anterior.
+			</p>
+		<% end %>
+		<%= scroll_reveal animation: 'enter right, after 0.7s' do %>
+			<p class="lead paragrafo-dizeres">
+			Além disso, a adubação verde proporciona outros benefícios, como a produção de palhada, descompactação do solo, redução de nematoides e outras doenças, entre outras vantagens.
+			</p>
+		<% end %>
+		<%= scroll_reveal animation: 'enter right, after 0.1s' do %>
+			<h2 style="color:#004438; font-weight: bold">Tendência Mundial</h2>
+		<% end %>
+		<%= scroll_reveal animation: 'enter right, after 0.3s' do %>
+			<p class="lead paragrafo-dizeres">
+			A adubação verde é uma ferramenta utilizada principalmente por produtores rurais de alta produtividade nas principais regiões agrícolas do Brasil e de outros países com forte tradição em tecnologias agrícolas, como os Estados Unidos, Canadá, França e demais países europeus.
+			</p>
+		<% end %>
+		<%= scroll_reveal animation: 'enter right, after 0.5s' do %>
+			<p class="lead paragrafo-dizeres">
+			A utilização de adubação verde é uma tendência mundial porque aumenta a produtividade das safras seguintes, reduz custos de manejo e aumentam a lucratividade das fazendas. A adubação verde também é considerada uma ferramenta de manejo sustentável, contribuindo para a conservação do solo e a redução do consumo de defensivos e fertilizantes industriais.
+			</p>
+		<% end %>
+		</div><!-- /col -->	
+	</div><!-- /container -->
+</div><!-- /row -->
+<%= scroll_reveal animation: 'enter bottom, after 0.1s' do %>
+<div class="container">	
+	<div class="culturas-faixa" style="padding: 20px;">
+			<p class="lead paragrafo-dizeres" style="color:#004438">
+			<strong>Por um lado a agricultura precisa alimentar a crescente população mundial de forma constante, e por outro ela também deve enfrentar novos desafios econômicos, sociais e regulatórios.</strong>
+			</p>
+			<p class="lead paragrafo-dizeres" style="color:#004438">
+			<strong>O "bom produto" se destaca como um dos princípios do futuro da agricultura, uma agricultura que vai conciliar os rendimentos de desempenho e respeito ao meio ambiente.</strong>
+			</p>
+	</div><!--/culturas-faixa -->	
+</div><!-- /container --> 
+<% end %>
+
+<div id="raix-fundo">
+<%= scroll_reveal animation: 'enter bottom, after 0.1s' do %>
+<div class="container">
+	<div class="row">
+		<div class="col-lg-4 col-md-4">
+			<div class="saco-raix">
+			<%= image_tag 'lavoura2.jpg', alt: 'O que é?', class: 'img-responsive img-thumbnail' %>
+			</div>
+
+			<div class="saco-raix">
+			<%= image_tag 'lavoura3.jpg', alt: 'O que é?', class: 'img-responsive img-thumbnail' %>
+			</div>
+		</div><!-- /.col -->
+		<div class="col-lg-8 col-md-8">
+			<h2 style="color:#A6c10b; font-weight: bold">Plantio direto e novas técnicas</h2>
+			<p class="lead">
+			O conceito de adubação verde está alinhado à técnica de Plantio Direto, pois as plantas utilizadas para este fim também proporcionam a formação de palhada. Desta forma, a adubação verde poder ser utilizada para melhorar a produtividade das safras seguintes de grãos como soja e milho ou qualquer outra cultura comercial.
+			</p>
+			<p class="lead">
+			Pesquisas e estudos científicos recentes permitiram a modernização das técnicas de adubação verde. Os métodos mais antigos e disseminados utilizam apenas leguminosas para fixar nitrogênio ao solo, com poucos benefícios paralelos.
+			</p>
+			<p class="lead">
+			A técnica mais avançada de Adubação Verde é a mistura de sementes conhecida como Raíx. As fórmulas desenvolvidas pela Sematter combinam diversos tipos de culturas, cobrindo o solo com diversas plantas e proporcionando múltiplos benefícios. A adubação verde com o Raíx é precisamente planejada de acordo com as culturas comerciais que serão semeadas posteriormente na lavoura.
+			</p>
+		</div><!-- /.col -->
+ 	</div><!-- /row -->
+</div><!-- /container --> 
+<% end %>
+</div><!--/raix-fundo -->
+<%= scroll_reveal animation: 'enter bottom, after 0.1s' do %>
+<div class="container">
+<hr>
+<div class="well">
+<p class="lead text-center">
+			Saiba mais sobre a adubação verde com o <strong><%= link_to 'Raíx aqui', page_path('raix') %></strong>.
+			</p>
+</div>
+</div>
+<% end %>
+
