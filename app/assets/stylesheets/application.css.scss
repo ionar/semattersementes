@@ -169,23 +169,33 @@ footer {
 
 /* TITULOS */
 .cabecalho-pagina {
-    background: #004438 image-url("bg-paisagem.jpg") no-repeat scroll center top / cover ;
-    height: 110px;
-    line-height: 110px;
+    background: #004438 image-url("bg_titulo_novo.jpg") no-repeat scroll center top / cover ;
+    height: 160px;
+    //line-height: 160px;
     margin-bottom: 20px;
-    /*background-attachment: fixed;*/
+    //padding-top:50px;
+    border-top: 4px solid #fff;
 }
 
+.titulo-bc {
+  margin-top: 55px;
+
+}
 .titulo-bc h2 {
-    color: #fff;
+    color: #004438;
     font-size: 2.0em !important;
     font-weight: bold;
-    line-height: 110px;
+    //line-height: 50px;
     margin: 0;
     text-align: left;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    //text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
     vertical-align: middle;
     text-transform: uppercase;
+    background-color: #fff;
+    //width: 200px;
+    display:inline-block; 
+    //border: 1px solid #A2B500;
+    padding: 10px;
 }
 
 
