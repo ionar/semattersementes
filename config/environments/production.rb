@@ -88,7 +88,7 @@ Rails.application.configure do
   Paperclip.options[:command_path] = "/usr/local/bin/"
 
   # Para o devise
-  config.action_mailer.default_url_options = { host: 'http://semattersementes.web1511.kinghost.net/'}
+  config.action_mailer.default_url_options = { host: 'http://semattersementes.com.br/'}
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
