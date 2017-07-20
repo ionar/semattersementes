@@ -14,7 +14,9 @@ class Product < ApplicationRecord
 
 	
 	default_scope { order(name: :asc) }  
-  default_scope { where(active: true) }
+  #default_scope { where(active: true) }
+
+  scope :ativos, -> { where(active: true) }
 
   def to_param
     [id, name.parameterize].join("-")

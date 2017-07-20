@@ -6,9 +6,16 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.where(nil) # creates an anonymous scope
-    @products = Product.joins(:cultivation).where(cultivations: { id: params[:cultivation] }) if params[:cultivation].present?
-    @products = @products.joins(:cycle).where(cycles: {id: params[:cycle]}) if params[:cycle].present?
+     if user_signed_in? and current_user.admin == true
+      @products = Product.where(nil) # creates an anonymous scope
+      @products = Product.joins(:cultivation).where(cultivations: { id: params[:cultivation] }) if params[:cultivation].present?
+      @products = @products.joins(:cycle).where(cycles: {id: params[:cycle]}) if params[:cycle].present?
+     else
+      @products = Product.ativos.where(nil) # creates an anonymous scope
+      @products = Product.ativos.joins(:cultivation).where(cultivations: { id: params[:cultivation] }) if params[:cultivation].present?
+      @products = @products.joins(:cycle).where(cycles: {id: params[:cycle]}) if params[:cycle].present?
+     end
+    
     ##@products = @products.cycle(params[:cycle]) if params[:cycle].present?
 
     ##if params[:cultivation]
