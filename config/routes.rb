@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 	resources :products_purposes_relations
   resources :products do
     resources :products_purposes_relations
+    resources :photo_products
   end
   resources :purposes
   resources :cycles

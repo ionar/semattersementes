@@ -8,7 +8,7 @@
   </div>
     <%= f.input :active, :label => t('active') %>
     <%= f.input :name, :label => t('name') %>
-    <%= f.input :description, :label => t('description') %>
+    <%= f.input :description, label: t('description'), as: :wysihtml5, wysihtml5: { locale: "pt-BR" } %>
     <%= f.association :cultivation, :label => t('cultivation'), as: :check_boxes %>
     <%= f.association :cycle, :label => t('cycle'), prompt: t('select') %>
     <%= f.association :purposes, :label => t('purposes'), as: :check_boxes,

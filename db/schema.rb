@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170704213707) do
+ActiveRecord::Schema.define(version: 20170727170639) do
 
   create_table "banners", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
@@ -54,6 +54,17 @@ ActiveRecord::Schema.define(version: 20170704213707) do
     t.datetime "updated_at",                null: false
     t.string   "abstract"
     t.string   "youtube"
+  end
+
+  create_table "photo_products", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "product_id"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.index ["product_id"], name: "index_photo_products_on_product_id", using: :btree
   end
 
   create_table "photonoticias", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -134,6 +145,7 @@ ActiveRecord::Schema.define(version: 20170704213707) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
+  add_foreign_key "photo_products", "products"
   add_foreign_key "photonoticias", "news"
   add_foreign_key "products", "cultivations"
   add_foreign_key "products", "cycles"
