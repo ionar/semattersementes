@@ -54,5 +54,6 @@ $( document ).ready(function() {
         interval: 3000 //changes the speed
     })
 
+    $('.editor').wysihtml5({'toolbar': {'blockquote': false, 'html': true}})
 
  });
