@@ -81,7 +81,7 @@
 					    </thead>
 
 					    <tbody>
-					      <% @benefits.each do |products_purposes_relation| %>
+					      <% @benefits.order("stars DESC").each do |products_purposes_relation| %>
 					        <tr>
 					          <td><%= link_to products_purposes_relation.purpose.name, edit_products_purposes_relation_path(products_purposes_relation) %></td>
 					          <td><%= products_purposes_relation.stars %></td>
@@ -94,7 +94,7 @@
 				      <div class="panel-body">
 				        <p><strong>Aplicações:</strong></p>
 				        <table class="table table-striped">
-						<% @product.products_purposes_relations.each do |relation| %>
+						<% @product.products_purposes_relations.order("stars DESC").each do |relation| %>
 							<tr>
 								<td>
 								<div class="text-left">
