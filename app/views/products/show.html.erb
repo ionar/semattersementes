@@ -58,9 +58,11 @@
 			  	<%= link_to @product.photo.url, class: 'link-foto-galeria', data: { toggle: 'lightbox', gallery: 'example-gallery' } do %>
 			  		<%= image_tag(@product.photo(:medium), alt: @product.name, class: 'img-responsive') if @product.photo.present? %>
 				<% end %>
+				<hr>
 			   	<% @product.photo_products.each do |photo_product| %>
 			   		<%= link_to photo_product.photo.url, class: 'link-foto-galeria', data: { toggle: 'lightbox', gallery: 'example-gallery' } do %>
 						<%= image_tag photo_product.photo.url(:medium), class: 'img-thumbnail' %>
+						<hr>
 					<% end %>
 				<% end %>
 			  </div>
