@@ -82,3 +82,5 @@ pt-BR:
   title: "Título"
   abstract: "Resumo"
   active: "Ativo"
+  soil: "Tipo de solo"
+  utilization: "Utilização"

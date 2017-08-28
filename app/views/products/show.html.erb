@@ -33,16 +33,23 @@
 	</div> <!-- /.row -->
 	<div class="row">
 		<div class="col-lg-9 col-md-9 col-sm-9">
+			<div class="well">
+				<p class="lead">
+				  <strong><%= t("cycle") %>:</strong>
+				  <%= @product.cycle.name %> (<%= @product.cycle.description %>)
+				</p>
+				<p class="lead"><strong>Tipo de solo: </strong>
+				  <%= @product.soil %>
+				</p>
+				<p class="lead"><strong>Utilização: </strong>
+				  <%= @product.utilization %>
+				</p>
+				<p class="lead"><strong>Indicado para: </strong>
+				  <%= @product.cultivation.map(&:name).join(" - ") %>
+				</p>
+			</div>
 		    <p class="lead">			 
 			  <%= @product.description.html_safe %>
-			</p>
-			<p class="lead">
-			  <strong><%= t("cycle") %>:</strong>
-			  <%= @product.cycle.name %> (<%= @product.cycle.description %>)
-			</p>
-
-	        <p class="lead"><strong>Indicado para: </strong>
-			  <%= @product.cultivation.map(&:name).join(" - ") %>
 			</p>
 		</div> <!-- /col -->
 		<div class="col-lg-3 col-md-3 col-sm-3 text-center">

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170727170639) do
+ActiveRecord::Schema.define(version: 20170828131825) do
 
   create_table "banners", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
@@ -91,6 +91,8 @@ ActiveRecord::Schema.define(version: 20170727170639) do
     t.integer  "photo_file_size"
     t.datetime "photo_updated_at"
     t.boolean  "active",                           default: true
+    t.string   "soil"
+    t.string   "utilization"
     t.index ["cultivation_id"], name: "index_products_on_cultivation_id", using: :btree
     t.index ["cycle_id"], name: "index_products_on_cycle_id", using: :btree
   end
