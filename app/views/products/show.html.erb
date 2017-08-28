@@ -48,10 +48,12 @@
 		<div class="col-lg-3 col-md-3 col-sm-3 text-center">
 		<div class="panel panel-default">
 			  <div class="panel-body">
-			  	<%= image_tag(@product.photo(:thumb), alt: @product.name, class: 'img-thumbnail') if @product.photo.present? %>
+			  	<%= link_to @product.photo.url, class: 'link-foto-galeria', data: { toggle: 'lightbox', gallery: 'example-gallery' } do %>
+			  		<%= image_tag(@product.photo(:medium), alt: @product.name, class: 'img-responsive') if @product.photo.present? %>
+				<% end %>
 			   	<% @product.photo_products.each do |photo_product| %>
 			   		<%= link_to photo_product.photo.url, class: 'link-foto-galeria', data: { toggle: 'lightbox', gallery: 'example-gallery' } do %>
-						<%= image_tag photo_product.photo.url(:thumb), class: 'img-thumbnail' %>
+						<%= image_tag photo_product.photo.url(:medium), class: 'img-thumbnail' %>
 					<% end %>
 				<% end %>
 			  </div>
