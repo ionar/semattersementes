@@ -48,7 +48,7 @@
 <div class="faixa-saiba-mais">
   <div class="container">
     <div class="row welcome-margens">
-      <div class="col-lg-offset-1 col-lg-3 col-md-3 col-sm-3">
+    <div class="col-lg-3 col-md-3 col-sm-3">
       <%= scroll_reveal animation: 'enter left, after 0.1s' do %>
         <div id="o-que-e-adubacao-verde" class="text-center">
           <span class="welcome-titulos">O que é <br><strong>adubação verde</strong>?</span>
@@ -61,7 +61,7 @@
         <% end %>
         <hr class="visible-xs">
       </div><!-- /col -->
-        <div class="col-lg-offset-1 col-lg-3 col-md-3 col-sm-3">
+        <div class="col-lg-3 col-md-3 col-sm-3">
         <%= scroll_reveal animation: 'enter left, after 0.4s' do %>
           <div id="conheca-o-raix" class="text-center">
           <span class="welcome-titulos">Conheça o<br></span>
@@ -75,8 +75,21 @@
         <% end %>
         <hr class="visible-xs">
       </div><!-- /col -->
-        <div class="col-lg-offset-1 col-lg-3 col-md-3 col-sm-3">
-        <%= scroll_reveal animation: 'enter left, after 0.7s' do %>
+      <div class="col-lg-3 col-md-3 col-sm-3">
+      <%= scroll_reveal animation: 'enter left, after 0.7s' do %>
+        <div id="nossos-produtos" class="text-center">
+          <span class="welcome-titulos">Conheça <br><strong>nossos produtos</strong></span>
+          <h3>
+          <%= link_to products_path, class: 'link-leia-mais' do %>
+            <%= image_tag 'welcome-btn-leia-mais.png', alt: "Leia mais" %>
+          <% end %>
+          </h3>
+        </div>
+        <% end %>
+        <hr class="visible-xs">
+      </div><!-- /col -->
+        <div class="col-lg-3 col-md-3 col-sm-3">
+        <%= scroll_reveal animation: 'enter left, after 0.10s' do %>
         <div id="fique-por-dentro" class="text-center">
           <span class="welcome-titulos">Fique por dentro<br><strong>Blog da Sematter</strong></span>
           <h3>
@@ -91,6 +104,9 @@
   </div><!-- /container -->
 </div>
 <%= render partial: 'layouts/faixinha-verde' %>
+
+<div class="parallax-1">
+</div><!-- /.parallax-1 -->
 
 <div class="container">
  <%= scroll_reveal animation: "enter left" do %>

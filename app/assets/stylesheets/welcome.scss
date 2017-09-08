@@ -4,8 +4,23 @@
 
 .faixa-saiba-mais {
 	background-color:#e4e4e4;
+	//background-color:#FF6600;
+	//background: #A7C20B image-url("vista-aerea.jpg") no-repeat scroll center top / cover ;
+	//background-attachment: fixed;
 }
 
+.parallax-1{
+	width: 100%;
+	height: 250px;
+	background: #A7C20B image-url("vista-aerea.jpg") no-repeat fixed center top / cover ;
+}
+
+.parallax-2{
+	width: 100%;
+	height: 250px;
+	background: #A7C20B image-url("vista-adubacao-verde.jpg") no-repeat fixed center top / cover ;
+	padding-top: 20px;
+}
 
 .welcome-saiba-mais span {
     bottom: 5px;
@@ -28,6 +43,12 @@
 #o-que-e-adubacao-verde {
 	height: 220px;
 	background: #A7C20B image-url("welcome-o-que-e-3.jpg") no-repeat scroll center top / cover ;
+	padding-top: 40px;
+	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+#nossos-produtos {
+	height: 220px;
+	background: #A7C20B image-url("welcome-nossos-produtos.jpg") no-repeat scroll center top / cover ;
 	padding-top: 40px;
 	text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
 }
