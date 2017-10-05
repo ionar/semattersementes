@@ -109,15 +109,16 @@
 </div><!-- /.parallax-1 -->
 
 <div class="container">
- <%= scroll_reveal animation: "enter left" do %>
+
  <h2 class="text-center"><span style="color: #004438; font-weight: bold">DEPOIMENTOS</span> - <span style="color: #A6C10B; font-weight: bold">Quem usa aprova!</span></h2>
+ <%= scroll_reveal animation: "enter left" do %>
     <div class="row welcome-margens">
       <div class="col-lg-8 col-md-8 col-sm-8 text-center">
       <p class="lead text-center">
         “A Sematter trouxe essa ideia de fazer um mix de sementes e nós resolvemos experimentar. Usamos em algumas áreas que tinham 30 anos de plantio direto para resolver um problema de solo que estava compactado. Deu um resultado ótimo, foi a maior safra da história que a gente conseguiu atingir em produtividade.”
         </p>
         <p class="lead text-center">
-        Volnei Zandoná, produtor de milho<br>
+        <b>Volnei Zandoná</b>, produtor de milho<br>
         soja e trigo de Palma Sola, extremo oeste de Santa Catarina
         </p>
       </div><!-- /col -->     
@@ -125,7 +126,9 @@
       <%= image_tag "welcome-depoimento-2.jpg", alt: "Depoimento", class: "img-circle" %>
       </div><!-- /col -->         
     </div><!-- /row -->
+    <% end %>
     <hr>
+    <%= scroll_reveal animation: "enter right" do %>
     <div class="row welcome-margens">
       <div class="col-lg-4 col-md-4 col-sm-4">
       <%= image_tag "welcome-depoimento-fabio.jpg", alt: "Depoimento", class: "img-circle" %>
@@ -135,19 +138,21 @@
         “Diagnostiquei compactação em 30 cm em todos meus talhões. Testei o Raíx e aprovei. O Raix é a melhor opção para essa questão.”
         </p>
         <p class="lead text-center">
-        Fábio Bedin, produtor de grãos<br>
+        <b>Fábio Bedin</b>, produtor de grãos<br>
         Ouro Verde - Santa Catarina
         </p>
       </div><!-- /col -->             
     </div><!-- /row -->
+    <% end %>
     <hr>
+    <%= scroll_reveal animation: "enter left" do %>
     <div class="row welcome-margens">
       <div class="col-lg-8 col-md-8 col-sm-8 text-center">
       <p class="lead text-center">
         “O meu maior gargalo técnico é a entressafra e o Raíx nasceu para solucionar essa questão.”
         </p>
         <p class="lead text-center">
-        Diego Gribler, produtor de grãos<br>
+        <b>Diego Gribler</b>, produtor de grãos<br>
         Abelardo Luz - Santa Catarina
         </p>
       </div><!-- /col -->     
