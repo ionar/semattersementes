@@ -10,7 +10,7 @@ class Contact < MailForm::Base
     {
       #:reply_to => "naoresponda@teste.com",
       :subject => "Formulário de contato - semattersementes.com.br",
-      :to => "irm@ionar.com.br, adm@semattersementes.com.br",
+      :to => "irm@ionar.com.br, adm@semattersementes.com.br, contato@semattersementes.com.br",
       :from => %("#{name}" <#{email}>),
       :reply_to => %("#{name}" <#{email}>)
     }
