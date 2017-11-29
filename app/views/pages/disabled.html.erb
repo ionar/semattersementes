@@ -1,0 +1,17 @@
+<%= render partial: 'layouts/faixinha-verde' %>
+<div class="culturas-faixa">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-8 col-md-8 col-sm-8">
+			<h2 style="font-weight: bold;color: #004438">Produtos</h2>
+			<%= image_tag 'raix-recomendacoes.png', alt: "Recomendações", class: 'img-responsive' %>
+			</div><!-- /col -->
+			<div class="col-lg-4 col-md-4 col-sm-4">
+			<%= link_to resales_path, class: '' do %>
+				<%= image_tag 'raix-onde-comprar.png', alt: "Onde comprar", class: 'img-responsive raix-onde-comprar' %>
+			<% end %>
+			</div><!-- /col -->
+		</div><!-- /row -->
+		<hr>
+	</div><!-- /container -->
+</div><!-- /produtos-faixa -->
