@@ -3,12 +3,12 @@
 <div class="container">
 <ol class="breadcrumb">
   <li><%= link_to 'Inicial', root_path %></li>
-  <li class="active">Revendas</li>
+  <li class="active">Representantes</li>
 </ol>
   <% if user_signed_in? and current_user.admin == true %>
     <div class="row">
       <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
-        <h2><%= t("resales") %></h2>
+        <h2>Representantes</h2>
       </div>
       <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
         <div class="text-right">
