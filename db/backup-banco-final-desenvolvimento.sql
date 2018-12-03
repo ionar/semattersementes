@@ -11,7 +11,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `ar_internal_metadata`
+-- Table structure for table `ar_internal_metadata` 
 --
 
 DROP TABLE IF EXISTS `ar_internal_metadata`;
