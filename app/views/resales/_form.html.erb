@@ -41,7 +41,7 @@
       ], prompt: t('select'), :label => t('province') %>
     <%= f.input :phone, :label => t('phone')  %>
     <%= f.input :email, :label => t('email')  %>
-    <%= f.input :territory, :label => t('territory')  %>
+    <%= f.input :territory, label: t('territory'), as: :wysihtml5, wysihtml5: {locale: 'pt-BR', 'toolbar': {'blockquote': true, 'html': true, 'image': false, 'smallmodals': true}} %>
   </div>
 
     <div class="actions text-right">

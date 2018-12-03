@@ -44,14 +44,13 @@
              %>
                   <% @resales.each do |resale| %>
                     <div class="well">
-                      <h3><strong><%= resale.city %> - <%= resale.province %></strong></h3>
-                      <strong style="text-transform: uppercase;"><%= resale.name %></strong><br>
+                      <h3><strong><%= resale.name %></h3>
+                      <strong style="text-transform: uppercase;">Fone: <%= resale.phone %></strong><br>
                      <%= resale.company_name %><br>
                       <%= resale.address %><br>
                       <%= resale.neighborhood %><br>
                       <%= 'CEP:' + resale.cep + '<br>'.html_safe if resale.cep.present? %>
                       <%= resale.city %> - <%= resale.province %><br>
-                      Fone: <%= resale.phone %><br>
                       <%= 'e-mail:' + resale.email + '<br>'.html_safe if resale.email.present? %>
                       Atua em: <%= resale.territory %>
                       <% if user_signed_in? and current_user.admin == true %>
