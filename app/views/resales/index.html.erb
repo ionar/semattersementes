@@ -46,12 +46,12 @@
                     <div class="well">
                       <h3><strong><%= resale.name %></strong></h3>
                       <strong style="text-transform: uppercase;">Fone: <%= resale.phone %></strong><br>
-                     <%= resale.company_name + '<br>' if resale.company_name.present? %>
-                      <%= resale.address if resale.address.present? %><br>
+                      <%=  "#{resale.company_name}<br>".html_safe if resale.company_name.present? %>
+                      <%= "#{resale.address}<br>"  if resale.address.present? %><br>
                       <%= resale.neighborhood + '<br>' if resale.neighborhood.present? %>
-                      <%= 'CEP: ' + resale.cep + '<br>' if resale.cep.present? %>
+                      <%= "CEP: #{resale.cep}<br>".html_safe if resale.cep.present? %>
                       <%= resale.city %> - <%= resale.province %><br>
-                      <%= 'e-mail:' + resale.email + '<br>' if resale.email.present? %>
+                      <%= "#{resale.email}<br>".html_safe if resale.email.present? %>
                       Atua em: <%= resale.territory %>
                       <% if user_signed_in? and current_user.admin == true %>
                       <hr>
