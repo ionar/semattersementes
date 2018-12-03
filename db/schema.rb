@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170828131825) do
+ActiveRecord::Schema.define(version: 20181203110627) do
 
   create_table "banners", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "image"
@@ -123,9 +123,9 @@ ActiveRecord::Schema.define(version: 20170828131825) do
     t.string   "province"
     t.string   "phone"
     t.string   "email"
-    t.string   "territory"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.text     "territory",    limit: 65535
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "city"
   end
 
