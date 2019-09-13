@@ -40,6 +40,24 @@
 	margin-top: 40px;
 	margin-bottom: 40px;
 }
+#sac-banner {
+	height: 220px;
+	background: #A7C20B image-url("welcome-o-que-e-3.jpg") no-repeat scroll center top / cover ;
+	padding-top: 40px;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+  
+  .sac-titulo{
+    color: #fff;
+    font-size:22px;
+  }
+  .sac-email{
+    color: #fff;
+    font-size:22px;
+  }
+  .sac-email:hover{
+    color:#A7C20B;
+  }
+}
 #o-que-e-adubacao-verde {
 	height: 220px;
 	background: #A7C20B image-url("welcome-o-que-e-3.jpg") no-repeat scroll center top / cover ;

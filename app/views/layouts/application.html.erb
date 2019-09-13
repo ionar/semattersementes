@@ -59,7 +59,7 @@
 							<li class="<%= active?('products')%>"><%= link_to "PRODUTOS", products_path %></li>
 							<li class="<%= active?('resales')%>"><%= link_to "REPRESENTANTES", resales_path %></li>
 							<li class="<%= active?('news')%>"><%= link_to "NOTÍCIAS", news_index_path %></li>				
-							<li class="<%= active?('contacts')%>"><%= link_to "CONTATO", contacts_path %></li>
+							<li class="<%= active?('contacts')%>"><%= link_to "FALE CONOSCO", fale_conosco_path %></li>
 							<% if user_signed_in? and current_user.admin == true %>
 								<li class="dropdown">
 						          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN <span class="caret"></span></a>
@@ -103,7 +103,7 @@
 					<li class="<%= active?('products')%>"><%= link_to "PRODUTOS", products_path %></li>
 					<li class="<%= active?('resales')%>"><%= link_to "REPRESENTANTES", resales_path %></li>
 					<li class="<%= active?('noticias') %>"><%= link_to "NOTÍCIAS", news_index_path %></li>				
-					<li class="<%= active?('contacts')%>"><%= link_to "CONTATO", contacts_path %></li>
+          <li class="<%= active?('contacts')%>"><%= link_to "FALE CONOSCO", fale_conosco_path %></li>
 					<% if user_signed_in? and current_user.admin == true %>
 					<li class="dropdown">
 			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ADMIN <span class="caret"></span></a>
@@ -151,7 +151,7 @@
 	                        <%= link_to new_user_session_path do %><span class="glyphicon glyphicon-log-in"></span> Login <% end %>
 	                        <br>
 	                      <% end %>
-	                      <%= link_to 'https://mail.zoho.com/' do %>
+	                      <%= link_to 'http://webmail.semattersementes.com.br/' do %>
 	                      <span class="glyphicon glyphicon-envelope"></span> Webmail
 	                      <% end %>
 	                      <div class="visible-xs"><hr></div>
@@ -179,7 +179,7 @@
                       <%= link_to "Produtos", products_path %> <br>
                       <%= link_to "Onde Comprar", resales_path %> <br>
                       <%= link_to "Notícias", news_index_path %> <br>
-                      <%= link_to "Contato", contacts_path %>
+                      <%= link_to "Fale Conosco", fale_conosco_path %>
 					<div class="visible-xs"><hr></div>
 					<% end %>
                   </div>                  

@@ -21,17 +21,22 @@
     <% end %>
     <% end %>
     </div><!-- /.col -->
-  	<div class="col-md-4">
-    <%= scroll_reveal animation: 'enter left, after 0.4s' do %>
-  	 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.008777691865!2d-53.50520368545173!3d-26.744095983200488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fa5c75c950c0fb%3A0x616516427ca6fc31!2sSematter+Sementes!5e0!3m2!1spt-BR!2sus!4v1496673744205" width="100%" height="420" frameborder="0" style="border:0" allowfullscreen></iframe>
-     <% end %>
-  	</div><!-- /.col -->
     <div class="col-md-4">
     <%= scroll_reveal animation: 'enter left, move 50px, after 0.7s' do %>
      <%# image_tag 'sematter-fachada.jpg', alt: 'Sematter Sementes', class: 'img-thumbnail img-responsive' %>
-
-    <p>
-    <span class="texto-verde">Sematter Sementes</span> <br />
+     <!-- sac -->
+     <div id="sac-banner" class="text-center">
+      <span class="sac-titulo">Serviço de atendimento ao cliente<br></span>
+      <%= image_tag 'welcome-raix-small.png', alt: 'Raíx' %>
+      <h3>
+        <%= mail_to 'sac@semattersementes.com.br', class: 'sac-email' do %>
+          sac@semattersementes.com.br
+        <% end %>
+      </h3>
+     </div>
+    <!-- /sac -->
+    <p class="text-center"><br>
+    <span class="texto-verde">SEMATTER DO BRASIL LTDA</span> <br />
         SC-386 KM 0, 300  <br />
         Bairro Santa Rita, CEP: 89900-000 <br />
         São Miguel do Oeste - SC <br />
@@ -40,6 +45,11 @@
         </p>
     <% end %>
     </div><!-- /.col -->
+    <div class="col-md-4">
+    <%= scroll_reveal animation: 'enter left, after 0.4s' do %>
+  	 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.008777691865!2d-53.50520368545173!3d-26.744095983200488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94fa5c75c950c0fb%3A0x616516427ca6fc31!2sSematter+Sementes!5e0!3m2!1spt-BR!2sus!4v1496673744205" width="100%" height="420" frameborder="0" style="border:0" allowfullscreen></iframe>
+     <% end %>
+  	</div><!-- /.col -->
   </div><!-- /.row -->
 
 </div><!-- /.container -->

@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :resales
   #get 'welcome/index'
 
+  match '/fale-conosco', to: 'contacts#new', via: 'get'  
   match '/contacts', to: 'contacts#new', via: 'get'
   resources "contacts", only: [:new, :create]
 
