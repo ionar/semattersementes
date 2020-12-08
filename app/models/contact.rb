@@ -9,8 +9,8 @@ class Contact < MailForm::Base
   def headers
     {
       #:reply_to => "naoresponda@teste.com",
-      :subject => "Formulário de contato - semattersementes.com.br",
-      :to => "irm@ionar.com.br, contato@semattersementes.com.br",
+      :subject => "Formulário de contato - raixsementes.com.br",
+      :to => "irm@ionar.com.br, contato@raixsementes.com.br",
       :from => %("#{name}" <#{email}>),
       :reply_to => %("#{name}" <#{email}>)
     }
